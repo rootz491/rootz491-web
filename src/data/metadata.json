@@ -1,0 +1,161 @@
+{
+  "name": "Karan Sharma",
+  "role": "Full-Stack Developer",
+  "tagline": "Building scalable, fast, and creative web systems.",
+  "about": "I’m a full-stack developer with over 4 years of experience creating efficient, reliable, and user-friendly web applications. I specialize in TypeScript, NestJS, Next.js, MongoDB, and Elasticsearch, with a focus on system architecture, performance, and scalability. I enjoy blending strong backend logic with clean, intuitive frontend design.",
+  "skills": {
+    "frontend": ["Next.js", "React", "TailwindCSS", "TypeScript"],
+    "backend": ["NestJS", "Express", "Flask", "Node.js"],
+    "databases": ["MongoDB", "Elasticsearch", "Redis", "PostgreSQL"],
+    "devops": ["Docker", "BullMQ", "Prometheus", "Grafana", "NGINX", "AWS S3"],
+    "tools": ["Git", "VSCode", "Linux", "Puppeteer", "Coolify"],
+    "specialties": [
+      "Search Optimization",
+      "Real-time Systems",
+      "Microservices",
+      "Performance Tuning",
+      "DevOps Automation"
+    ]
+  },
+  "experience": [
+    {
+      "title": "Full Stack Engineer",
+      "company": "Creazilla",
+      "type": "Full-time",
+      "location": "Remote",
+      "duration": "Aug 2023 – Present",
+      "description": "Leading backend and frontend development for a large-scale stock media platform. Focused on scalable APIs, fast search using Elasticsearch, and efficient deployment pipelines using Docker and Redis."
+    },
+    {
+      "title": "Full-Stack Developer",
+      "company": "Adstia Agency",
+      "type": "Full-time",
+      "location": "Remote",
+      "duration": "May 2023 – Aug 2023",
+      "description": "Worked across backend and server management while collaborating closely with frontend teams. Built and optimized full-stack applications ensuring smooth communication between client and server."
+    },
+    {
+      "title": "Lead Developer",
+      "company": "Growhut",
+      "type": "Full-time",
+      "location": "Remote",
+      "duration": "Apr 2023 – May 2023",
+      "description": "Led a team of developers and designers, focusing on architecture design, development, and deployment. Oversaw infrastructure setup using NGINX and guided the full application lifecycle."
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Growhut",
+      "type": "Full-time",
+      "location": "Remote",
+      "duration": "Jan 2023 – May 2023",
+      "description": "Handled backend architecture, tech stack management, and deployment of applications to AWS. Ensured smooth data flow and performance optimization across systems."
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Billingpanel.io",
+      "type": "Freelance",
+      "location": "Iceland (Remote)",
+      "duration": "Dec 2022 – Jan 2023",
+      "description": "Developed and managed backend APIs and services for a SaaS billing product. Focused on clean code, modular design, and API reliability."
+    },
+    {
+      "title": "Full-Stack Developer",
+      "company": "Yugam Technologies Pvt Ltd",
+      "type": "Full-time",
+      "location": "Dehradun, India",
+      "duration": "Jul 2022 – Dec 2022",
+      "description": "Built full-stack web applications integrating services and ensuring smooth UI-API communication. Worked primarily with React, Node.js, and MongoDB."
+    },
+    {
+      "title": "Back End Developer Intern",
+      "company": "Yugam Technologies Pvt Ltd",
+      "type": "Internship",
+      "location": "Remote",
+      "duration": "Jan 2022 – Jul 2022",
+      "description": "Developed backend modules and maintained existing services. Gained hands-on experience with Node.js, MongoDB, and API development."
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI Image Tagging Pipeline",
+      "description": "An end-to-end AI-based image tagging system that automates metadata extraction and labeling for media platforms.",
+      "tech": ["Python", "Flask", "Machine Learning"],
+      "github": "https://github.com/rootz491/AI-image-tagging-pipeline"
+    },
+    {
+      "name": "Kaluwala Web",
+      "description": "web app visualizing routes and points of interest for a local beautification project.",
+      "tech": ["Next.js", "Leaflet", "TypeScript", "TailwindCSS"],
+      "github": "https://github.com/rootz491/kaluwala-web",
+      "link": "https://kaluwala.in"
+    },
+    {
+      "name": "Addy Portfolio",
+      "description": "A portfolio website managed by Sanity CMS and deployed on Vercel, with real-time update webhooks from Sanity to Next.js for live updates.",
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Sanity CMS",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Vercel"
+      ],
+      "github": "https://github.com/rootz491/addy-web",
+      "link": "https://addy.rootz491.com"
+    },
+    {
+      "name": "Youkai Studio",
+      "description": "A portfolio website for a creative studio, showcasing projects and services with a modern design.",
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Sanity CMS",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Vercel"
+      ],
+      "github": "https://github.com/rootz491/youkai-frontend",
+      "link": "https://youkai.rootz491.com"
+    },
+    {
+      "name": "Express Real-Time Notification System",
+      "description": "Real-time event-based notification system using WebSockets and Redis pub/sub.",
+      "tech": ["Express", "TypeScript", "Socket.IO", "Redis"],
+      "github": "https://github.com/rootz491/express-real-time-notification-system"
+    },
+    {
+      "name": "NestJS Real-Time Notification System",
+      "description": "Real-time event-based notification system using WebSockets and Redis pub/sub.",
+      "tech": ["NestJS", "TypeScript", "Socket.IO", "Redis"],
+      "github": "https://github.com/rootz491/real-time-notifi-system-example"
+    },
+    {
+      "name": "OAuth Template",
+      "description": "Plug-and-play OAuth 2.0 authentication template for Express and TypeScript backends.",
+      "tech": ["Express", "TypeScript", "OAuth2"],
+      "github": "https://github.com/rootz491/oauth-template"
+    }
+  ],
+  "interests": [
+    "Web Performance",
+    "Search Systems",
+    "FPGA Development",
+    "Hardware Programming",
+    "AI-powered Tools"
+  ],
+  "socials": {
+    "github": "https://github.com/rootz491",
+    "linkedin": "https://linkedin.com/in/karansh491",
+    "instagram": "https://instagram.com/karansh491"
+  },
+  "contact": {
+    "email": "karansharma.dev@example.com"
+  },
+  "profileImage": "https://cdn.creazilla.com/profile/karan-sharma.jpg",
+  "highlights": [
+    "4+ years of full-stack development experience",
+    "Deep experience in TypeScript, NestJS, Next.js, and Elasticsearch",
+    "Worked across AI, real-time, and large-scale web systems",
+    "Interested in FPGA and low-level hardware development"
+  ]
+}
