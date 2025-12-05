@@ -174,7 +174,7 @@ The contact form uses **nodemailer** to send emails via SMTP:
    SMTP_USER=your-email@gmail.com
    SMTP_PASS=your-app-password
    SMTP_FROM_NAME=ROOTZ491 Website
-   CONTACT_EMAIL=hello@rootz491.com
+   CONTACT_EMAIL=rootz491@wearehackerone.com
    ```
 
 2. **Gmail Example** (using App Password):
@@ -229,5 +229,5 @@ Proprietary - © 2025 ROOTZ491
 
 For issues or questions:
 
-- Email: hello@rootz491.com
+- Email: rootz491@wearehackerone.com
 - GitHub Issues: [repository-url]/issues
