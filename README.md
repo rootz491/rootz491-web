@@ -164,11 +164,38 @@ pm2 start npm --name "rootz491-web" -- start
 
 ## Contact Form Setup
 
-The contact form requires SMTP configuration:
+The contact form uses **nodemailer** to send emails via SMTP:
 
-1. Set SMTP environment variables in `.env.local`
-2. Configure SMTP details in `src/app/api/contact/route.ts`
-3. Alternatively, use a webhook service (SendGrid, Mailgun, etc.)
+1. **Set environment variables** in `.env.local`:
+
+   ```env
+   SMTP_HOST=smtp.gmail.com
+   SMTP_PORT=587
+   SMTP_USER=your-email@gmail.com
+   SMTP_PASS=your-app-password
+   SMTP_FROM_NAME=ROOTZ491 Website
+   CONTACT_EMAIL=hello@rootz491.com
+   ```
+
+2. **Gmail Example** (using App Password):
+
+   - Enable 2FA on your Google account
+   - Generate an App Password at https://myaccount.google.com/apppasswords
+   - Use the 16-character password as `SMTP_PASS`
+
+3. **Other SMTP Providers**:
+
+   - **SendGrid**: `smtp.sendgrid.net` (port 587)
+   - **Mailgun**: `smtp.mailgun.org` (port 587)
+   - **AWS SES**: `email-smtp.region.amazonaws.com` (port 587)
+   - **Custom**: Use your hosting provider's SMTP settings
+
+4. **Email Features**:
+   - HTML formatted emails with branding
+   - Plain text fallback
+   - Reply-to set to sender's contact info
+   - Rate limiting (3 requests per minute per IP)
+   - Honeypot spam protection
 
 ## Security Features
 
