@@ -24,10 +24,10 @@
     },
     "legal": {
       "companyName": "ROOTZ491",
-      "pan": "AAAAA1234A",
-      "gstin": "22ABCDE1234F1Z_ (masked)",
-      "udyam": "UDYAM-XX-00-0000000 (masked)",
-      "iec": "IECXXXXXXXX (masked)",
+      "pan": "PEGPxxxxxx",
+      "gstin": "22ABCDE1xxxxx",
+      "udyam": "UDYAM-XX-00-0000000",
+      "iec": "IECXXXXXXXX",
       "privacyUrl": "/legal/privacy",
       "termsUrl": "/legal/terms",
       "securityUrl": "/legal/security"
@@ -416,7 +416,7 @@
       "seoTitle": "Case Study — {{title}} | ROOTZ491",
       "title": "Citizen Portal Revamp",
       "client": {
-        "name": "Dept. Name (masked)",
+        "name": "Dept. Name",
         "sector": "Government"
       },
       "cover": "/assets/work/a.jpg",
