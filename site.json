@@ -460,10 +460,22 @@
       ],
       "team": [
         {
-          "name": "Your Name",
-          "role": "Founder & Lead Engineer",
+          "name": "Karan Sharma",
+          "role": "Founder",
           "avatar": "/assets/team/you.jpg",
           "bio": "Full-stack + DevOps specialist."
+        },
+        {
+          "name": "Nikhil Kumar Swain",
+          "role": "Frontend Lead",
+          "avatar": "/assets/team/you.jpg",
+          "bio": "Frontend architect and accessibility lead."
+        },
+        {
+          "name": "Sandeep Rawat",
+          "role": "Backend Lead",
+          "avatar": "/assets/team/you.jpg",
+          "bio": "Backend and database specialist."
         }
       ],
       "badges": [

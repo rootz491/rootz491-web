@@ -47,7 +47,7 @@ export default function HomePage() {
   return (
     <div className='flex flex-col'>
       {/* Hero Section */}
-      <section className='relative overflow-hidden bg-gradient-to-b from-muted/50 to-background py-20 md:py-32'>
+      <section className='relative overflow-hidden bg-gradient-to-b from-muted/50 to-background py-12 md:py-20'>
         <div className='container mx-auto px-4'>
           <div className='grid gap-8 lg:grid-cols-2 lg:gap-12 items-center'>
             <div className='space-y-6'>
