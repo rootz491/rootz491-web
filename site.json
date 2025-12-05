@@ -1,0 +1,576 @@
+{
+  "site": {
+    "brand": {
+      "name": "ROOTZ491",
+      "tagline": "Full-stack. DevOps. Production-grade delivery.",
+      "logo": {
+        "type": "wordmark",
+        "src": "/assets/logo.svg",
+        "alt": "ROOTZ491"
+      },
+      "favicon": "/assets/favicon.ico"
+    },
+    "theme": {
+      "mode": "light",
+      "accent": "#0EA5E9"
+    },
+    "contact": {
+      "email": "hello@rootz491.com",
+      "phone": "+91-00000-00000",
+      "whatsapp": "",
+      "address": "Your Address, City, India",
+      "hours": "Mon–Sat, 10:00–18:00 IST",
+      "mapEmbedUrl": ""
+    },
+    "legal": {
+      "companyName": "ROOTZ491",
+      "pan": "AAAAA1234A",
+      "gstin": "22ABCDE1234F1Z_ (masked)",
+      "udyam": "UDYAM-XX-00-0000000 (masked)",
+      "iec": "IECXXXXXXXX (masked)",
+      "privacyUrl": "/legal/privacy",
+      "termsUrl": "/legal/terms",
+      "securityUrl": "/legal/security"
+    },
+    "social": [
+      {
+        "platform": "github",
+        "url": ""
+      },
+      {
+        "platform": "linkedin",
+        "url": ""
+      },
+      {
+        "platform": "x",
+        "url": ""
+      }
+    ],
+    "nav": {
+      "primary": [
+        {
+          "label": "Services",
+          "href": "/services"
+        },
+        {
+          "label": "Government",
+          "href": "/government"
+        },
+        {
+          "label": "Work",
+          "href": "/work"
+        },
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ],
+      "cta": {
+        "label": "Request Proposal",
+        "href": "/contact"
+      },
+      "footer": [
+        {
+          "label": "Privacy",
+          "href": "/legal/privacy"
+        },
+        {
+          "label": "Terms",
+          "href": "/legal/terms"
+        },
+        {
+          "label": "Security",
+          "href": "/legal/security"
+        }
+      ]
+    },
+    "seo": {
+      "defaultTitle": "ROOTZ491 — Full-stack, DevOps & Govt-grade Delivery",
+      "defaultDescription": "We build and maintain secure, scalable portals and APIs for public sector and enterprise.",
+      "keywords": ["full-stack", "DevOps", "government", "Next.js", "AMC"],
+      "ogImage": "/assets/og.jpg",
+      "twitter": "@rootz491"
+    }
+  },
+  "pages": {
+    "/": {
+      "hero": {
+        "badges": ["MSME (Udyam)", "GST Registered", "IEC Holder"],
+        "title": "Full-stack. DevOps. Production-grade delivery.",
+        "subtitle": "Secure portals, reliable APIs, 24×7 AMC — built for departments and PSUs.",
+        "primaryCta": {
+          "label": "Get AMC Quote",
+          "href": "/contact"
+        },
+        "secondaryCta": {
+          "label": "See Recent Work",
+          "href": "/work"
+        },
+        "stats": [
+          {
+            "label": "Uptime managed",
+            "value": ">99.9%"
+          },
+          {
+            "label": "Projects delivered",
+            "value": "25+"
+          },
+          {
+            "label": "Govt/PSU ready",
+            "value": "Yes"
+          }
+        ],
+        "media": {
+          "type": "image",
+          "src": "/assets/hero-visual.png",
+          "alt": "Infra + CI/CD Preview"
+        }
+      },
+      "serviceHighlights": {
+        "title": "Services",
+        "subtitle": "Outcome-focused delivery across web, backend, and cloud operations.",
+        "items": [
+          {
+            "icon": "globe",
+            "title": "Website & Portals",
+            "desc": "Next.js, Drupal/WordPress, accessibility, multilingual, SEO.",
+            "bullets": [
+              "Govt design standards",
+              "High performance",
+              "A/B deploys"
+            ],
+            "href": "/services/web-portals"
+          },
+          {
+            "icon": "server",
+            "title": "APIs & Data",
+            "desc": "Node/NestJS, Python, PostgreSQL, MongoDB, Elasticsearch.",
+            "bullets": ["Secure auth", "Rate limiting", "Observability"],
+            "href": "/services/apis-data"
+          },
+          {
+            "icon": "cloud",
+            "title": "DevOps & Cloud",
+            "desc": "Kubernetes, Docker, CI/CD, AWS/GCP, cost & reliability engineering.",
+            "bullets": ["IaC (Terraform)", "24×7 monitoring", "DR & backups"],
+            "href": "/services/devops"
+          }
+        ]
+      },
+      "govtFocus": {
+        "title": "Focused on Government & PSU",
+        "paragraph": "Registered under MSME (Udyam), GST, and IEC. Comfortable with CPPP/eProcure, GeM, and department workflows.",
+        "cards": [
+          {
+            "title": "Compliance",
+            "text": "Accessibility, data protection, secure hosting, logs retention, SLA reporting."
+          },
+          {
+            "title": "Rapid Onboarding",
+            "text": "Subcontract or prime vendor. Ready templates for RFPs & BoQs."
+          },
+          {
+            "title": "Security-first",
+            "text": "OWASP + hardening, secrets mgmt, least-privilege, VAPT fixes."
+          }
+        ]
+      },
+      "workPreview": {
+        "title": "Selected Work",
+        "items": [
+          {
+            "slug": "case-study-a",
+            "title": "Case Study A",
+            "summary": "Outcome, KPIs, stack",
+            "thumb": "/assets/work/a.jpg"
+          },
+          {
+            "slug": "case-study-b",
+            "title": "Case Study B",
+            "summary": "Outcome, KPIs, stack",
+            "thumb": "/assets/work/b.jpg"
+          },
+          {
+            "slug": "case-study-c",
+            "title": "Case Study C",
+            "summary": "Outcome, KPIs, stack",
+            "thumb": "/assets/work/c.jpg"
+          }
+        ]
+      },
+      "testimonials": [
+        {
+          "name": "Client Name",
+          "role": "Designation",
+          "quote": "ROOTZ491 delivered on time with rock-solid uptime.",
+          "logo": "/assets/logos/client1.png"
+        }
+      ],
+      "ctaBanner": {
+        "title": "Need reliable AMC or a secure revamp?",
+        "cta": {
+          "label": "Request Proposal",
+          "href": "/contact"
+        }
+      }
+    },
+    "/services": {
+      "title": "Services",
+      "intro": "End-to-end delivery from UX to infra with SLAs and reporting.",
+      "groups": [
+        {
+          "title": "Web & Portals",
+          "items": [
+            {
+              "slug": "web-portals",
+              "title": "Website & Portal Development",
+              "summary": "Next.js, React, Drupal/WordPress, accessibility, multilingual, SEO.",
+              "bullets": [
+                "Design systems",
+                "Performance budgets",
+                "Accessibility (WCAG)"
+              ],
+              "href": "/services/web-portals"
+            }
+          ]
+        },
+        {
+          "title": "Backend & Data",
+          "items": [
+            {
+              "slug": "apis-data",
+              "title": "APIs & Data Platforms",
+              "summary": "Node/NestJS, Python, PostgreSQL, MongoDB, Elasticsearch.",
+              "bullets": ["JWT/SSO", "Rate limiting", "Audit logs"],
+              "href": "/services/apis-data"
+            }
+          ]
+        },
+        {
+          "title": "Ops & Security",
+          "items": [
+            {
+              "slug": "devops",
+              "title": "DevOps & Cloud",
+              "summary": "Kubernetes, Docker, CI/CD, AWS/GCP, observability.",
+              "bullets": ["IaC (Terraform)", "24×7 monitoring", "DR & backups"],
+              "href": "/services/devops"
+            },
+            {
+              "slug": "amc",
+              "title": "Maintenance (AMC)",
+              "summary": "Patches, SLAs, content updates, incidents, audits.",
+              "bullets": ["SLA-backed", "Security-first", "Monthly reports"],
+              "href": "/services/amc"
+            },
+            {
+              "slug": "security",
+              "title": "Security & Compliance",
+              "summary": "OWASP, hardening, VAPT remediation, access governance.",
+              "bullets": ["SSO/2FA", "Zero-downtime patching", "Audit-ready"],
+              "href": "/services/security"
+            }
+          ]
+        }
+      ],
+      "plans": [
+        {
+          "slug": "sla-bronze",
+          "name": "Bronze",
+          "price": "₹ 15,000 / month",
+          "features": [
+            "Business hours support",
+            "Response 8h",
+            "Monthly report"
+          ]
+        },
+        {
+          "slug": "sla-silver",
+          "name": "Silver",
+          "price": "₹ 30,000 / month",
+          "features": [
+            "10×5 support",
+            "Response 4h",
+            "Weekly report",
+            "Uptime dashboard"
+          ]
+        },
+        {
+          "slug": "sla-gold",
+          "name": "Gold",
+          "price": "₹ 60,000 / month",
+          "features": [
+            "24×7 support",
+            "Response 1h",
+            "Proactive monitoring",
+            "DR drill"
+          ]
+        }
+      ]
+    },
+    "/services/{slug}": {
+      "seoTitle": "Service — {{title}} | ROOTZ491",
+      "title": "Website & Portal Development",
+      "summary": "Enterprise-class websites & portals with accessibility and performance baked in.",
+      "heroImage": "/assets/services/web-portals.jpg",
+      "problem": "Outdated, insecure, and slow portals reduce citizen trust.",
+      "solution": [
+        "Modern frontend (Next.js/React) with accessibility (WCAG).",
+        "Secure backend with robust auth and audit logs.",
+        "Automated CI/CD, monitoring, backups, DR."
+      ],
+      "deliverables": [
+        "UX/UI screens & design system",
+        "Frontend + backend code",
+        "Infra (IaC) + pipeline",
+        "SLA & runbook"
+      ],
+      "stack": [
+        "Next.js",
+        "Node/NestJS",
+        "PostgreSQL",
+        "MongoDB",
+        "Elasticsearch",
+        "Docker",
+        "Kubernetes",
+        "Terraform"
+      ],
+      "caseStudies": ["case-study-a", "case-study-b"],
+      "cta": {
+        "label": "Request Proposal",
+        "href": "/contact"
+      }
+    },
+    "/government": {
+      "title": "Government & PSU",
+      "badges": [
+        "Udyam (MSME) — EMD Exemption",
+        "GST Registered",
+        "IEC Holder"
+      ],
+      "procurement": {
+        "platforms": ["GeM", "CPPP/eProcure", "State eProcurement"],
+        "modes": ["Nomination (as per rules)", "Limited Tender", "Open RFP/RFQ"]
+      },
+      "compliance": [
+        "Accessibility (WCAG), GIGW-style design alignment",
+        "Secure hosting, encryption in transit/at rest",
+        "Logs retention, audit trails, backup & DR"
+      ],
+      "security": [
+        "OWASP coverage & hardening",
+        "Least-privilege access, secrets mgmt",
+        "VAPT remediation workflows"
+      ],
+      "documents": [
+        {
+          "label": "Company Profile",
+          "url": "/docs/rootz491-profile.pdf"
+        },
+        {
+          "label": "No-blacklisting Undertaking",
+          "url": "/docs/no-blacklisting.pdf"
+        },
+        {
+          "label": "MSME/Udyam Certificate",
+          "url": "/docs/udyam.pdf"
+        }
+      ],
+      "cta": {
+        "label": "Share RFP / Scope",
+        "href": "/contact"
+      }
+    },
+    "/work": {
+      "title": "Selected Work",
+      "intro": "A few recent projects across portals, APIs, and DevOps.",
+      "items": [
+        {
+          "slug": "case-study-a",
+          "title": "Citizen Portal Revamp",
+          "summary": "60% faster pages, 99.95% uptime.",
+          "thumb": "/assets/work/a.jpg",
+          "href": "/work/case-study-a"
+        },
+        {
+          "slug": "case-study-b",
+          "title": "API Platform for Services",
+          "summary": "Unified auth, rate limiting, dashboards.",
+          "thumb": "/assets/work/b.jpg",
+          "href": "/work/case-study-b"
+        },
+        {
+          "slug": "case-study-c",
+          "title": "Cloud Migration & DR",
+          "summary": "Zero-downtime cutover, DR drills.",
+          "thumb": "/assets/work/c.jpg",
+          "href": "/work/case-study-c"
+        }
+      ]
+    },
+    "/work/{slug}": {
+      "seoTitle": "Case Study — {{title}} | ROOTZ491",
+      "title": "Citizen Portal Revamp",
+      "client": {
+        "name": "Dept. Name (masked)",
+        "sector": "Government"
+      },
+      "cover": "/assets/work/a.jpg",
+      "summary": "Revamped portal with accessibility, performance, and uptime improvements.",
+      "kpis": [
+        {
+          "label": "Page speed",
+          "value": "60% faster"
+        },
+        {
+          "label": "Uptime",
+          "value": "99.95%"
+        },
+        {
+          "label": "Incidents reduced",
+          "value": "-70%"
+        }
+      ],
+      "challenge": "Legacy CMS with security issues and slow publishing.",
+      "approach": [
+        "Audit & plan",
+        "Modular rebuild",
+        "CI/CD & monitoring",
+        "Training & handover"
+      ],
+      "stack": ["Next.js", "Node/NestJS", "PostgreSQL", "Docker", "Grafana"],
+      "gallery": ["/assets/work/a1.jpg", "/assets/work/a2.jpg"],
+      "testimonial": {
+        "name": "Official Name",
+        "role": "Designation",
+        "quote": "Delivered reliably and securely."
+      }
+    },
+    "/about": {
+      "title": "About ROOTZ491",
+      "lede": "Full-stack developers with strong DevOps background delivering resilient systems, clean code, and transparent SLAs.",
+      "highlights": [
+        "4+ years full-stack + DevOps",
+        "India-based; serving India & Europe",
+        "Elasticsearch, NestJS, Next.js, Kubernetes, AWS/GCP"
+      ],
+      "team": [
+        {
+          "name": "Your Name",
+          "role": "Founder & Lead Engineer",
+          "avatar": "/assets/team/you.jpg",
+          "bio": "Full-stack + DevOps specialist."
+        }
+      ],
+      "badges": [
+        {
+          "label": "MSME (Udyam)",
+          "value": "UDYAM-XX-00-0000000"
+        },
+        {
+          "label": "GSTIN",
+          "value": "22ABCDE1234F1Z_"
+        },
+        {
+          "label": "IEC",
+          "value": "IECXXXXXXXX"
+        },
+        {
+          "label": "PAN",
+          "value": "PEGPxxxxxx"
+        }
+      ]
+    },
+    "/contact": {
+      "title": "Request a Proposal",
+      "subtitle": "Share your project brief, RFP/RFQ, or AMC scope. We’ll respond with approach, timeline, and pricing.",
+      "form": {
+        "fields": [
+          {
+            "name": "name",
+            "label": "Your name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "contact",
+            "label": "Email or phone",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "organization",
+            "label": "Organization / Department",
+            "type": "text",
+            "required": false
+          },
+          {
+            "name": "scope",
+            "label": "Project brief / RFP link / AMC scope",
+            "type": "textarea",
+            "required": true
+          }
+        ],
+        "submit": {
+          "label": "Send Request"
+        },
+        "successMessage": "Thanks! We’ll get back within one business day."
+      },
+      "altContacts": [
+        {
+          "label": "Email",
+          "value": "rootz491@wearehackerone.com"
+        }
+      ]
+    },
+    "/blog": {
+      "title": "Insights",
+      "intro": "Operational notes on portals, APIs, DevOps, and compliance.",
+      "posts": [
+        {
+          "slug": "govt-portal-performance-checklist",
+          "title": "Government Portal Performance Checklist",
+          "excerpt": "Concrete steps to hit Core Web Vitals on heavy content sites.",
+          "date": "2025-01-01",
+          "tags": ["performance", "accessibility", "nextjs"],
+          "cover": "/assets/blog/perf.jpg"
+        }
+      ]
+    }
+  },
+  "shared": {
+    "faqs": [
+      {
+        "q": "Do you work via GeM or eProcure?",
+        "a": "Yes — we support procurement on GeM, CPPP/eProcure, and state portals."
+      },
+      {
+        "q": "Can you sign SLAs and NDAs?",
+        "a": "Yes — standard or department-provided formats."
+      },
+      {
+        "q": "Do you provide 24×7 support?",
+        "a": "Yes — under Gold SLA tier with on-call rotations."
+      }
+    ],
+    "badges": [
+      {
+        "label": "Udyam (MSME)",
+        "icon": "shield-check"
+      },
+      {
+        "label": "GST Registered",
+        "icon": "badge-check"
+      },
+      {
+        "label": "IEC Holder",
+        "icon": "globe"
+      }
+    ],
+    "footerNote": "© 2025 ROOTZ491. All rights reserved."
+  }
+}

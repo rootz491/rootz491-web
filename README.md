@@ -1,109 +1,206 @@
-# Rootz491 Web
+# ROOTZ491 Website
 
-A modern Next.js application with Tailwind CSS for styling, built with TypeScript for type safety.
+Production-ready Next.js website with TypeScript, Tailwind CSS, and JSON-driven content architecture.
 
-## 🚀 Features
+## Features
 
-- **Next.js 14+** with App Router
-- **Tailwind CSS** for utility-first styling
-- **TypeScript** for type safety
-- **ESLint** for code quality
-- **Responsive design** with mobile-first approach
-- **Dark mode support** built-in
+- ✅ **Next.js 14+ App Router** with TypeScript
+- ✅ **Tailwind CSS** + shadcn/ui components
+- ✅ **JSON-driven content** - all site content from `site.json`
+- ✅ **SEO optimized** with metadata and structured data
+- ✅ **Accessible** - WCAG AA compliant
+- ✅ **Security** - Headers, rate limiting, input validation
+- ✅ **Government-ready** - Compliance & procurement focused
+- ✅ **Performance** - Optimized for Core Web Vitals
 
-## 📋 Prerequisites
+## Quick Start
 
-- Node.js 18.17 or later
-- npm, yarn, pnpm, or bun
+### Prerequisites
 
-## 🛠️ Getting Started
+- Node.js 18+
+- npm or yarn
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### Installation
 
-2. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+```bash
+# Clone repository
+git clone <repository-url>
+cd rootz491-web
 
-3. **Open your browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+# Install dependencies
+npm install
 
-## 📦 Available Scripts
+# Copy environment variables
+cp .env.example .env.local
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-## 📁 Project Structure
-
-```
-src/
-├── app/
-│   ├── globals.css     # Global styles with Tailwind directives
-│   ├── layout.tsx      # Root layout component
-│   └── page.tsx        # Home page component
-├── components/         # Reusable components (add as needed)
-└── lib/               # Utility functions (add as needed)
+# Run development server
+npm run dev
 ```
 
-## 🎨 Styling
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-This project uses Tailwind CSS for styling:
+## Project Structure
 
-- Utility-first CSS framework
-- Responsive design with mobile-first approach
-- Custom CSS variables for theming
-- Dark mode support built-in
+```
+rootz491-web/
+├── src/
+│   ├── app/              # Next.js pages (App Router)
+│   │   ├── page.tsx      # Homepage
+│   │   ├── services/     # Services pages
+│   │   ├── government/   # Government page
+│   │   ├── work/         # Case studies
+│   │   ├── about/        # About page
+│   │   ├── contact/      # Contact form
+│   │   ├── blog/         # Blog listing
+│   │   ├── legal/        # Legal pages
+│   │   └── api/          # API routes
+│   ├── components/       # React components
+│   │   ├── ui/           # shadcn/ui components
+│   │   ├── Header.tsx    # Site header
+│   │   └── Footer.tsx    # Site footer
+│   └── lib/              # Utilities
+│       ├── types.ts      # TypeScript types & zod schemas
+│       ├── content.ts    # Content loader
+│       ├── seo.ts        # SEO helpers
+│       └── utils.ts      # Utility functions
+├── public/               # Static assets
+├── site.json             # Site content (single source of truth)
+├── .env.example          # Environment variables template
+└── README.md
+```
 
-### Customizing Styles
+## Content Management
 
-- Edit `tailwind.config.js` to customize Tailwind configuration
-- Add custom styles in `src/app/globals.css`
-- Use Tailwind utility classes in your components
+All site content is managed through `site.json`. This file contains:
 
-## 🔧 Configuration Files
+- Site configuration (branding, contact, legal)
+- Page content (homepage, services, work, etc.)
+- Navigation structure
+- Shared content (FAQs, badges)
 
-- `next.config.js` - Next.js configuration
-- `tailwind.config.js` - Tailwind CSS configuration
-- `postcss.config.js` - PostCSS configuration
-- `tsconfig.json` - TypeScript configuration
-- `.eslintrc.json` - ESLint configuration
+### Updating Content
 
-## 📝 Development Guidelines
+1. Edit `site.json` with your content changes
+2. The changes will be reflected immediately in development
+3. For production, rebuild and redeploy
 
-- Use functional components with TypeScript
-- Follow Tailwind CSS utility-first approach
-- Use Next.js App Router conventions
-- Implement responsive design patterns
-- Use semantic HTML elements
-- Follow Next.js best practices for performance
+### Content Schema
 
-## 🚀 Deployment
+The content is validated using Zod schemas defined in `src/lib/types.ts`. This ensures type safety and prevents invalid
+data.
 
-This Next.js application can be deployed to various platforms:
+## Development
 
-- **Vercel** (recommended): Connect your GitHub repository for automatic deployments
-- **Netlify**: Build command: `npm run build`, Output directory: `out`
-- **AWS**, **Google Cloud**, **Azure**: Build and deploy the `.next` folder
+```bash
+# Development server
+npm run dev
 
-## 📚 Learn More
+# Build for production
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs)
+# Start production server
+npm start
 
-## 🤝 Contributing
+# Lint code
+npm run lint
+```
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## Environment Variables
 
-## 📄 License
+Create `.env.local` file with the following variables:
 
-This project is licensed under the MIT License.
+```env
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your-email@example.com
+SMTP_PASS=your-password
+CONTACT_EMAIL=contact@yourdomain.com
+```
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push code to GitHub
+2. Import repository in Vercel
+3. Set environment variables in Vercel dashboard
+4. Deploy
+
+```bash
+# Or use Vercel CLI
+npx vercel
+```
+
+### Docker
+
+```bash
+# Build image
+docker build -t rootz491-web .
+
+# Run container
+docker run -p 3000:3000 \
+  -e NEXT_PUBLIC_SITE_URL=https://yourdomain.com \
+  rootz491-web
+```
+
+### Manual Deployment
+
+```bash
+# Build
+npm run build
+
+# Copy .next, public, package.json, and node_modules to server
+# Start with PM2 or similar process manager
+pm2 start npm --name "rootz491-web" -- start
+```
+
+## Adding New Pages
+
+1. Create new page in `src/app/your-page/page.tsx`
+2. Add page content to `site.json` under `pages` key
+3. Update TypeScript types in `src/lib/types.ts` if needed
+4. Add navigation link in `site.json` under `site.nav.primary`
+
+## Contact Form Setup
+
+The contact form requires SMTP configuration:
+
+1. Set SMTP environment variables in `.env.local`
+2. Configure SMTP details in `src/app/api/contact/route.ts`
+3. Alternatively, use a webhook service (SendGrid, Mailgun, etc.)
+
+## Security Features
+
+- Security headers via middleware
+- Input validation with Zod
+- Rate limiting on contact form
+- Honeypot field for spam prevention
+- No sensitive data exposure (masked certificate numbers)
+
+## Performance Optimization
+
+- Static generation for all pages
+- Image optimization with next/image
+- Font optimization with next/font
+- Tailwind CSS purging
+- Lazy loading components
+
+## Accessibility
+
+- Semantic HTML throughout
+- ARIA labels where needed
+- Keyboard navigation support
+- Color contrast WCAG AA compliant
+- Screen reader friendly
+
+## License
+
+Proprietary - © 2025 ROOTZ491
+
+## Support
+
+For issues or questions:
+
+- Email: hello@rootz491.com
+- GitHub Issues: [repository-url]/issues
