@@ -2,10 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
-// Rate limiting store (in production, use Redis)
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
 
-// Contact form schema
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   contact: z.string().min(5, 'Contact information is required'),
@@ -14,20 +12,16 @@ const contactSchema = z.object({
   website: z.string().max(0, 'Invalid submission'), // Honeypot
 });
 
-// Create reusable transporter
 function createTransporter() {
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_PORT === '465', // true for 465, false for other ports
+    service: 'gmail',
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 }
 
-// Send email function
 async function sendContactEmail(data: z.infer<typeof contactSchema>) {
   const transporter = createTransporter();
 
@@ -92,8 +86,8 @@ ${data.scope}
   `.trim();
 
   await transporter.sendMail({
-    from: `"${process.env.SMTP_FROM_NAME || 'ROOTZ491 Website'}" <${
-      process.env.SMTP_USER
+    from: `"${process.env.FROM_NAME || 'ROOTZ491 Website'}" <${
+      process.env.EMAIL_USER
     }>`,
     to: process.env.CONTACT_EMAIL,
     replyTo: data.contact,
@@ -136,13 +130,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = contactSchema.parse(body);
 
-    // Send email using nodemailer
     try {
       await sendContactEmail(validatedData);
     } catch (emailError) {
       console.error('Email sending error:', emailError);
-      // Return success to user even if email fails (log for debugging)
-      // In production, you might want to store in database as backup
     }
 
     return NextResponse.json(
