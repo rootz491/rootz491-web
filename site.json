@@ -463,7 +463,7 @@
           "name": "Karan Sharma",
           "role": "Founder",
           "avatar": "/assets/team/you.jpg",
-          "bio": "Full-stack + DevOps specialist."
+          "bio": "DevOps specialist."
         },
         {
           "name": "Nikhil Kumar Swain",
@@ -473,9 +473,9 @@
         },
         {
           "name": "Sandeep Rawat",
-          "role": "Backend Lead",
+          "role": "Full-stack Developer",
           "avatar": "/assets/team/you.jpg",
-          "bio": "Backend and database specialist."
+          "bio": "Backend and API specialist."
         }
       ],
       "badges": [
