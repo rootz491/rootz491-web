@@ -132,7 +132,7 @@
       },
       "serviceHighlights": {
         "title": "Services",
-        "subtitle": "Outcome-focused delivery across web, backend, and cloud operations.",
+        "subtitle": "Full-stack development, AI automation, and scalable infrastructure.",
         "items": [
           {
             "icon": "globe",
@@ -153,11 +153,15 @@
             "href": "/services/apis-data"
           },
           {
-            "icon": "cloud",
-            "title": "DevOps & Cloud",
-            "desc": "Kubernetes, Docker, CI/CD, AWS/GCP, cost & reliability engineering.",
-            "bullets": ["IaC (Terraform)", "24×7 monitoring", "DR & backups"],
-            "href": "/services/devops"
+            "icon": "badge-check",
+            "title": "AI Chatbots & Bots",
+            "desc": "Custom AI assistants, Discord/Telegram bots, web scrapers, automation.",
+            "bullets": [
+              "RAG with custom data",
+              "Multi-channel support",
+              "API integrations"
+            ],
+            "href": "/services/ai-chatbots"
           }
         ]
       },
@@ -180,25 +184,13 @@
         ]
       },
       "workPreview": {
-        "title": "Selected Work",
+        "title": "Featured Work",
         "items": [
           {
-            "slug": "case-study-a",
-            "title": "Case Study A",
-            "summary": "Outcome, KPIs, stack",
-            "thumb": "/assets/work/a.jpg"
-          },
-          {
-            "slug": "case-study-b",
-            "title": "Case Study B",
-            "summary": "Outcome, KPIs, stack",
-            "thumb": "/assets/work/b.jpg"
-          },
-          {
-            "slug": "case-study-c",
-            "title": "Case Study C",
-            "summary": "Outcome, KPIs, stack",
-            "thumb": "/assets/work/c.jpg"
+            "slug": "creazilla",
+            "title": "Creazilla — 10M+ Graphics Platform",
+            "summary": "Scalable backend with Elasticsearch, MongoDB, Redis serving millions of assets.",
+            "thumb": "/assets/work/creazilla.jpg"
           }
         ]
       },
@@ -244,9 +236,79 @@
             {
               "slug": "apis-data",
               "title": "APIs & Data Platforms",
-              "summary": "Node/NestJS, Python, PostgreSQL, MongoDB, Elasticsearch.",
-              "bullets": ["JWT/SSO", "Rate limiting", "Audit logs"],
+              "summary": "Scalable backend APIs with Node/NestJS, Python FastAPI, microservices architecture.",
+              "bullets": [
+                "RESTful & GraphQL APIs",
+                "JWT/SSO & OAuth2 authentication",
+                "Rate limiting & throttling",
+                "Comprehensive audit logs",
+                "API documentation (Swagger/OpenAPI)"
+              ],
               "href": "/services/apis-data"
+            },
+            {
+              "slug": "data-migration",
+              "title": "Database Migration & ETL",
+              "summary": "Seamless data migration between SQL and NoSQL databases with zero downtime.",
+              "bullets": [
+                "PostgreSQL ↔ MySQL ↔ MongoDB migrations",
+                "Legacy to modern DB transitions",
+                "Data transformation pipelines",
+                "Validation & integrity checks",
+                "Rollback strategies"
+              ],
+              "href": "/services/data-migration"
+            },
+            {
+              "slug": "data-engineering",
+              "title": "Data Engineering & Analytics",
+              "summary": "Build data pipelines, warehouses, and real-time analytics with modern stack.",
+              "bullets": [
+                "ETL/ELT pipelines (Apache Airflow)",
+                "Data warehousing (PostgreSQL, ClickHouse)",
+                "Real-time streaming (Kafka, Redis)",
+                "BI dashboards (Metabase, Grafana)",
+                "Data lake architecture"
+              ],
+              "href": "/services/data-engineering"
+            }
+          ]
+        },
+        {
+          "title": "AI & Automation",
+          "items": [
+            {
+              "slug": "ai-chatbots",
+              "title": "AI Chatbots & Assistants",
+              "summary": "Custom chatbots with OpenAI, Claude, or local LLMs for customer support and automation.",
+              "bullets": [
+                "RAG (Retrieval-Augmented Generation)",
+                "Multi-channel (web, WhatsApp, Telegram)",
+                "Custom training on your data"
+              ],
+              "href": "/services/ai-chatbots"
+            },
+            {
+              "slug": "web-scrapers",
+              "title": "Web Scrapers & Data Extraction",
+              "summary": "Automated data collection, monitoring, and processing pipelines.",
+              "bullets": [
+                "Real-time scraping",
+                "Anti-bot bypass",
+                "Scheduled crawlers"
+              ],
+              "href": "/services/web-scrapers"
+            },
+            {
+              "slug": "custom-bots",
+              "title": "Custom Bots & Integrations",
+              "summary": "Discord, Telegram, Slack, Twitter bots and workflow automation.",
+              "bullets": [
+                "Moderation & community management",
+                "Notifications & alerts",
+                "API integrations (Trello, Notion, etc.)"
+              ],
+              "href": "/services/custom-bots"
             }
           ]
         },
@@ -314,32 +376,56 @@
     },
     "/services/{slug}": {
       "seoTitle": "Service — {{title}} | ROOTZ491",
-      "title": "Website & Portal Development",
-      "summary": "Enterprise-class websites & portals with accessibility and performance baked in.",
-      "heroImage": "/assets/services/web-portals.jpg",
-      "problem": "Outdated, insecure, and slow portals reduce citizen trust.",
+      "title": "Professional Development Services",
+      "summary": "Custom solutions tailored to your business needs with modern tech stack.",
+      "heroImage": "/assets/services/default.jpg",
+      "problem": "Finding reliable technical partners who understand both modern technology and business requirements can be challenging.",
       "solution": [
-        "Modern frontend (Next.js/React) with accessibility (WCAG).",
-        "Secure backend with robust auth and audit logs.",
-        "Automated CI/CD, monitoring, backups, DR."
+        "Expert consultation to understand your specific needs",
+        "Modern, scalable solutions built with best practices",
+        "Ongoing support and maintenance",
+        "Transparent communication and SLA-backed delivery"
       ],
       "deliverables": [
-        "UX/UI screens & design system",
-        "Frontend + backend code",
-        "Infra (IaC) + pipeline",
-        "SLA & runbook"
+        "Complete technical architecture and documentation",
+        "Production-ready code and deployment",
+        "Infrastructure setup and configuration",
+        "Training and handover documentation"
       ],
       "stack": [
         "Next.js",
-        "Node/NestJS",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "NestJS",
+        "Python",
+        "FastAPI",
         "PostgreSQL",
+        "MySQL",
         "MongoDB",
+        "Redis",
         "Elasticsearch",
+        "Bull Queue",
+        "Apache Kafka",
+        "Apache Airflow",
+        "ClickHouse",
         "Docker",
         "Kubernetes",
-        "Terraform"
+        "Terraform",
+        "AWS",
+        "GCP",
+        "OpenAI API",
+        "Claude API",
+        "LangChain",
+        "Discord.js",
+        "Telegram Bot API",
+        "Puppeteer",
+        "Cheerio",
+        "Scrapy",
+        "Grafana",
+        "Metabase"
       ],
-      "caseStudies": ["case-study-a", "case-study-b"],
+      "caseStudies": ["creazilla"],
       "cta": {
         "label": "Request Proposal",
         "href": "/contact"
@@ -387,67 +473,67 @@
     },
     "/work": {
       "title": "Selected Work",
-      "intro": "A few recent projects across portals, APIs, and DevOps.",
+      "intro": "Featured project showcasing scalable architecture and high-performance delivery.",
       "items": [
         {
-          "slug": "case-study-a",
-          "title": "Citizen Portal Revamp",
-          "summary": "60% faster pages, 99.95% uptime.",
-          "thumb": "/assets/work/a.jpg",
-          "href": "/work/case-study-a"
-        },
-        {
-          "slug": "case-study-b",
-          "title": "API Platform for Services",
-          "summary": "Unified auth, rate limiting, dashboards.",
-          "thumb": "/assets/work/b.jpg",
-          "href": "/work/case-study-b"
-        },
-        {
-          "slug": "case-study-c",
-          "title": "Cloud Migration & DR",
-          "summary": "Zero-downtime cutover, DR drills.",
-          "thumb": "/assets/work/c.jpg",
-          "href": "/work/case-study-c"
+          "slug": "creazilla",
+          "title": "Creazilla — 10M+ Free Graphics Platform",
+          "summary": "Scalable platform serving millions of free graphics with optimized search and CDN delivery.",
+          "thumb": "/assets/work/creazilla.jpg",
+          "href": "/work/creazilla"
         }
       ]
     },
     "/work/{slug}": {
       "seoTitle": "Case Study — {{title}} | ROOTZ491",
-      "title": "Citizen Portal Revamp",
+      "title": "Creazilla — 10M+ Free Graphics Platform",
       "client": {
-        "name": "Dept. Name",
-        "sector": "Government"
+        "name": "Creazilla",
+        "sector": "Digital Media / SaaS"
       },
-      "cover": "/assets/work/a.jpg",
-      "summary": "Revamped portal with accessibility, performance, and uptime improvements.",
+      "cover": "/assets/work/creazilla.jpg",
+      "summary": "Built and scaled a high-performance platform serving over 10 million free graphic resources including photos, clipart, vectors, icons, and fonts to content creators worldwide.",
       "kpis": [
         {
-          "label": "Page speed",
-          "value": "60% faster"
+          "label": "Resources",
+          "value": "10M+"
+        },
+        {
+          "label": "Search Speed",
+          "value": "<200ms"
         },
         {
           "label": "Uptime",
-          "value": "99.95%"
-        },
-        {
-          "label": "Incidents reduced",
-          "value": "-70%"
+          "value": "99.9%"
         }
       ],
-      "challenge": "Legacy CMS with security issues and slow publishing.",
+      "challenge": "Building a scalable platform to efficiently serve millions of graphic assets with fast search capabilities, high traffic handling, and seamless CDN integration while maintaining excellent performance under load.",
       "approach": [
-        "Audit & plan",
-        "Modular rebuild",
-        "CI/CD & monitoring",
-        "Training & handover"
+        "Architected complete backend infrastructure with NestJS",
+        "Implemented Elasticsearch for lightning-fast asset search",
+        "Set up MongoDB for flexible document storage",
+        "Deployed Bull Queue for background job processing",
+        "Configured Redis for high-performance caching",
+        "Managed deployment across multiple dedicated servers",
+        "Optimized for scalability and high-traffic scenarios"
       ],
-      "stack": ["Next.js", "Node/NestJS", "PostgreSQL", "Docker", "Grafana"],
-      "gallery": ["/assets/work/a1.jpg", "/assets/work/a2.jpg"],
+      "stack": [
+        "NestJS",
+        "MongoDB",
+        "Elasticsearch",
+        "Bull Queue",
+        "Redis",
+        "Node.js",
+        "CDN"
+      ],
+      "gallery": [
+        "/assets/work/creazilla-1.jpg",
+        "/assets/work/creazilla-2.jpg"
+      ],
       "testimonial": {
-        "name": "Official Name",
-        "role": "Designation",
-        "quote": "Delivered reliably and securely."
+        "name": "Creazilla Team",
+        "role": "Product Owner",
+        "quote": "Exceptional technical leadership in building a platform that handles millions of requests efficiently."
       }
     },
     "/about": {

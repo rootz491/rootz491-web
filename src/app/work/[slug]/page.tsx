@@ -46,12 +46,15 @@ export default async function WorkDetailPage({
       <section className='bg-muted/40 py-16'>
         <div className='container mx-auto px-4'>
           <div className='max-w-4xl'>
-            <Button asChild variant='ghost' className='mb-4'>
-              <Link href='/work'>
-                <ArrowLeft className='mr-2 h-4 w-4' /> Back to Work
-              </Link>
-            </Button>
-            <Badge className='mb-4'>{work.client.sector}</Badge>
+            <div className='flex items-center'>
+              <Button asChild variant='ghost' className='mb-4'>
+                <Link href='/work' className='flex items-center gap-2'>
+                  <ArrowLeft className='h-4 w-4' />
+                  Back to Work
+                </Link>
+              </Button>
+              <Badge className='mb-4'>{work.client.sector}</Badge>
+            </div>
             <h1 className='text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4'>
               {work.title}
             </h1>

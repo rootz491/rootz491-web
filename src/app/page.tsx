@@ -18,6 +18,7 @@ import {
   Server,
   ShieldCheck,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = generateMetadata({
@@ -102,15 +103,15 @@ export default function HomePage() {
             </div>
 
             {/* Hero Image */}
-            <div className='relative aspect-square lg:aspect-auto lg:h-[600px]'>
-              <div className='absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-lg' />
-              <div className='relative h-full flex items-center justify-center text-muted-foreground'>
-                {/* Placeholder for hero visual */}
-                <div className='text-center'>
-                  <Server className='h-32 w-32 mx-auto mb-4 opacity-20' />
-                  <p className='text-sm'>Hero Visual Placeholder</p>
-                </div>
-              </div>
+            <div className='relative aspect-square lg:aspect-auto lg:h-[600px] rounded-lg overflow-hidden'>
+              <Image
+                src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop&q=85'
+                alt='Modern developer workspace with code'
+                fill
+                className='object-cover'
+                priority
+              />
+              <div className='absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent' />
             </div>
           </div>
         </div>
@@ -216,23 +217,31 @@ export default function HomePage() {
           </div>
 
           <div className='grid gap-8 md:grid-cols-3'>
-            {workPreview.items.map((work, idx) => (
-              <Link key={idx} href={`/work/${work.slug}`} className='group'>
-                <Card className='overflow-hidden border-2 hover:border-primary transition-colors'>
-                  <div className='aspect-video bg-muted relative overflow-hidden'>
-                    <div className='absolute inset-0 flex items-center justify-center text-muted-foreground'>
-                      <Server className='h-16 w-16 opacity-20' />
+            {workPreview.items.map((work, idx) => {
+              // Using Creazilla website screenshot-style image
+              const image =
+                'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1280&h=720&fit=crop&q=85';
+              return (
+                <Link key={idx} href={`/work/${work.slug}`} className='group'>
+                  <Card className='overflow-hidden border-2 hover:border-primary transition-colors'>
+                    <div className='aspect-video relative overflow-hidden bg-muted'>
+                      <Image
+                        src={image}
+                        alt={work.title}
+                        fill
+                        className='object-cover group-hover:scale-105 transition-transform duration-300'
+                      />
                     </div>
-                  </div>
-                  <CardHeader>
-                    <CardTitle className='group-hover:text-primary transition-colors'>
-                      {work.title}
-                    </CardTitle>
-                    <CardDescription>{work.summary}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-            ))}
+                    <CardHeader>
+                      <CardTitle className='group-hover:text-primary transition-colors'>
+                        {work.title}
+                      </CardTitle>
+                      <CardDescription>{work.summary}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
