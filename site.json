@@ -137,7 +137,7 @@
           {
             "icon": "globe",
             "title": "Website & Portals",
-            "desc": "Next.js, Drupal/WordPress, accessibility, multilingual, SEO.",
+            "desc": "Next.js, accessibility, multilingual, SEO.",
             "bullets": [
               "Govt design standards",
               "High performance",
@@ -220,13 +220,36 @@
             {
               "slug": "web-portals",
               "title": "Website & Portal Development",
-              "summary": "Next.js, React, Drupal/WordPress, accessibility, multilingual, SEO.",
+              "summary": "Next.js, React, accessibility, multilingual, SEO.",
               "bullets": [
                 "Design systems",
                 "Performance budgets",
                 "Accessibility (WCAG)"
               ],
-              "href": "/services/web-portals"
+              "href": "/services/web-portals",
+              "problem": "Outdated websites with poor accessibility, slow performance, and lack of mobile responsiveness hurt user engagement and SEO rankings.",
+              "solution": [
+                "Modern frontend frameworks (Next.js/React) with server-side rendering",
+                "Accessibility-first design following WCAG 2.1 standards",
+                "Performance optimization with Core Web Vitals monitoring",
+                "Responsive design with mobile-first approach",
+                "SEO optimization and multilingual support"
+              ],
+              "deliverables": [
+                "UX/UI design system and component library",
+                "Fully responsive frontend codebase",
+                "CMS integration (if required)",
+                "Performance and accessibility audit reports",
+                "SEO optimization and analytics setup"
+              ],
+              "stack": [
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "Vercel",
+                "Cloudflare"
+              ]
             }
           ]
         },
@@ -244,7 +267,35 @@
                 "Comprehensive audit logs",
                 "API documentation (Swagger/OpenAPI)"
               ],
-              "href": "/services/apis-data"
+              "href": "/services/apis-data",
+              "problem": "Monolithic backends that don't scale, lack proper authentication, and have poor API documentation lead to security vulnerabilities and developer friction.",
+              "solution": [
+                "Microservices architecture with NestJS or FastAPI",
+                "RESTful and GraphQL API design with versioning",
+                "Robust authentication (JWT, OAuth2, SSO)",
+                "Rate limiting and request throttling",
+                "Auto-generated API documentation with Swagger/OpenAPI",
+                "Comprehensive logging and monitoring"
+              ],
+              "deliverables": [
+                "Scalable API architecture and codebase",
+                "Authentication and authorization system",
+                "API documentation (interactive Swagger UI)",
+                "Load testing and performance reports",
+                "Monitoring dashboards and alerts"
+              ],
+              "stack": [
+                "Node.js",
+                "NestJS",
+                "Python",
+                "FastAPI",
+                "PostgreSQL",
+                "MongoDB",
+                "Redis",
+                "Elasticsearch",
+                "Docker",
+                "Swagger"
+              ]
             },
             {
               "slug": "data-migration",
@@ -257,7 +308,36 @@
                 "Validation & integrity checks",
                 "Rollback strategies"
               ],
-              "href": "/services/data-migration"
+              "href": "/services/data-migration",
+              "problem": "Legacy databases becoming bottlenecks, incompatible data schemas, and fear of data loss during migration prevent businesses from modernizing their infrastructure.",
+              "solution": [
+                "Thorough data audit and migration planning",
+                "Custom ETL pipelines with data transformation",
+                "Dual-write strategy for zero-downtime migration",
+                "Automated data validation and integrity checks",
+                "Comprehensive rollback procedures",
+                "Post-migration optimization and indexing"
+              ],
+              "deliverables": [
+                "Migration strategy document and timeline",
+                "Custom ETL scripts and automation",
+                "Data validation reports",
+                "Migrated database with optimized schema",
+                "Rollback procedures and backup strategy",
+                "Performance comparison reports"
+              ],
+              "stack": [
+                "PostgreSQL",
+                "MySQL",
+                "MongoDB",
+                "Python",
+                "Apache Airflow",
+                "Pandas",
+                "SQLAlchemy",
+                "Alembic",
+                "pg_dump",
+                "mongodump"
+              ]
             },
             {
               "slug": "data-engineering",
@@ -270,7 +350,36 @@
                 "BI dashboards (Metabase, Grafana)",
                 "Data lake architecture"
               ],
-              "href": "/services/data-engineering"
+              "href": "/services/data-engineering",
+              "problem": "Fragmented data sources, manual reporting processes, and lack of real-time insights prevent data-driven decision making.",
+              "solution": [
+                "Automated ETL/ELT pipelines with Apache Airflow",
+                "Centralized data warehouse (PostgreSQL, ClickHouse)",
+                "Real-time data streaming with Kafka",
+                "Interactive BI dashboards (Metabase, Grafana)",
+                "Data lake architecture for big data",
+                "Scheduled reports and alerting"
+              ],
+              "deliverables": [
+                "Data pipeline architecture and workflows",
+                "Automated ETL/ELT jobs",
+                "Data warehouse with optimized schemas",
+                "Interactive dashboards and reports",
+                "Real-time streaming infrastructure",
+                "Documentation and runbooks"
+              ],
+              "stack": [
+                "Apache Airflow",
+                "PostgreSQL",
+                "ClickHouse",
+                "Apache Kafka",
+                "Redis",
+                "Python",
+                "Pandas",
+                "Metabase",
+                "Grafana",
+                "dbt"
+              ]
             }
           ]
         },
@@ -286,7 +395,36 @@
                 "Multi-channel (web, WhatsApp, Telegram)",
                 "Custom training on your data"
               ],
-              "href": "/services/ai-chatbots"
+              "href": "/services/ai-chatbots",
+              "problem": "High customer support costs, repetitive queries, and lack of 24/7 availability lead to poor customer experience and operational inefficiency.",
+              "solution": [
+                "Custom AI chatbots using OpenAI GPT-4, Claude, or local LLMs",
+                "RAG (Retrieval-Augmented Generation) with your knowledge base",
+                "Multi-channel deployment (website, WhatsApp, Telegram, Slack)",
+                "Context-aware conversations with memory",
+                "Seamless handoff to human agents when needed",
+                "Analytics dashboard for bot performance"
+              ],
+              "deliverables": [
+                "Trained AI chatbot with custom knowledge base",
+                "Multi-channel integration (web widget, messaging platforms)",
+                "Admin dashboard for monitoring and training",
+                "Conversation analytics and reports",
+                "API documentation and integration guide",
+                "Ongoing fine-tuning and improvements"
+              ],
+              "stack": [
+                "OpenAI API",
+                "Claude API",
+                "LangChain",
+                "Pinecone",
+                "Redis",
+                "Node.js",
+                "Python",
+                "FastAPI",
+                "React",
+                "WebSockets"
+              ]
             },
             {
               "slug": "web-scrapers",
@@ -297,7 +435,36 @@
                 "Anti-bot bypass",
                 "Scheduled crawlers"
               ],
-              "href": "/services/web-scrapers"
+              "href": "/services/web-scrapers",
+              "problem": "Manual data collection is time-consuming, error-prone, and can't keep up with real-time requirements for competitive intelligence and market research.",
+              "solution": [
+                "Custom scrapers with Puppeteer, Playwright, or Scrapy",
+                "Anti-bot detection bypass with proxy rotation",
+                "Scheduled crawling with monitoring",
+                "Data cleaning and transformation pipelines",
+                "Real-time alerts and notifications",
+                "Scalable architecture for large-scale scraping"
+              ],
+              "deliverables": [
+                "Custom web scraper with scheduling",
+                "Data extraction and transformation pipelines",
+                "Proxy management and rotation system",
+                "Monitoring dashboard with alerts",
+                "Cleaned and structured data exports (JSON, CSV, DB)",
+                "Documentation and maintenance guide"
+              ],
+              "stack": [
+                "Python",
+                "Scrapy",
+                "Puppeteer",
+                "Playwright",
+                "Selenium",
+                "BeautifulSoup",
+                "Pandas",
+                "Redis",
+                "PostgreSQL",
+                "Celery"
+              ]
             },
             {
               "slug": "custom-bots",
@@ -308,7 +475,35 @@
                 "Notifications & alerts",
                 "API integrations (Trello, Notion, etc.)"
               ],
-              "href": "/services/custom-bots"
+              "href": "/services/custom-bots",
+              "problem": "Managing communities, coordinating workflows, and integrating multiple tools manually wastes time and reduces team productivity.",
+              "solution": [
+                "Custom bots for Discord, Telegram, Slack, Twitter",
+                "Automated moderation and community management",
+                "Workflow automation with Trello, Notion, GitHub integrations",
+                "Real-time notifications and alerts",
+                "Custom commands and interactive features",
+                "Analytics and usage tracking"
+              ],
+              "deliverables": [
+                "Fully functional bot with custom commands",
+                "Integration with third-party APIs",
+                "Moderation and automation rules",
+                "Admin dashboard for bot management",
+                "Usage analytics and logs",
+                "Deployment and hosting setup"
+              ],
+              "stack": [
+                "Discord.js",
+                "Telegram Bot API",
+                "Slack API",
+                "Twitter API",
+                "Node.js",
+                "Python",
+                "Redis",
+                "MongoDB",
+                "Webhooks"
+              ]
             }
           ]
         },
@@ -320,21 +515,105 @@
               "title": "DevOps & Cloud",
               "summary": "Kubernetes, Docker, CI/CD, AWS/GCP, observability.",
               "bullets": ["IaC (Terraform)", "24×7 monitoring", "DR & backups"],
-              "href": "/services/devops"
+              "href": "/services/devops",
+              "problem": "Manual deployments, lack of automation, poor monitoring, and no disaster recovery plans lead to downtime and slow release cycles.",
+              "solution": [
+                "Infrastructure as Code (IaC) with Terraform",
+                "Container orchestration with Kubernetes",
+                "CI/CD pipelines with GitHub Actions / GitLab CI",
+                "Cloud infrastructure on AWS or GCP",
+                "Comprehensive monitoring with Grafana and Prometheus",
+                "Automated backups and disaster recovery procedures"
+              ],
+              "deliverables": [
+                "Complete IaC codebase (Terraform/CloudFormation)",
+                "CI/CD pipeline configuration",
+                "Kubernetes cluster setup and configuration",
+                "Monitoring dashboards and alerts",
+                "Backup and disaster recovery documentation",
+                "Runbooks and incident response procedures"
+              ],
+              "stack": [
+                "Kubernetes",
+                "Docker",
+                "Terraform",
+                "AWS",
+                "GCP",
+                "GitHub Actions",
+                "GitLab CI",
+                "Prometheus",
+                "Grafana",
+                "Helm"
+              ]
             },
             {
               "slug": "amc",
               "title": "Maintenance (AMC)",
               "summary": "Patches, SLAs, content updates, incidents, audits.",
               "bullets": ["SLA-backed", "Security-first", "Monthly reports"],
-              "href": "/services/amc"
+              "href": "/services/amc",
+              "problem": "Applications become outdated, security patches are delayed, and incidents go unresolved due to lack of dedicated maintenance support.",
+              "solution": [
+                "Proactive security patching and updates",
+                "SLA-backed incident response and resolution",
+                "Regular content and feature updates",
+                "Performance monitoring and optimization",
+                "Monthly maintenance reports and audits",
+                "24/7 support options available"
+              ],
+              "deliverables": [
+                "SLA agreement with defined response times",
+                "Monthly maintenance and security reports",
+                "Patch management schedule",
+                "Incident tracking and resolution logs",
+                "Performance optimization recommendations",
+                "Quarterly review meetings"
+              ],
+              "stack": [
+                "Monitoring Tools",
+                "Grafana",
+                "Prometheus",
+                "New Relic",
+                "Sentry",
+                "PagerDuty",
+                "Jira",
+                "Git"
+              ]
             },
             {
               "slug": "security",
               "title": "Security & Compliance",
               "summary": "OWASP, hardening, VAPT remediation, access governance.",
               "bullets": ["SSO/2FA", "Zero-downtime patching", "Audit-ready"],
-              "href": "/services/security"
+              "href": "/services/security",
+              "problem": "Security vulnerabilities, lack of compliance with industry standards, and weak access controls expose organizations to data breaches and regulatory penalties.",
+              "solution": [
+                "OWASP Top 10 vulnerability assessment and remediation",
+                "Application hardening and security best practices",
+                "VAPT (Vulnerability Assessment & Penetration Testing) support",
+                "SSO and 2FA implementation",
+                "Access governance and role-based permissions",
+                "Compliance with GDPR, SOC2, ISO 27001",
+                "Security audit preparation"
+              ],
+              "deliverables": [
+                "Security audit report with findings",
+                "VAPT remediation plan and implementation",
+                "SSO/2FA integration",
+                "Access control and governance policies",
+                "Compliance documentation",
+                "Security training for team members"
+              ],
+              "stack": [
+                "OWASP ZAP",
+                "Burp Suite",
+                "Auth0",
+                "Keycloak",
+                "HashiCorp Vault",
+                "Let's Encrypt",
+                "AWS IAM",
+                "Cloudflare"
+              ]
             }
           ]
         }
@@ -392,39 +671,7 @@
         "Infrastructure setup and configuration",
         "Training and handover documentation"
       ],
-      "stack": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Node.js",
-        "NestJS",
-        "Python",
-        "FastAPI",
-        "PostgreSQL",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
-        "Bull Queue",
-        "Apache Kafka",
-        "Apache Airflow",
-        "ClickHouse",
-        "Docker",
-        "Kubernetes",
-        "Terraform",
-        "AWS",
-        "GCP",
-        "OpenAI API",
-        "Claude API",
-        "LangChain",
-        "Discord.js",
-        "Telegram Bot API",
-        "Puppeteer",
-        "Cheerio",
-        "Scrapy",
-        "Grafana",
-        "Metabase"
-      ],
+      "stack": [],
       "caseStudies": ["creazilla"],
       "cta": {
         "label": "Request Proposal",

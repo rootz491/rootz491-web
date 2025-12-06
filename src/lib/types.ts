@@ -171,6 +171,10 @@ export const ServiceItemSchema = z.object({
   summary: z.string(),
   bullets: z.array(z.string()),
   href: z.string(),
+  problem: z.string().optional(),
+  solution: z.array(z.string()).optional(),
+  deliverables: z.array(z.string()).optional(),
+  stack: z.array(z.string()).optional(),
 });
 
 export const ServiceGroupSchema = z.object({

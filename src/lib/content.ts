@@ -62,10 +62,18 @@ export function getServiceBySlug(slug: string) {
   for (const group of servicesPage.groups) {
     const service = group.items.find(item => item.slug === slug);
     if (service) {
+      // Only use template fields that don't exist in service
       return {
-        ...serviceDetail,
+        seoTitle: serviceDetail.seoTitle,
         title: service.title,
         summary: service.summary,
+        heroImage: serviceDetail.heroImage,
+        problem: service.problem || serviceDetail.problem,
+        solution: service.solution || serviceDetail.solution,
+        deliverables: service.deliverables || serviceDetail.deliverables,
+        stack: service.stack || serviceDetail.stack,
+        caseStudies: serviceDetail.caseStudies,
+        cta: serviceDetail.cta,
         slug: service.slug,
       };
     }
