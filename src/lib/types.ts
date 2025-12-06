@@ -349,17 +349,19 @@ export const SharedSchema = z.object({
 // Main site data schema
 export const SiteDataSchema = z.object({
   site: SiteSchema,
-  pages: z.object({
-    '/': HomePageSchema,
-    '/services': ServicesPageSchema,
-    '/services/{slug}': ServiceDetailSchema,
-    '/government': GovernmentPageSchema,
-    '/work': WorkPageSchema,
-    '/work/{slug}': WorkDetailSchema,
-    '/about': AboutPageSchema,
-    '/contact': ContactPageSchema,
-    '/blog': BlogPageSchema,
-  }),
+  pages: z
+    .object({
+      '/': HomePageSchema,
+      '/services': ServicesPageSchema,
+      '/services/{slug}': ServiceDetailSchema,
+      '/government': GovernmentPageSchema,
+      '/work': WorkPageSchema,
+      '/work/{slug}': WorkDetailSchema,
+      '/about': AboutPageSchema,
+      '/contact': ContactPageSchema,
+      '/blog': BlogPageSchema,
+    })
+    .passthrough(), // Allow additional work pages like /work/creazilla, /work/kaluwala
   shared: SharedSchema,
 });
 

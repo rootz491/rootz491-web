@@ -191,6 +191,12 @@
             "title": "Creazilla — 10M+ Graphics Platform",
             "summary": "Scalable backend with Elasticsearch, MongoDB, Redis serving millions of assets.",
             "thumb": "/assets/work/creazilla.jpg"
+          },
+          {
+            "slug": "kaluwala",
+            "title": "Kaluwala.in — Village Digital Platform",
+            "summary": "Community-driven tourism platform with Telegram bot for photo contributions and blog notifications.",
+            "thumb": "/assets/work/kaluwala.png"
           }
         ]
       },
@@ -672,7 +678,7 @@
         "Training and handover documentation"
       ],
       "stack": [],
-      "caseStudies": ["creazilla"],
+      "caseStudies": ["creazilla", "kaluwala"],
       "cta": {
         "label": "Request Proposal",
         "href": "/contact"
@@ -720,7 +726,7 @@
     },
     "/work": {
       "title": "Selected Work",
-      "intro": "Featured project showcasing scalable architecture and high-performance delivery.",
+      "intro": "Featured projects showcasing scalable architecture, high-performance delivery, and real-world impact.",
       "items": [
         {
           "slug": "creazilla",
@@ -728,6 +734,13 @@
           "summary": "Scalable platform serving millions of free graphics with optimized search and CDN delivery.",
           "thumb": "/assets/work/creazilla.jpg",
           "href": "/work/creazilla"
+        },
+        {
+          "slug": "kaluwala",
+          "title": "Kaluwala.in — Village Digital Platform",
+          "summary": "Community-driven tourism platform with Telegram bot for photo contributions and blog notifications.",
+          "thumb": "/assets/work/kaluwala.png",
+          "href": "/work/kaluwala"
         }
       ]
     },
@@ -782,6 +795,55 @@
         "role": "Product Owner",
         "quote": "Exceptional technical leadership in building a platform that handles millions of requests efficiently."
       }
+    },
+    "/work/kaluwala": {
+      "seoTitle": "Case Study — Kaluwala.in Village Digital Platform | ROOTZ491",
+      "title": "Kaluwala.in — Village Digital Platform",
+      "client": {
+        "name": "Kaluwala Village",
+        "sector": "Tourism / Community Platform"
+      },
+      "cover": "/assets/work/kaluwala.png",
+      "summary": "A modern tourism platform for a remote Himalayan village near Dehradun, Uttarakhand. Features Telegram bot integration for community-driven content and real-time blog notifications.",
+      "kpis": [
+        {
+          "label": "Active Users",
+          "value": "150+"
+        },
+        {
+          "label": "Community Photos",
+          "value": "30+"
+        },
+        {
+          "label": "Blog Subscribers",
+          "value": "50+"
+        }
+      ],
+      "challenge": "Creating an engaging tourism platform for a remote village with community-driven content management. Needed accessible contribution system via Telegram for locals & tourists, admin moderation workflow, and real-time notification system for blog subscribers.",
+      "approach": [
+        "Built SEO-optimized tourism website with Next.js and Tailwind CSS",
+        "Implemented Sanity CMS for blog and content management",
+        "Created Telegram bot on Cloudflare Workers for photo contributions",
+        "Built admin moderation system for user-submitted content",
+        "Developed real-time blog notification system via Telegram subscriptions",
+        "Integrated interactive village map with Leaflet.js",
+        "Designed community photo gallery with user submissions",
+        "Optimized for mobile-first with progressive enhancement"
+      ],
+      "stack": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "shadcn/ui",
+        "Sanity CMS",
+        "Cloudflare Workers",
+        "Telegram Bot API",
+        "SWR",
+        "Leaflet.js",
+        "Google AdSense"
+      ],
+      "gallery": ["/assets/work/kaluwala-1.jpg", "/assets/work/kaluwala-2.jpg"]
     },
     "/about": {
       "title": "About ROOTZ491",

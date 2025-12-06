@@ -102,6 +102,18 @@ export function getAllServiceSlugs(): string[] {
  * Get work/case study by slug
  */
 export function getWorkBySlug(slug: string) {
+  const data = getSiteData();
+
+  // Try to find specific work page first (e.g., /work/creazilla, /work/kaluwala)
+  const specificWorkKey = `/work/${slug}` as keyof typeof data.pages;
+  if (specificWorkKey in data.pages) {
+    return {
+      ...(data.pages[specificWorkKey] as any),
+      slug,
+    };
+  }
+
+  // Fallback to template if specific page doesn't exist
   const workPage = getPageContent('/work');
   const workDetail = getPageContent('/work/{slug}');
 
