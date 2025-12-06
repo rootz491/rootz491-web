@@ -16,7 +16,9 @@ export function Header() {
       <nav className='container mx-auto flex h-16 items-center justify-between px-4'>
         {/* Logo */}
         <Link href='/' className='flex items-center space-x-2'>
-          <span className='text-xl font-bold'>{siteConfig.brand.name}</span>
+          <span className='text-xl font-bold font-[family-name:var(--font-poller-one)]'>
+            {siteConfig.brand.name}
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
