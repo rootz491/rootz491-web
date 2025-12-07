@@ -61,9 +61,9 @@ export default async function WorkDetailPage({
             <p className='text-xl text-muted-foreground mb-4'>{work.summary}</p>
             {work.liveUrl && (
               <Button asChild variant='outline' size='lg'>
-                <a 
-                  href={work.liveUrl} 
-                  target='_blank' 
+                <a
+                  href={work.liveUrl}
+                  target='_blank'
                   rel='noopener noreferrer'
                   className='inline-flex items-center gap-2'
                 >

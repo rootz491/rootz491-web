@@ -260,11 +260,13 @@ export const WorkDetailSchema = z.object({
   approach: z.array(z.string()),
   stack: z.array(z.string()),
   gallery: z.array(z.string()),
-  testimonial: z.object({
-    name: z.string(),
-    role: z.string(),
-    quote: z.string(),
-  }).optional(),
+  testimonial: z
+    .object({
+      name: z.string(),
+      role: z.string(),
+      quote: z.string(),
+    })
+    .optional(),
 });
 
 // About page schema
