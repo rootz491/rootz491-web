@@ -67,14 +67,16 @@ export default async function WorkDetailPage({
       <section className='py-12 bg-primary text-primary-foreground'>
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto'>
-            {work.kpis.map((kpi, idx) => (
-              <div key={idx} className='text-center'>
-                <div className='text-3xl md:text-4xl font-bold mb-2'>
-                  {kpi.value}
+            {work.kpis.map(
+              (kpi: { label: string; value: string }, idx: number) => (
+                <div key={idx} className='text-center'>
+                  <div className='text-3xl md:text-4xl font-bold mb-2'>
+                    {kpi.value}
+                  </div>
+                  <div className='text-sm opacity-90'>{kpi.label}</div>
                 </div>
-                <div className='text-sm opacity-90'>{kpi.label}</div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </section>
@@ -90,7 +92,7 @@ export default async function WorkDetailPage({
             <div>
               <h2 className='text-2xl font-bold mb-4'>Our Approach</h2>
               <ul className='space-y-3'>
-                {work.approach.map((step, idx) => (
+                {work.approach.map((step: string, idx: number) => (
                   <li key={idx} className='flex items-start gap-2'>
                     <CheckCircle className='h-5 w-5 text-primary shrink-0 mt-0.5' />
                     <span className='text-muted-foreground'>{step}</span>
@@ -108,7 +110,7 @@ export default async function WorkDetailPage({
           <div className='max-w-4xl mx-auto'>
             <h2 className='text-2xl font-bold mb-6'>Technology Stack</h2>
             <div className='flex flex-wrap gap-2'>
-              {work.stack.map((tech, idx) => (
+              {work.stack.map((tech: string, idx: number) => (
                 <Badge
                   key={idx}
                   variant='secondary'
