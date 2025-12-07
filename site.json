@@ -256,6 +256,47 @@
                 "Vercel",
                 "Cloudflare"
               ]
+            },
+            {
+              "slug": "headless-cms",
+              "title": "Headless CMS Development",
+              "summary": "Modern content management with Sanity, Strapi, Contentful for API-driven content delivery.",
+              "bullets": [
+                "Headless CMS architecture",
+                "Custom content schemas",
+                "Real-time collaboration",
+                "Multi-channel publishing"
+              ],
+              "href": "/services/headless-cms",
+              "problem": "Traditional CMS platforms like WordPress and Drupal are monolithic, tightly coupled to the frontend, and lack flexibility for modern multi-channel content delivery (web, mobile, IoT).",
+              "solution": [
+                "Headless CMS architecture with API-first approach",
+                "Custom content modeling and schema design",
+                "Real-time collaboration and preview features",
+                "Multi-channel content delivery (web, mobile, apps)",
+                "Structured content with portable text/rich text",
+                "Webhooks for build triggers and integrations",
+                "Version control and content scheduling"
+              ],
+              "deliverables": [
+                "Custom content schemas and data models",
+                "Headless CMS setup and configuration",
+                "API integration with frontend applications",
+                "Content migration from legacy systems",
+                "Editor training and documentation",
+                "Webhook integrations and automation"
+              ],
+              "stack": [
+                "Sanity CMS",
+                "Strapi",
+                "Contentful",
+                "Payload CMS",
+                "GraphQL",
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Webhooks"
+              ]
             }
           ]
         },
