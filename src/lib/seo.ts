@@ -32,6 +32,7 @@ export function generateMetadata({
   const url = `${baseUrl}${path}`;
 
   return {
+    metadataBase: new URL(baseUrl),
     title: metaTitle,
     description: metaDescription,
     keywords: metaKeywords,
