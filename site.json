@@ -190,24 +190,17 @@
             "slug": "creazilla",
             "title": "Creazilla — 10M+ Graphics Platform",
             "summary": "Scalable backend with Elasticsearch, MongoDB, Redis serving millions of assets.",
-            "thumb": "/assets/work/creazilla.jpg"
+            "thumb": "/assets/work/creazilla-website.png"
           },
           {
             "slug": "kaluwala",
             "title": "Kaluwala.in — Village Digital Platform",
             "summary": "Community-driven tourism platform with Telegram bot for photo contributions and blog notifications.",
-            "thumb": "/assets/work/kaluwala.png"
+            "thumb": "/images/work/kaluwala-website.jpg"
           }
         ]
       },
-      "testimonials": [
-        {
-          "name": "Client Name",
-          "role": "Designation",
-          "quote": "ROOTZ491 delivered on time with rock-solid uptime.",
-          "logo": "/assets/logos/client1.png"
-        }
-      ],
+      "testimonials": [],
       "ctaBanner": {
         "title": "Need reliable AMC or a secure revamp?",
         "cta": {
@@ -773,26 +766,59 @@
           "slug": "creazilla",
           "title": "Creazilla — 10M+ Free Graphics Platform",
           "summary": "Scalable platform serving millions of free graphics with optimized search and CDN delivery.",
-          "thumb": "/assets/work/creazilla.jpg",
+          "thumb": "/assets/work/creazilla-website.png",
           "href": "/work/creazilla"
         },
         {
           "slug": "kaluwala",
           "title": "Kaluwala.in — Village Digital Platform",
           "summary": "Community-driven tourism platform with Telegram bot for photo contributions and blog notifications.",
-          "thumb": "/assets/work/kaluwala.png",
+          "thumb": "/images/work/kaluwala-website.jpg",
           "href": "/work/kaluwala"
         }
       ]
     },
     "/work/{slug}": {
       "seoTitle": "Case Study — {{title}} | ROOTZ491",
+      "title": "Project Case Study",
+      "client": {
+        "name": "Client Name",
+        "sector": "Industry"
+      },
+      "cover": "/assets/work/default.jpg",
+      "summary": "Project summary and overview.",
+      "kpis": [
+        {
+          "label": "Metric 1",
+          "value": "Value"
+        },
+        {
+          "label": "Metric 2",
+          "value": "Value"
+        },
+        {
+          "label": "Metric 3",
+          "value": "Value"
+        }
+      ],
+      "challenge": "Project challenge and problem statement.",
+      "approach": ["Approach step 1", "Approach step 2", "Approach step 3"],
+      "stack": ["Technology 1", "Technology 2", "Technology 3"],
+      "gallery": ["/assets/work/default-1.jpg", "/assets/work/default-2.jpg"],
+      "testimonial": {
+        "name": "Client Name",
+        "role": "Role",
+        "quote": "Testimonial quote."
+      }
+    },
+    "/work/creazilla": {
+      "seoTitle": "Case Study — Creazilla | ROOTZ491",
       "title": "Creazilla — 10M+ Free Graphics Platform",
       "client": {
         "name": "Creazilla",
         "sector": "Digital Media / SaaS"
       },
-      "cover": "/assets/work/creazilla.jpg",
+      "cover": "/assets/work/creazilla-website.png",
       "summary": "Built and scaled a high-performance platform serving over 10 million free graphic resources including photos, clipart, vectors, icons, and fonts to content creators worldwide.",
       "kpis": [
         {
@@ -844,7 +870,7 @@
         "name": "Kaluwala Village",
         "sector": "Tourism / Community Platform"
       },
-      "cover": "/assets/work/kaluwala.png",
+      "cover": "/images/work/kaluwala-website.jpg",
       "summary": "A modern tourism platform for a remote Himalayan village near Dehradun, Uttarakhand. Features Telegram bot integration for community-driven content and real-time blog notifications.",
       "kpis": [
         {
@@ -884,6 +910,11 @@
         "Leaflet.js",
         "Google AdSense"
       ],
+      "testimonial": {
+        "name": "Admin, Kaluwala.in",
+        "role": "Product Owner",
+        "quote": "The platform has transformed how our community shares and promotes tourism in our village."
+      },
       "gallery": ["/assets/work/kaluwala-1.jpg", "/assets/work/kaluwala-2.jpg"]
     },
     "/about": {
