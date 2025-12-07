@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { getAllWorkSlugs, getWorkBySlug } from '@/lib/content';
 import { generateMetadata as genMeta } from '@/lib/seo';
-import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -58,7 +58,20 @@ export default async function WorkDetailPage({
             <h1 className='text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4'>
               {work.title}
             </h1>
-            <p className='text-xl text-muted-foreground'>{work.summary}</p>
+            <p className='text-xl text-muted-foreground mb-4'>{work.summary}</p>
+            {work.liveUrl && (
+              <Button asChild variant='outline' size='lg'>
+                <a 
+                  href={work.liveUrl} 
+                  target='_blank' 
+                  rel='noopener noreferrer'
+                  className='inline-flex items-center gap-2'
+                >
+                  Visit Live Website
+                  <ArrowRight className='h-4 w-4' />
+                </a>
+              </Button>
+            )}
           </div>
         </div>
       </section>

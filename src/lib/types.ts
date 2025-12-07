@@ -252,6 +252,7 @@ export const WorkDetailSchema = z.object({
     name: z.string(),
     sector: z.string(),
   }),
+  liveUrl: z.string().optional(),
   cover: z.string(),
   summary: z.string(),
   kpis: z.array(StatSchema),
@@ -263,7 +264,7 @@ export const WorkDetailSchema = z.object({
     name: z.string(),
     role: z.string(),
     quote: z.string(),
-  }),
+  }).optional(),
 });
 
 // About page schema

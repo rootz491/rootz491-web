@@ -190,7 +190,7 @@
             "slug": "creazilla",
             "title": "Creazilla — 10M+ Graphics Platform",
             "summary": "Scalable backend with Elasticsearch, MongoDB, Redis serving millions of assets.",
-            "thumb": "/assets/work/creazilla-website.png"
+            "thumb": "/images/work/creazilla-website.png"
           },
           {
             "slug": "kaluwala",
@@ -766,7 +766,7 @@
           "slug": "creazilla",
           "title": "Creazilla — 10M+ Free Graphics Platform",
           "summary": "Scalable platform serving millions of free graphics with optimized search and CDN delivery.",
-          "thumb": "/assets/work/creazilla-website.png",
+          "thumb": "/images/work/creazilla-website.png",
           "href": "/work/creazilla"
         },
         {
@@ -818,7 +818,8 @@
         "name": "Creazilla",
         "sector": "Digital Media / SaaS"
       },
-      "cover": "/assets/work/creazilla-website.png",
+      "liveUrl": "https://creazilla.com",
+      "cover": "/images/work/creazilla-website.png",
       "summary": "Built and scaled a high-performance platform serving over 10 million free graphic resources including photos, clipart, vectors, icons, and fonts to content creators worldwide.",
       "kpis": [
         {
@@ -870,6 +871,7 @@
         "name": "Kaluwala Village",
         "sector": "Tourism / Community Platform"
       },
+      "liveUrl": "https://kaluwala.in",
       "cover": "/images/work/kaluwala-website.jpg",
       "summary": "A modern tourism platform for a remote Himalayan village near Dehradun, Uttarakhand. Features Telegram bot integration for community-driven content and real-time blog notifications.",
       "kpis": [
