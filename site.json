@@ -197,6 +197,12 @@
             "title": "Kaluwala.in — Village Digital Platform",
             "summary": "Community-driven tourism platform with Telegram bot for photo contributions and blog notifications.",
             "thumb": "/images/work/kaluwala-website.jpg"
+          },
+          {
+            "slug": "explorewithnurse",
+            "title": "ExploreWithNurse — Travel & Lifestyle Blog",
+            "summary": "SEO-optimised travel blog with CMS-managed posts and a clean mobile-first design.",
+            "thumb": "/images/work/explorewithnurse-website.jpg"
           }
         ]
       },
@@ -775,6 +781,13 @@
           "summary": "Community-driven tourism platform with Telegram bot for photo contributions and blog notifications.",
           "thumb": "/images/work/kaluwala-website.jpg",
           "href": "/work/kaluwala"
+        },
+        {
+          "slug": "explorewithnurse",
+          "title": "ExploreWithNurse — Travel & Lifestyle Blog",
+          "summary": "Content-rich travel and lifestyle blog built for a nurse-turned-traveller, with SEO-optimised pages and CMS-managed posts.",
+          "thumb": "/images/work/explorewithnurse-website.jpg",
+          "href": "/work/explorewithnurse"
         }
       ]
     },
@@ -918,6 +931,58 @@
         "quote": "The platform has transformed how our community shares and promotes tourism in our village."
       },
       "gallery": ["/assets/work/kaluwala-1.jpg", "/assets/work/kaluwala-2.jpg"]
+    },
+    "/work/explorewithnurse": {
+      "seoTitle": "Case Study — ExploreWithNurse.com | ROOTZ491",
+      "title": "ExploreWithNurse — Travel & Lifestyle Blog",
+      "client": {
+        "name": "ExploreWithNurse",
+        "sector": "Travel / Lifestyle"
+      },
+      "liveUrl": "https://explorewithnurse.com",
+      "cover": "/images/work/explorewithnurse-website.jpg",
+      "summary": "A content-rich travel and lifestyle blog for a nurse-turned-traveller. Built with a headless CMS, SEO-optimised pages, and a clean mobile-first design that loads fast on low-bandwidth connections.",
+      "kpis": [
+        {
+          "label": "Page Speed",
+          "value": "95+"
+        },
+        {
+          "label": "Mobile Score",
+          "value": "A+"
+        },
+        {
+          "label": "Core Web Vitals",
+          "value": "Pass"
+        }
+      ],
+      "challenge": "Needed a performant, easy-to-manage blog that ranks well on search engines and works reliably on mobile networks, allowing the owner to publish new travel stories without developer assistance.",
+      "approach": [
+        "Built with Next.js App Router for SSG/ISR-based fast page delivery",
+        "Integrated Sanity CMS for owner-managed content with live preview",
+        "Implemented structured data (JSON-LD) for rich search snippets",
+        "Optimised images via Next.js Image with lazy loading and WebP",
+        "Mobile-first responsive layout with Tailwind CSS",
+        "Deployed on Vercel with edge caching for global performance"
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Sanity CMS",
+        "Vercel",
+        "Cloudflare"
+      ],
+      "gallery": [
+        "/assets/work/explorewithnurse-1.jpg",
+        "/assets/work/explorewithnurse-2.jpg"
+      ],
+      "testimonial": {
+        "name": "Owner, ExploreWithNurse",
+        "role": "Founder",
+        "quote": "The site loads instantly, looks great on my phone, and I can publish new posts myself without any technical help."
+      }
     },
     "/about": {
       "title": "About ROOTZ491",
