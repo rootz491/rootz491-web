@@ -1,22 +1,65 @@
 {
-  "title": "Skills & technologies",
+  "title": "Skills & Technologies",
   "subtitle": "Tools and stacks I reach for most often.",
   "categories": [
     {
       "name": "Frontend",
-      "items": ["TypeScript", "React", "Next.js", "Tailwind CSS"]
+      "items": ["TypeScript", "React", "Next.js", "Vite"]
     },
     {
       "name": "Backend",
-      "items": ["Node.js", "NestJS", "Python", "FastAPI"]
+      "items": [
+        "Node.js",
+        "NestJS",
+        "Express",
+        "Fastify",
+        "GraphQL",
+        "Python",
+        "REST APIs",
+        "JWT",
+        "BullMQ"
+      ]
     },
     {
       "name": "Data",
-      "items": ["PostgreSQL", "MongoDB", "Elasticsearch", "Redis"]
+      "items": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
     },
     {
       "name": "DevOps",
-      "items": ["Docker", "Kubernetes", "Terraform", "AWS", "GCP"]
+      "items": [
+        "Docker",
+        "Linux",
+        "Nginx",
+        "Cloudflare",
+        "GitHub Actions",
+        "Jenkins",
+        "Coolify",
+        "Traefik"
+      ]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "items": [
+        "AWS",
+        "DigitalOcean",
+        "S3 / Wasabi",
+        "Coolify",
+        "Reverse Proxy",
+        "CI/CD",
+        "Telemetry"
+      ]
     }
-  ]
+  ],
+  "interests": {
+    "title": "Things I enjoy solving",
+    "items": [
+      "Scaling backend services",
+      "Search & indexing (Elasticsearch)",
+      "Dockerized deployments",
+      "AI API integrations",
+      "Performance optimization",
+      "Large dataset processing",
+      "System architecture"
+    ]
+  }
 }

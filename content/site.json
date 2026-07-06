@@ -2,7 +2,7 @@
   "brand": {
     "name": "Karan Sharma",
     "alias": "rootz491",
-    "tagline": "Full-stack developer",
+    "tagline": "Backend-focused full-stack engineer",
     "favicon": "/assets/favicon.ico"
   },
   "theme": {
@@ -29,7 +29,7 @@
   },
   "seo": {
     "defaultTitle": "Karan Sharma — Full-stack Developer",
-    "defaultDescription": "Portfolio of Karan Sharma (rootz491). Full-stack developer building web apps, APIs, and infrastructure.",
+    "defaultDescription": "Portfolio of Karan Sharma (rootz491). Backend-focused full-stack engineer building production web platforms, APIs, search infrastructure, and DevOps tooling.",
     "keywords": ["full-stack", "developer", "Next.js", "TypeScript", "DevOps", "portfolio"],
     "ogImage": "/images/og-image.jpg",
     "twitter": "@rootz491",

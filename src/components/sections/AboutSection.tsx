@@ -19,13 +19,18 @@ export function AboutSection({ preview = false }: { preview?: boolean }) {
 
         <Stagger className='grid gap-8 lg:grid-cols-2'>
           <StaggerItem>
-            <p className='text-lg text-cream-muted leading-relaxed'>{about.intro}</p>
-            {!preview &&
+            {preview ? (
+              <p className='text-lg text-cream-muted leading-relaxed'>{about.bio[0]}</p>
+            ) : (
               about.bio.map((p, i) => (
-                <p key={i} className='mt-4 text-base text-cream-muted leading-relaxed'>
+                <p
+                  key={i}
+                  className={`text-base text-cream-muted leading-relaxed${i > 0 ? ' mt-4' : ''}`}
+                >
                   {p}
                 </p>
-              ))}
+              ))
+            )}
           </StaggerItem>
 
           <StaggerItem>

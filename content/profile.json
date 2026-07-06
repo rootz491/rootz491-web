@@ -3,9 +3,9 @@
     "greeting": "Hi, I'm",
     "name": "Karan Sharma",
     "alias": "rootz491",
-    "role": "Full-stack Developer",
-    "headline": "I build reliable web apps, APIs, and infrastructure.",
-    "bio": "Based in Dehradun, India. I take products from idea to production — clean code, solid DevOps, and systems that stay up.",
+    "role": "Backend-focused Full-stack Engineer",
+    "headline": "I build production-grade web platforms from backend infrastructure to polished user interfaces.",
+    "bio": "Over the past 4+ years I've worked across the entire stack—designing APIs, building scalable backends, and shipping systems that stay reliable under real traffic.",
     "avatar": "/images/avatar.jpg",
     "ctas": [
       { "label": "View projects", "href": "/projects", "variant": "primary" },

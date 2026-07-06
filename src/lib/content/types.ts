@@ -79,6 +79,12 @@ export const SkillsSchema = z.object({
       items: z.array(z.string()),
     })
   ),
+  interests: z
+    .object({
+      title: z.string(),
+      items: z.array(z.string()),
+    })
+    .optional(),
 });
 
 export const ProjectSchema = z.object({

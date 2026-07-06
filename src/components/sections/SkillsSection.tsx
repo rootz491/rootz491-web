@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export function SkillsSection({ preview = false }: { preview?: boolean }) {
   const skills = getSkills();
-  const categories = preview ? skills.categories.slice(0, 2) : skills.categories;
+  const categories = preview ? skills.categories.slice(0, 3) : skills.categories;
 
   return (
     <section className='border-t border-border py-16 md:py-24'>
@@ -19,7 +19,7 @@ export function SkillsSection({ preview = false }: { preview?: boolean }) {
           </div>
         </Reveal>
 
-        <Stagger className='grid gap-8 md:grid-cols-2 lg:grid-cols-4'>
+        <Stagger className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
           {categories.map(cat => (
             <StaggerItem key={cat.name}>
               <motion.div
@@ -44,6 +44,27 @@ export function SkillsSection({ preview = false }: { preview?: boolean }) {
             </StaggerItem>
           ))}
         </Stagger>
+
+        {!preview && skills.interests && (
+          <Reveal delay={0.15}>
+            <div className='mt-12 max-w-3xl'>
+              <h3 className='text-lg font-semibold text-cream mb-5'>
+                {skills.interests.title}
+              </h3>
+              <ul className='grid gap-3 sm:grid-cols-2'>
+                {skills.interests.items.map(item => (
+                  <li
+                    key={item}
+                    className='flex items-start gap-2 text-sm text-cream-muted'
+                  >
+                    <span className='text-cream shrink-0'>•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        )}
       </div>
     </section>
   );
