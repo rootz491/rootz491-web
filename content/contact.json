@@ -1,0 +1,37 @@
+{
+  "title": "Contact",
+  "subtitle": "Open to interesting projects and conversations. Reach out via email or socials.",
+  "email": "rootz491@wearehackerone.com",
+  "social": [
+    {
+      "platform": "github",
+      "label": "GitHub",
+      "url": "https://github.com/rootz491",
+      "handle": "@rootz491"
+    },
+    {
+      "platform": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/karansh491/",
+      "handle": "karansh491"
+    },
+    {
+      "platform": "instagram",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/rootz491",
+      "handle": "@rootz491"
+    },
+    {
+      "platform": "reddit",
+      "label": "Reddit",
+      "url": "https://www.reddit.com/user/rootz491/",
+      "handle": "u/rootz491"
+    },
+    {
+      "platform": "email",
+      "label": "Email",
+      "url": "mailto:rootz491@wearehackerone.com",
+      "handle": "rootz491@wearehackerone.com"
+    }
+  ]
+}

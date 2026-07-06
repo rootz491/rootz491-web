@@ -1,10 +1,30 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+const redirects: Record<string, string> = {
+  '/work': '/projects',
+  '/services': '/projects',
+  '/government': '/about',
+};
+
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (redirects[pathname]) {
+    return NextResponse.redirect(new URL(redirects[pathname], request.url));
+  }
+
+  if (pathname.startsWith('/work/')) {
+    const slug = pathname.replace('/work/', '');
+    return NextResponse.redirect(new URL(`/projects/${slug}`, request.url));
+  }
+
+  if (pathname.startsWith('/services/')) {
+    return NextResponse.redirect(new URL('/projects', request.url));
+  }
+
   const response = NextResponse.next();
 
-  // Security headers
   response.headers.set('X-DNS-Prefetch-Control', 'on');
   response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains');
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');
@@ -20,7 +40,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|assets/).*)',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|assets/|images/|resume/).*)'],
 };

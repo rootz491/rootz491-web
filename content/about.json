@@ -1,0 +1,14 @@
+{
+  "title": "About me",
+  "intro": "I'm Karan Sharma, a backend-focused full-stack engineer with 4+ years of experience building production web applications, who goes by rootz491 online.",
+  "bio": [
+    "I enjoy designing systems that scale—from APIs and databases to Docker deployments, CI/CD pipelines, and cloud infrastructure. Most of my work involves taking products from early prototypes to production, with a strong focus on performance, maintainability, and developer experience.",
+    "I've worked extensively with NestJS, Next.js, Elasticsearch, PostgreSQL, Redis, and modern DevOps tooling, and I'm particularly interested in AI-powered applications, distributed systems, and search infrastructure."
+  ],
+  "highlights": [
+    "Built search infrastructure handling 10M+ assets",
+    "Designed full-stack systems from API to deployment",
+    "Production experience across Docker, CI/CD & cloud"
+  ],
+  "location": "India"
+}

@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Karan Sharma",
+    "alias": "rootz491",
+    "role": "Backend-focused Full-stack Engineer",
+    "headline": "I build production-grade web platforms from backend infrastructure to polished user interfaces.",
+    "bio": "Over the past 4+ years I've worked across the entire stack—designing APIs, building scalable backends, and shipping systems that stay reliable under real traffic.",
+    "avatar": "/images/avatar.jpg",
+    "ctas": [
+      { "label": "View projects", "href": "/projects", "variant": "primary" },
+      { "label": "Download resume", "href": "/resume/karan-sharma-resume.pdf", "variant": "secondary" }
+    ]
+  },
+  "resume": {
+    "label": "Download Resume",
+    "href": "/resume/karan-sharma-resume.pdf",
+    "filename": "karan-sharma-resume.pdf"
+  }
+}
