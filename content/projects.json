@@ -70,6 +70,52 @@
         "Image optimisation with WebP",
         "Deployed on Vercel with edge caching"
       ]
+    },
+    {
+      "slug": "akira",
+      "title": "Addy — Artist Gallery",
+      "summary": "Portfolio site for a digital artist to showcase sketches across digital art, traditional art, and manga panels.",
+      "role": "Full-stack Developer",
+      "thumb": "/images/work/akira-website.png",
+      "liveUrl": "https://akira.rootz491.com/",
+      "githubUrl": "",
+      "stack": ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS"],
+      "kpis": [
+        { "label": "Categories", "value": "3" },
+        { "label": "CMS", "value": "Sanity" },
+        { "label": "Gallery", "value": "Grid" }
+      ],
+      "challenge": "Give a digital artist a clean way to publish and browse sketches by medium — digital, traditional, and manga — without needing developer help.",
+      "approach": [
+        "Built a category-based gallery with Next.js and Sanity CMS",
+        "Organised artwork into Digital Art, Traditional Art, and Manga Panels",
+        "Optimised image delivery via Next.js Image and Sanity CDN",
+        "Simple navigation with Gallery and About pages",
+        "Social links for Instagram and Reddit"
+      ]
+    },
+    {
+      "slug": "artbyshul",
+      "title": "Studio Youkai",
+      "summary": "Sketch and illustration portfolio for a digital artist — gallery of original artwork and story illustrations.",
+      "role": "Full-stack Developer",
+      "thumb": "/images/work/artbyshul-website.png",
+      "liveUrl": "https://artbyshul.rootz491.com/",
+      "githubUrl": "",
+      "stack": ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS"],
+      "kpis": [
+        { "label": "Focus", "value": "Sketches" },
+        { "label": "Style", "value": "Digital" },
+        { "label": "CMS", "value": "Sanity" }
+      ],
+      "challenge": "Create a welcoming portfolio for an artist to share sketches, digital art, and story illustrations with an easy-to-browse gallery experience.",
+      "approach": [
+        "Designed a minimal landing page with clear gallery and about CTAs",
+        "Built a sketch portfolio with Sanity-backed content management",
+        "Highlighted original sketches, digital art, and story illustrations",
+        "Mobile-first layout with fast image loading",
+        "Deployed on rootz491.com subdomain"
+      ]
     }
   ]
 }

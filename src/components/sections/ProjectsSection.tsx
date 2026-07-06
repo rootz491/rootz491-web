@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export function ProjectsSection({ preview = false }: { preview?: boolean }) {
   const projects = getProjects();
-  const items = preview ? projects.items.slice(0, 3) : projects.items;
+  const items = projects.items;
 
   return (
     <section className='border-t border-border py-16 md:py-24'>
