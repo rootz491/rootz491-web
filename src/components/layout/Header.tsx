@@ -25,7 +25,7 @@ export function Header() {
           href='/'
           className='text-[20px] font-black tracking-tight text-cream transition-opacity hover:opacity-80'
         >
-          {site.brand.name}
+          {site.brand.wordmark}
         </Link>
 
         <div className='hidden items-center gap-8 md:flex'>

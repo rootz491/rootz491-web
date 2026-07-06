@@ -4,9 +4,12 @@ import { Button } from '@/components/ui/primitives';
 import { FadeIn } from '@/components/motion/Reveal';
 import { getProfile } from '@/lib/content';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useState } from 'react';
 
 export function HeroSection({ preview = false }: { preview?: boolean }) {
   const { hero } = getProfile();
+  const [imageError, setImageError] = useState(false);
 
   return (
     <section className={preview ? 'py-16' : 'py-24 md:py-32'}>
@@ -75,12 +78,24 @@ export function HeroSection({ preview = false }: { preview?: boolean }) {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className='relative mx-auto h-48 w-48 shrink-0 overflow-hidden rounded-full border-2 border-border md:h-56 md:w-56'
           >
-            <div className='flex h-full w-full items-center justify-center bg-surface-elevated text-4xl font-black text-cream-muted'>
-              {hero.name
-                .split(' ')
-                .map(n => n[0])
-                .join('')}
-            </div>
+            {!imageError && hero.avatar ? (
+              <Image
+                src={hero.avatar}
+                alt={hero.name}
+                fill
+                className='object-cover'
+                priority
+                sizes='(max-width: 768px) 192px, 224px'
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className='flex h-full w-full items-center justify-center bg-surface-elevated text-4xl font-black text-cream-muted'>
+                {hero.name
+                  .split(' ')
+                  .map(n => n[0])
+                  .join('')}
+              </div>
+            )}
           </motion.div>
         </div>
       </div>

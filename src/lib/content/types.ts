@@ -8,6 +8,7 @@ export const NavLinkSchema = z.object({
 export const SiteSchema = z.object({
   brand: z.object({
     name: z.string(),
+    wordmark: z.string(),
     alias: z.string(),
     tagline: z.string(),
     favicon: z.string(),
