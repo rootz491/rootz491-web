@@ -60,11 +60,9 @@ export function ExperienceSection({ preview = false }: { preview?: boolean }) {
                             </span>
                           )}
                         </div>
-                        <p className='text-sm text-cream-muted mt-1'>
-                          {role.period}
-                          {role.duration ? ` · ${role.duration}` : ''}
-                          {role.location ? ` · ${role.location}` : ''}
-                        </p>
+                        {item.roles.length > 1 && (
+                          <p className='text-sm text-cream-muted mt-1'>{role.period}</p>
+                        )}
                         {!preview && (
                           <>
                             <p className='mt-2 text-sm text-cream-muted leading-relaxed'>
