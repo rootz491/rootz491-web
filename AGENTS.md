@@ -14,7 +14,7 @@ Use the scripts in `package.json`: `npm run dev`, `npm run build`, `npm start`, 
 
 ### Non-obvious notes
 
-- Content is split across `content/*.json` (site, profile, about, skills, projects, experience, services, contact). Edit those files to update copy — no contact form API.
+- Content is split across `content/*.json` (site, profile, about, skills, projects, experience, services, contact, blogs). Edit those files to update copy — no contact form API.
 - Resume PDF path: `public/resume/karan-sharma-resume.pdf` (replace with your real resume).
 - `next.config.js` uses `output: 'standalone'` for the Docker build; this does not affect `npm run dev`.
 - `npm run lint` uses `next lint` (prints a deprecation notice but works and passes).

@@ -3,25 +3,119 @@
   "subtitle": "Where I've worked and what I've shipped.",
   "items": [
     {
-      "company": "Freelance / Contract",
-      "role": "Full-stack Developer",
-      "period": "2022 — Present",
-      "description": "Building web apps, APIs, and infrastructure for startups and small teams.",
-      "highlights": [
-        "Scaled Creazilla backend to 10M+ assets",
-        "Delivered tourism and content platforms end-to-end",
-        "Set up CI/CD, monitoring, and cloud infra"
+      "company": "Creazilla",
+      "location": "Remote",
+      "period": "Aug 2023 — Present",
+      "duration": "1 yr 7 mos",
+      "roles": [
+        {
+          "title": "Full Stack Engineer",
+          "employmentType": "Full-time",
+          "period": "Aug 2023 — Present",
+          "duration": "1 yr 7 mos",
+          "location": "Remote",
+          "description": "Experienced Full-Stack Developer focused on creating seamless and user-friendly applications. Proficient in NestJS for backend, NextJS for frontend, and adept at deployment and data administration. Currently working on enhancing the user experience for a stock image website.",
+          "skills": ["MongoDB", "NestJS"]
+        }
       ]
     },
     {
-      "company": "Previous roles",
-      "role": "DevOps & Backend Engineer",
-      "period": "2021 — 2022",
-      "description": "Infrastructure automation, deployment pipelines, and backend services.",
-      "highlights": [
-        "Kubernetes and Docker-based deployments",
-        "Monitoring with Grafana and Prometheus",
-        "API development with Node.js"
+      "company": "Adstia Agency",
+      "location": "India · Remote",
+      "period": "May 2023 — Aug 2023",
+      "duration": "4 mos",
+      "roles": [
+        {
+          "title": "Full-stack Developer",
+          "employmentType": "Full-time",
+          "period": "May 2023 — Aug 2023",
+          "duration": "4 mos",
+          "location": "India · Remote",
+          "description": "Expertise in backend and server management. Collaborated with the frontend team to develop UI using React. Led end-to-end web application development. Proficient in Python/Node.js for backend and React, JavaScript, HTML, and CSS for frontend. Skilled in performance optimization and cross-functional collaboration.",
+          "skills": ["Node.js", "React.js"]
+        }
+      ]
+    },
+    {
+      "company": "Growhut",
+      "location": "India · Remote",
+      "period": "Jan 2023 — May 2023",
+      "duration": "5 mos",
+      "roles": [
+        {
+          "title": "Lead Developer",
+          "period": "Apr 2023 — May 2023",
+          "duration": "2 mos",
+          "location": "India · Remote",
+          "description": "Led a team of developers and worked closely with designers throughout the project lifecycle. Responsibilities included architecture design, development, and deployment.",
+          "skills": ["Full-Stack Development", "Nginx"]
+        },
+        {
+          "title": "Back End Developer",
+          "period": "Jan 2023 — May 2023",
+          "duration": "5 mos",
+          "location": "India · Remote",
+          "description": "Responsible for mapping architecture, tech-stack selection, managing the development team, and deployment of applications to AWS.",
+          "skills": ["MongoDB", "Node.js"]
+        }
+      ]
+    },
+    {
+      "company": "Billingpanel.io",
+      "location": "Iceland · Remote",
+      "period": "Dec 2022 — Jan 2023",
+      "duration": "2 mos",
+      "roles": [
+        {
+          "title": "Back End Developer",
+          "employmentType": "Freelance",
+          "period": "Dec 2022 — Jan 2023",
+          "duration": "2 mos",
+          "location": "Iceland · Remote",
+          "description": "Worked on the product as a core developer, writing and managing API and backend workflows.",
+          "skills": ["Node.js", "REST APIs"]
+        }
+      ]
+    },
+    {
+      "company": "Yugam Technologies Pvt Ltd",
+      "period": "Jan 2022 — Dec 2022",
+      "duration": "1 yr",
+      "roles": [
+        {
+          "title": "Full-stack Developer",
+          "employmentType": "Full-time",
+          "period": "Jul 2022 — Dec 2022",
+          "duration": "6 mos",
+          "location": "Dehradun, Uttarakhand, India",
+          "description": "Writing and integrating services.",
+          "skills": ["JavaScript", "React.js"]
+        },
+        {
+          "title": "Back End Developer",
+          "employmentType": "Internship",
+          "period": "Jan 2022 — Jul 2022",
+          "duration": "7 mos",
+          "location": "Remote",
+          "description": "Writing and maintaining services and modules.",
+          "skills": ["JavaScript", "Node.js"]
+        }
+      ]
+    },
+    {
+      "company": "HackerOne",
+      "period": "Jan 2021 — Dec 2021",
+      "duration": "1 yr",
+      "url": "https://hackerone.com/rootz491?type=user",
+      "roles": [
+        {
+          "title": "Bug Bounty Hunter",
+          "employmentType": "Freelance",
+          "period": "Jan 2021 — Dec 2021",
+          "duration": "1 yr",
+          "description": "Security research and responsible disclosure through the HackerOne platform.",
+          "skills": []
+        }
       ]
     }
   ]

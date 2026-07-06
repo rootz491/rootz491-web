@@ -1,17 +1,10 @@
 'use client';
 
+import { SocialIcon } from '@/components/icons/SocialIcon';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { SectionHeading, SectionLink } from '@/components/ui/primitives';
 import { getContact } from '@/lib/content';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const iconMap = {
-  github: Github,
-  linkedin: Linkedin,
-  x: Twitter,
-  email: Mail,
-};
 
 export function ContactSection({ preview = false }: { preview?: boolean }) {
   const contact = getContact();
@@ -26,32 +19,33 @@ export function ContactSection({ preview = false }: { preview?: boolean }) {
           </div>
         </Reveal>
 
-        <Stagger className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
+        <Stagger className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
           {contact.social
             .filter(s => s.url)
-            .map(social => {
-              const Icon = iconMap[social.platform as keyof typeof iconMap];
-              return (
-                <StaggerItem key={social.platform}>
-                  <motion.a
-                    href={social.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className='flex flex-col gap-3 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-cream/30 hover:bg-surface-elevated'
-                  >
-                    {Icon && <Icon className='h-6 w-6 text-cream' />}
-                    <div>
-                      <p className='font-semibold text-cream'>{social.label}</p>
-                      {social.handle && (
-                        <p className='text-sm text-cream-muted mt-1'>{social.handle}</p>
-                      )}
-                    </div>
-                  </motion.a>
-                </StaggerItem>
-              );
-            })}
+            .map(social => (
+              <StaggerItem key={social.platform}>
+                <motion.a
+                  href={social.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className='flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-cream/30 hover:bg-surface-elevated'
+                >
+                  <div className='flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface-elevated'>
+                    <SocialIcon platform={social.platform} className='h-5 w-5 text-cream' />
+                  </div>
+                  <div className='min-w-0'>
+                    <p className='font-semibold text-cream'>{social.label}</p>
+                    {social.handle && (
+                      <p className='text-sm text-cream-muted mt-0.5 truncate'>
+                        {social.handle}
+                      </p>
+                    )}
+                  </div>
+                </motion.a>
+              </StaggerItem>
+            ))}
         </Stagger>
       </div>
     </section>

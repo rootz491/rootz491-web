@@ -1,13 +1,6 @@
+import { SocialIcon } from '@/components/icons/SocialIcon';
 import { getContact, getSite } from '@/lib/content';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import Link from 'next/link';
-
-const iconMap = {
-  github: Github,
-  linkedin: Linkedin,
-  x: Twitter,
-  email: Mail,
-};
 
 export function Footer() {
   const site = getSite();
@@ -34,25 +27,21 @@ export function Footer() {
             ))}
           </div>
 
-          <div className='flex gap-4'>
+          <div className='flex gap-3'>
             {contact.social
               .filter(s => s.url)
-              .map(social => {
-                const Icon = iconMap[social.platform as keyof typeof iconMap];
-                if (!Icon) return null;
-                return (
-                  <a
-                    key={social.platform}
-                    href={social.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label={social.label}
-                    className='text-cream-muted transition-all hover:text-cream hover:scale-110'
-                  >
-                    <Icon className='h-5 w-5' />
-                  </a>
-                );
-              })}
+              .map(social => (
+                <a
+                  key={social.platform}
+                  href={social.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label={social.label}
+                  className='flex h-9 w-9 items-center justify-center rounded-full border border-border text-cream-muted transition-all hover:border-cream/30 hover:text-cream hover:scale-110'
+                >
+                  <SocialIcon platform={social.platform} className='h-4 w-4' />
+                </a>
+              ))}
           </div>
         </div>
 

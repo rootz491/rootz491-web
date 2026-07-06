@@ -12,14 +12,20 @@
     {
       "platform": "linkedin",
       "label": "LinkedIn",
-      "url": "",
-      "handle": ""
+      "url": "https://www.linkedin.com/in/karansh491/",
+      "handle": "karansh491"
     },
     {
-      "platform": "x",
-      "label": "X",
-      "url": "",
+      "platform": "instagram",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/rootz491",
       "handle": "@rootz491"
+    },
+    {
+      "platform": "reddit",
+      "label": "Reddit",
+      "url": "https://www.reddit.com/user/rootz491/",
+      "handle": "u/rootz491"
     },
     {
       "platform": "email",

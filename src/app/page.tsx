@@ -1,3 +1,4 @@
+import { BlogsSection } from '@/components/sections/BlogsSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { ExperienceSection } from '@/components/sections/ExperienceSection';
@@ -17,6 +18,7 @@ export default function HomePage() {
       <SkillsSection preview />
       <ProjectsSection preview />
       <ExperienceSection preview />
+      <BlogsSection preview />
       <ServicesSection preview />
       <ContactSection preview />
     </>

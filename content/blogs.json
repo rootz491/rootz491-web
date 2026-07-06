@@ -1,0 +1,29 @@
+{
+  "title": "Writing",
+  "subtitle": "Occasional posts on security, development, and things I learn along the way.",
+  "platforms": [
+    {
+      "id": "medium",
+      "name": "Medium",
+      "profileUrl": "https://medium.com/@karansh491",
+      "icon": "medium",
+      "posts": [
+        {
+          "title": "How to find that badass IDOR",
+          "url": "https://medium.com/@karansh491/how-to-find-that-badass-idor-ddeed06195b0"
+        },
+        {
+          "title": "My first bounty: Stored XSS",
+          "url": "https://medium.com/@karansh491/my-first-bounty-stored-xss-96dea41fd9cf"
+        }
+      ]
+    },
+    {
+      "id": "devto",
+      "name": "DEV Community",
+      "profileUrl": "https://dev.to/karansh491",
+      "icon": "devto",
+      "posts": []
+    }
+  ]
+}

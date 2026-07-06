@@ -1,3 +1,4 @@
+import blogsData from '../../../content/blogs.json';
 import aboutData from '../../../content/about.json';
 import contactData from '../../../content/contact.json';
 import experienceData from '../../../content/experience.json';
@@ -7,6 +8,7 @@ import servicesData from '../../../content/services.json';
 import siteData from '../../../content/site.json';
 import skillsData from '../../../content/skills.json';
 import {
+  BlogsSchema,
   AboutSchema,
   ContactSchema,
   ExperienceSchema,
@@ -15,6 +17,7 @@ import {
   ServicesSchema,
   SiteSchema,
   SkillsSchema,
+  type BlogsContent,
   type AboutContent,
   type ContactContent,
   type ExperienceContent,
@@ -35,6 +38,7 @@ let cache: {
   experience: ExperienceContent;
   services: ServicesContent;
   contact: ContactContent;
+  blogs: BlogsContent;
 } | null = null;
 
 function loadAll() {
@@ -49,6 +53,7 @@ function loadAll() {
     experience: ExperienceSchema.parse(experienceData),
     services: ServicesSchema.parse(servicesData),
     contact: ContactSchema.parse(contactData),
+    blogs: BlogsSchema.parse(blogsData),
   };
 
   return cache;
@@ -92,4 +97,8 @@ export function getServices(): ServicesContent {
 
 export function getContact(): ContactContent {
   return loadAll().contact;
+}
+
+export function getBlogs(): BlogsContent {
+  return loadAll().blogs;
 }

@@ -5,7 +5,6 @@ const redirects: Record<string, string> = {
   '/work': '/projects',
   '/services': '/projects',
   '/government': '/about',
-  '/blog': '/',
 };
 
 export function middleware(request: NextRequest) {

@@ -101,18 +101,29 @@ export const ProjectsSchema = z.object({
   items: z.array(ProjectSchema),
 });
 
+export const ExperienceRoleSchema = z.object({
+  title: z.string(),
+  employmentType: z.string().optional(),
+  period: z.string(),
+  duration: z.string().optional(),
+  location: z.string().optional(),
+  description: z.string(),
+  skills: z.array(z.string()).optional(),
+});
+
+export const ExperienceItemSchema = z.object({
+  company: z.string(),
+  location: z.string().optional(),
+  period: z.string(),
+  duration: z.string().optional(),
+  url: z.string().optional(),
+  roles: z.array(ExperienceRoleSchema),
+});
+
 export const ExperienceSchema = z.object({
   title: z.string(),
   subtitle: z.string(),
-  items: z.array(
-    z.object({
-      company: z.string(),
-      role: z.string(),
-      period: z.string(),
-      description: z.string(),
-      highlights: z.array(z.string()),
-    })
-  ),
+  items: z.array(ExperienceItemSchema),
 });
 
 export const ServicesSchema = z.object({
@@ -141,6 +152,26 @@ export const ContactSchema = z.object({
   ),
 });
 
+export const BlogPostSchema = z.object({
+  title: z.string(),
+  url: z.string(),
+  date: z.string().optional(),
+});
+
+export const BlogPlatformSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  profileUrl: z.string(),
+  icon: z.string(),
+  posts: z.array(BlogPostSchema),
+});
+
+export const BlogsSchema = z.object({
+  title: z.string(),
+  subtitle: z.string(),
+  platforms: z.array(BlogPlatformSchema),
+});
+
 export type SiteContent = z.infer<typeof SiteSchema>;
 export type ProfileContent = z.infer<typeof ProfileSchema>;
 export type AboutContent = z.infer<typeof AboutSchema>;
@@ -150,3 +181,5 @@ export type ProjectsContent = z.infer<typeof ProjectsSchema>;
 export type ExperienceContent = z.infer<typeof ExperienceSchema>;
 export type ServicesContent = z.infer<typeof ServicesSchema>;
 export type ContactContent = z.infer<typeof ContactSchema>;
+export type BlogsContent = z.infer<typeof BlogsSchema>;
+export type BlogPlatform = z.infer<typeof BlogPlatformSchema>;
