@@ -1,0 +1,14 @@
+{
+  "title": "About me",
+  "intro": "I'm Karan Sharma — a full-stack developer who goes by rootz491 online.",
+  "bio": [
+    "I started in DevOps and grew into full-stack development. Most of my work is taking products from prototype to production: frontends, APIs, databases, CI/CD, and the ops that keep things running.",
+    "I care about performance, maintainability, and shipping things that work under real traffic — not just in demos."
+  ],
+  "highlights": [
+    "4+ years full-stack & DevOps",
+    "Based in Dehradun, open to remote",
+    "Next.js, NestJS, Elasticsearch, Kubernetes, AWS"
+  ],
+  "location": "Dehradun, Uttarakhand, India"
+}

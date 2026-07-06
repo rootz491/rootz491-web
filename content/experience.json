@@ -1,0 +1,28 @@
+{
+  "title": "Experience",
+  "subtitle": "Where I've worked and what I've shipped.",
+  "items": [
+    {
+      "company": "Freelance / Contract",
+      "role": "Full-stack Developer",
+      "period": "2022 — Present",
+      "description": "Building web apps, APIs, and infrastructure for startups and small teams.",
+      "highlights": [
+        "Scaled Creazilla backend to 10M+ assets",
+        "Delivered tourism and content platforms end-to-end",
+        "Set up CI/CD, monitoring, and cloud infra"
+      ]
+    },
+    {
+      "company": "Previous roles",
+      "role": "DevOps & Backend Engineer",
+      "period": "2021 — 2022",
+      "description": "Infrastructure automation, deployment pipelines, and backend services.",
+      "highlights": [
+        "Kubernetes and Docker-based deployments",
+        "Monitoring with Grafana and Prometheus",
+        "API development with Node.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Projects",
+  "subtitle": "Selected work — platforms I've built and scaled.",
+  "items": [
+    {
+      "slug": "creazilla",
+      "title": "Creazilla",
+      "summary": "Backend for a platform serving 10M+ free graphics with Elasticsearch search and Redis caching.",
+      "role": "Backend Developer",
+      "thumb": "/images/work/creazilla-website.png",
+      "liveUrl": "https://creazilla.com",
+      "githubUrl": "",
+      "stack": ["NestJS", "MongoDB", "Elasticsearch", "Redis", "Bull Queue", "Node.js"],
+      "kpis": [
+        { "label": "Resources", "value": "10M+" },
+        { "label": "Search", "value": "<200ms" },
+        { "label": "Uptime", "value": "99.9%" }
+      ],
+      "challenge": "Serve millions of graphic assets with fast search and stable performance under high traffic.",
+      "approach": [
+        "Architected backend with NestJS and queue-based processing",
+        "Elasticsearch for sub-200ms asset search",
+        "MongoDB for flexible document storage",
+        "Redis caching and Bull Queue for background jobs",
+        "Multi-server deployment with CDN integration"
+      ]
+    },
+    {
+      "slug": "kaluwala",
+      "title": "Kaluwala.in",
+      "summary": "Village tourism platform with Sanity CMS and a Telegram bot for community photo contributions.",
+      "role": "Full-stack Developer",
+      "thumb": "/images/work/kaluwala-website.jpg",
+      "liveUrl": "https://kaluwala.in",
+      "githubUrl": "",
+      "stack": ["Next.js 15", "TypeScript", "Sanity CMS", "Cloudflare Workers", "Telegram Bot API"],
+      "kpis": [
+        { "label": "Users", "value": "150+" },
+        { "label": "Photos", "value": "30+" },
+        { "label": "Subscribers", "value": "10+" }
+      ],
+      "challenge": "Enable easy content contributions from a remote village with moderation and real-time blog alerts.",
+      "approach": [
+        "Next.js tourism site with SEO-first structure",
+        "Sanity CMS for blog and content management",
+        "Telegram bot on Cloudflare Workers for uploads",
+        "Admin moderation workflow",
+        "Interactive village map with Leaflet.js"
+      ]
+    },
+    {
+      "slug": "explorewithnurse",
+      "title": "ExploreWithNurse",
+      "summary": "Travel blog with headless CMS, SEO-optimised pages, and strong Core Web Vitals.",
+      "role": "Full-stack Developer",
+      "thumb": "/images/work/explorewithnurse-website.png",
+      "liveUrl": "https://explorewithnurse.com",
+      "githubUrl": "",
+      "stack": ["Next.js", "React", "TypeScript", "Sanity CMS", "Tailwind CSS", "Vercel"],
+      "kpis": [
+        { "label": "Page Speed", "value": "95+" },
+        { "label": "Mobile", "value": "A+" },
+        { "label": "CWV", "value": "Pass" }
+      ],
+      "challenge": "A performant blog that ranks well and works on slow mobile networks with self-service publishing.",
+      "approach": [
+        "Next.js App Router with SSG/ISR",
+        "Sanity CMS with live preview",
+        "JSON-LD structured data for SEO",
+        "Image optimisation with WebP",
+        "Deployed on Vercel with edge caching"
+      ]
+    }
+  ]
+}

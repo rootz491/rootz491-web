@@ -1,0 +1,22 @@
+{
+  "title": "Skills & technologies",
+  "subtitle": "Tools and stacks I reach for most often.",
+  "categories": [
+    {
+      "name": "Frontend",
+      "items": ["TypeScript", "React", "Next.js", "Tailwind CSS"]
+    },
+    {
+      "name": "Backend",
+      "items": ["Node.js", "NestJS", "Python", "FastAPI"]
+    },
+    {
+      "name": "Data",
+      "items": ["PostgreSQL", "MongoDB", "Elasticsearch", "Redis"]
+    },
+    {
+      "name": "DevOps",
+      "items": ["Docker", "Kubernetes", "Terraform", "AWS", "GCP"]
+    }
+  ]
+}

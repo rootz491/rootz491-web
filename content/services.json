@@ -1,0 +1,21 @@
+{
+  "title": "Services",
+  "subtitle": "What I can help you with.",
+  "items": [
+    {
+      "icon": "code",
+      "title": "Web development",
+      "description": "Full-stack apps with Next.js, React, and TypeScript — from MVP to production."
+    },
+    {
+      "icon": "server",
+      "title": "APIs & backends",
+      "description": "Scalable APIs with NestJS or FastAPI, databases, caching, and search."
+    },
+    {
+      "icon": "cloud",
+      "title": "DevOps & cloud",
+      "description": "Docker, Kubernetes, CI/CD, AWS/GCP — infrastructure that ships reliably."
+    }
+  ]
+}

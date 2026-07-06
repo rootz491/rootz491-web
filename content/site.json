@@ -1,0 +1,40 @@
+{
+  "brand": {
+    "name": "Karan Sharma",
+    "alias": "rootz491",
+    "tagline": "Full-stack developer",
+    "favicon": "/assets/favicon.ico"
+  },
+  "theme": {
+    "background": "#0D0D0D",
+    "surface": "#141414",
+    "surfaceElevated": "#1C1C1C",
+    "border": "#2E2E2E",
+    "text": "#FFFDF8",
+    "textMuted": "#A8A29E",
+    "accent": "#FFFDF8"
+  },
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Projects", "href": "/projects" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "resume": {
+      "label": "Resume",
+      "href": "/resume/karan-sharma-resume.pdf"
+    }
+  },
+  "seo": {
+    "defaultTitle": "Karan Sharma — Full-stack Developer",
+    "defaultDescription": "Portfolio of Karan Sharma (rootz491). Full-stack developer building web apps, APIs, and infrastructure.",
+    "keywords": ["full-stack", "developer", "Next.js", "TypeScript", "DevOps", "portfolio"],
+    "ogImage": "/images/og-image.jpg",
+    "twitter": "@rootz491",
+    "url": "https://rootz491.com"
+  },
+  "footer": {
+    "note": "© 2025 Karan Sharma. Built with Next.js."
+  }
+}
