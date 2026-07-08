@@ -3,6 +3,7 @@
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { SectionHeading, SectionLink } from '@/components/ui/primitives';
 import { getExperience } from '@/lib/content';
+import { calcDuration } from '@/lib/utils';
 import Link from 'next/link';
 
 export function ExperienceSection({ preview = false }: { preview?: boolean }) {
@@ -42,7 +43,7 @@ export function ExperienceSection({ preview = false }: { preview?: boolean }) {
                       )}
                       <p className='text-sm text-cream-muted mt-1'>
                         {item.period}
-                        {item.duration ? ` · ${item.duration}` : ''}
+                        {item.period ? ` · ${calcDuration(item.period)}` : ''}
                         {item.location ? ` · ${item.location}` : ''}
                       </p>
                     </div>

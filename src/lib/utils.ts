@@ -66,3 +66,39 @@ export function isValidPhone(phone: string): boolean {
   // Check for 10 digits (with optional 91 prefix)
   return /^(91)?[6-9]\d{9}$/.test(cleaned);
 }
+
+const MONTH_MAP: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+function parsePeriodEnd(token: string): Date {
+  if (token === 'Present') return new Date();
+  const [mon, year] = token.split(' ');
+  return new Date(parseInt(year), MONTH_MAP[mon], 1);
+}
+
+/**
+ * Calculate a human-readable duration from a period string like
+ * "Aug 2023 — Present" or "May 2023 — Aug 2023".
+ * Returns a string such as "1 yr 7 mos", "4 mos", "1 yr", etc.
+ */
+export function calcDuration(period: string): string {
+  const [startToken, endToken] = period.split('—').map(s => s.trim());
+  const [startMon, startYear] = startToken.split(' ');
+  const start = new Date(parseInt(startYear), MONTH_MAP[startMon], 1);
+  const end = parsePeriodEnd(endToken);
+
+  let totalMonths =
+    (end.getFullYear() - start.getFullYear()) * 12 +
+    (end.getMonth() - start.getMonth());
+  if (totalMonths < 1) totalMonths = 1;
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  const parts: string[] = [];
+  if (years > 0) parts.push(`${years} yr${years > 1 ? 's' : ''}`);
+  if (months > 0) parts.push(`${months} mo${months > 1 ? 's' : ''}`);
+  return parts.join(' ');
+}
