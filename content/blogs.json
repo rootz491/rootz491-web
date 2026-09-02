@@ -24,6 +24,30 @@
       "profileUrl": "https://dev.to/karansh491",
       "icon": "devto",
       "posts": []
+    },
+    {
+      "id": "hashnode",
+      "name": "Hashnode",
+      "profileUrl": "https://karansh491.hashnode.dev",
+      "icon": "hashnode",
+      "posts": [
+        {
+          "title": "Let's secure your NextJs webapp",
+          "url": "https://karansh491.hashnode.dev/lets-secure-your-nextjs-webapp"
+        },
+        {
+          "title": "Integrate Stripe With Your Next Big Idea",
+          "url": "https://karansh491.hashnode.dev/integrate-stripe-with-your-next-big-idea"
+        },
+        {
+          "title": "JWT and Session",
+          "url": "https://karansh491.hashnode.dev/jwt-and-session"
+        },
+        {
+          "title": "Let's Firebase everything",
+          "url": "https://karansh491.hashnode.dev/lets-firebase-everything"
+        }
+      ]
     }
   ]
 }
