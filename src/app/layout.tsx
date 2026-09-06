@@ -1,6 +1,6 @@
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
-import { generateMetadata as genMeta } from '@/lib/seo';
+import { generateMetadata as genMeta, getPersonSchema, getWebSiteSchema } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -17,9 +17,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personSchema = getPersonSchema();
+  const websiteSchema = getWebSiteSchema();
+
   return (
     <html lang='en' className='dark'>
       <body className={`${inter.variable} font-sans`}>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <div className='flex min-h-screen flex-col'>
           <Header />
           <main className='flex-1'>{children}</main>
