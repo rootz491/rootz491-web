@@ -1,23 +1,39 @@
 import { getContact, getSite } from '@/lib/content';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 interface SEOProps {
   title?: string;
   description?: string;
   path?: string;
+  /** Override the default OG / Twitter card image with a page-specific one. */
+  ogImage?: string;
 }
 
 export function generateMetadata({
   title,
   description,
   path = '',
+  ogImage,
 }: SEOProps = {}): Metadata {
   const site = getSite();
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || site.seo.url;
 
-  const metaTitle = title ? `${title} — ${site.brand.name}` : site.seo.defaultTitle;
+  /**
+   * When a title is provided (child pages), return it as a plain string so
+   * the root layout's title.template ("%s — Karan Sharma") appends the site
+   * name automatically. When called with no title (root layout), return a
+   * template object that sets both the default and the template.
+   */
+  const metaTitle: Metadata['title'] = title
+    ? title
+    : { default: site.seo.defaultTitle, template: `%s — ${site.brand.name}` };
+
+  // Build the explicit OG/Twitter title (always include the site name suffix).
+  const ogTitle = title ? `${title} — ${site.brand.name}` : site.seo.defaultTitle;
+
   const metaDescription = description || site.seo.defaultDescription;
   const url = `${baseUrl}${path}`;
+  const resolvedOgImage = ogImage || site.seo.ogImage;
 
   return {
     metadataBase: new URL(baseUrl),
@@ -25,23 +41,30 @@ export function generateMetadata({
     description: metaDescription,
     keywords: site.seo.keywords,
     authors: [{ name: site.brand.name }],
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       type: 'website',
       url,
-      title: metaTitle,
+      title: ogTitle,
       description: metaDescription,
       siteName: site.brand.name,
-      images: [{ url: site.seo.ogImage, width: 1200, height: 630 }],
+      images: [{ url: resolvedOgImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       site: site.seo.twitter,
       creator: site.seo.twitter,
-      title: metaTitle,
+      title: ogTitle,
       description: metaDescription,
-      images: [site.seo.ogImage],
+      images: [resolvedOgImage],
     },
-    icons: { icon: site.brand.favicon },
+    icons: {
+      icon: site.brand.favicon,
+      shortcut: site.brand.favicon,
+      apple: site.brand.favicon,
+    },
   };
 }
 
@@ -59,5 +82,19 @@ export function getPersonSchema() {
     email: contact.email,
     sameAs: contact.social.map(s => s.url).filter(Boolean),
     jobTitle: site.brand.tagline,
+  };
+}
+
+export function getWebSiteSchema() {
+  const site = getSite();
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || site.seo.url;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: site.brand.name,
+    alternateName: site.brand.wordmark,
+    url: baseUrl,
+    description: site.seo.defaultDescription,
   };
 }

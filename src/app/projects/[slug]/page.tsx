@@ -24,6 +24,7 @@ export async function generateMetadata({
     title: project.title,
     description: project.summary,
     path: `/projects/${slug}`,
+    ogImage: project.thumb,
   });
 }
 
