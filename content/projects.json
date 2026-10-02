@@ -31,7 +31,7 @@
       "summary": "Village tourism platform with Sanity CMS and a Telegram bot for community photo contributions.",
       "role": "Full-stack Developer",
       "thumb": "/images/work/kaluwala-website.jpg",
-      "liveUrl": "https://kaluwala.in",
+      "liveUrl": "https://kaluwala-web.vercel.app",
       "githubUrl": "",
       "stack": ["Next.js 15", "TypeScript", "Sanity CMS", "Cloudflare Workers", "Telegram Bot API"],
       "kpis": [
