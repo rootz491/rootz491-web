@@ -1,5 +1,6 @@
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { generateMetadata as genMeta, getPersonSchema, getWebSiteSchema } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -31,11 +32,13 @@ export default function RootLayout({
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <div className='flex min-h-screen flex-col'>
-          <Header />
-          <main className='flex-1'>{children}</main>
-          <Footer />
-        </div>
+        <SmoothScroll>
+          <div className='flex min-h-screen flex-col'>
+            <Header />
+            <main className='flex-1'>{children}</main>
+            <Footer />
+          </div>
+        </SmoothScroll>
       </body>
     </html>
   );

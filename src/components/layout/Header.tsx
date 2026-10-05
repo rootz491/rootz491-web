@@ -2,7 +2,7 @@
 
 import { getSite } from '@/lib/content';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { Download, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,13 +12,24 @@ export function Header() {
   const site = getSite();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, 'change', latest => {
+    setScrolled(latest > 24);
+  });
 
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className='sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl'
+      className={cn(
+        'sticky top-0 z-50 border-b transition-colors duration-300',
+        scrolled
+          ? 'border-border bg-background/90 backdrop-blur-xl'
+          : 'border-border/60 bg-background/80 backdrop-blur-xl'
+      )}
     >
       <nav className='container flex h-16 items-center justify-between px-6'>
         <Link

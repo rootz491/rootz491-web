@@ -3,16 +3,22 @@
 import { Button } from '@/components/ui/primitives';
 import { FadeIn } from '@/components/motion/Reveal';
 import { getProfile } from '@/lib/content';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export function HeroSection({ preview = false }: { preview?: boolean }) {
   const { hero } = getProfile();
   const [imageError, setImageError] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+  const avatarY = useTransform(scrollYProgress, [0, 1], [0, -16]);
 
   return (
-    <section className={preview ? 'py-16' : 'py-24 md:py-32'}>
+    <section ref={sectionRef} className={preview ? 'py-16' : 'py-24 md:py-32'}>
       <div className='container px-6'>
         <div className='grid items-center gap-12 lg:grid-cols-[1fr_auto]'>
           <div className='space-y-6 max-w-3xl'>
@@ -76,6 +82,7 @@ export function HeroSection({ preview = false }: { preview?: boolean }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ y: avatarY }}
             className='relative mx-auto h-48 w-48 shrink-0 overflow-hidden rounded-full border-2 border-border md:h-56 md:w-56'
           >
             {!imageError && hero.avatar ? (
