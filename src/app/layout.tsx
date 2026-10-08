@@ -1,5 +1,6 @@
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { SkipLink } from '@/components/ui/SkipLink';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { generateMetadata as genMeta, getPersonSchema, getWebSiteSchema } from '@/lib/seo';
 import type { Metadata } from 'next';
@@ -9,6 +10,7 @@ import './globals.css';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 });
 
 export const metadata: Metadata = genMeta();
@@ -34,8 +36,11 @@ export default function RootLayout({
         />
         <SmoothScroll>
           <div className='flex min-h-screen flex-col'>
+            <SkipLink />
             <Header />
-            <main className='flex-1'>{children}</main>
+            <main id='main' className='flex-1'>
+              {children}
+            </main>
             <Footer />
           </div>
         </SmoothScroll>

@@ -10,7 +10,7 @@ export function ContactSection({ preview = false }: { preview?: boolean }) {
   const contact = getContact();
 
   return (
-    <section className='border-t border-border py-16 md:py-24'>
+    <section className='border-t border-border section-spacing'>
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
@@ -33,7 +33,7 @@ export function ContactSection({ preview = false }: { preview?: boolean }) {
                   className='flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-cream/30 hover:bg-surface-elevated'
                 >
                   <div className='flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface-elevated'>
-                    <SocialIcon platform={social.platform} className='h-5 w-5 text-cream' />
+                    <SocialIcon platform={social.platform} className='h-5 w-5 text-cream' aria-hidden='true' />
                   </div>
                   <div className='min-w-0'>
                     <p className='font-semibold text-cream'>{social.label}</p>

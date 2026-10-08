@@ -16,7 +16,7 @@ export function ServicesSection({ preview = false }: { preview?: boolean }) {
   const services = getServices();
 
   return (
-    <section className='border-t border-border py-16 md:py-24'>
+    <section className='border-t border-border section-spacing'>
       <div className='container px-6'>
         <Reveal>
           <SectionHeading
@@ -35,8 +35,8 @@ export function ServicesSection({ preview = false }: { preview?: boolean }) {
                   whileHover={{ y: -4, borderColor: 'rgba(255,253,248,0.2)' }}
                   className='rounded-2xl border border-border bg-surface p-8 h-full transition-colors'
                 >
-                  <Icon className='h-8 w-8 text-cream mb-5' />
-                  <h3 className='text-lg font-semibold text-cream mb-2'>{service.title}</h3>
+                  <Icon className='h-8 w-8 text-cream mb-5' aria-hidden='true' />
+                  <h3 className='text-h3 text-cream mb-2'>{service.title}</h3>
                   <p className='text-sm text-cream-muted leading-relaxed'>
                     {service.description}
                   </p>

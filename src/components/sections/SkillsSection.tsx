@@ -10,7 +10,7 @@ export function SkillsSection({ preview = false }: { preview?: boolean }) {
   const categories = preview ? skills.categories.slice(0, 3) : skills.categories;
 
   return (
-    <section className='border-t border-border py-16 md:py-24'>
+    <section className='border-t border-border section-spacing'>
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
@@ -57,7 +57,7 @@ export function SkillsSection({ preview = false }: { preview?: boolean }) {
                     key={item}
                     className='flex items-start gap-2 text-sm text-cream-muted'
                   >
-                    <span className='text-cream shrink-0'>•</span>
+                    <span className='text-cream shrink-0' aria-hidden='true'>•</span>
                     {item}
                   </li>
                 ))}

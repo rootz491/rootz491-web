@@ -29,7 +29,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]',
+    'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium min-h-11 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] motion-reduce:hover:scale-100 motion-reduce:active:scale-100',
     variants[variant],
     className
   );
@@ -66,7 +66,7 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn('space-y-3', className)}>
-      <h2 className='text-[25px] font-semibold leading-[38px] text-cream'>{title}</h2>
+      <h2 className='text-h2 text-cream'>{title}</h2>
       {subtitle && <p className='text-base text-cream-muted max-w-2xl'>{subtitle}</p>}
     </div>
   );
@@ -79,7 +79,9 @@ export function SectionLink({ href, label }: { href: string; label: string }) {
       className='group inline-flex items-center gap-2 text-sm font-medium text-cream-muted transition-colors hover:text-cream'
     >
       {label}
-      <span className='transition-transform duration-300 group-hover:translate-x-1'>→</span>
+      <span aria-hidden='true' className='transition-transform duration-300 group-hover:translate-x-1 motion-reduce:group-hover:translate-x-0'>
+        →
+      </span>
     </Link>
   );
 }

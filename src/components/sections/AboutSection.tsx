@@ -8,7 +8,7 @@ export function AboutSection({ preview = false }: { preview?: boolean }) {
   const about = getAbout();
 
   return (
-    <section className='border-t border-border py-16 md:py-24'>
+    <section className='border-t border-border section-spacing'>
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>

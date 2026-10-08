@@ -15,17 +15,19 @@ export function Footer() {
             <p className='text-sm text-cream-muted'>{site.brand.tagline}</p>
           </div>
 
-          <div className='flex flex-wrap gap-6'>
-            {site.nav.links.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className='text-sm text-cream-muted transition-colors hover:text-cream'
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+          <nav aria-label='Footer navigation'>
+            <div className='flex flex-wrap gap-6'>
+              {site.nav.links.map(link => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className='text-sm text-cream-muted transition-colors hover:text-cream'
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
 
           <div className='flex gap-3'>
             {contact.social
@@ -37,7 +39,7 @@ export function Footer() {
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label={social.label}
-                  className='flex h-9 w-9 items-center justify-center rounded-full border border-border text-cream-muted transition-all hover:border-cream/30 hover:text-cream hover:scale-110'
+                  className='flex h-11 w-11 items-center justify-center rounded-full border border-border text-cream-muted transition-all hover:border-cream/30 hover:text-cream hover:scale-110 motion-reduce:hover:scale-100'
                 >
                   <SocialIcon platform={social.platform} className='h-4 w-4' />
                 </a>

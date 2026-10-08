@@ -12,7 +12,7 @@ export function BlogsSection({ preview = false }: { preview?: boolean }) {
   const platforms = preview ? blogs.platforms.slice(0, 2) : blogs.platforms;
 
   return (
-    <section className='border-t border-border py-16 md:py-24'>
+    <section className='border-t border-border section-spacing'>
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
@@ -43,7 +43,7 @@ export function BlogsSection({ preview = false }: { preview?: boolean }) {
                       className='text-sm text-cream-muted hover:text-cream transition-colors inline-flex items-center gap-1'
                     >
                       Profile
-                      <ExternalLink className='h-3.5 w-3.5' />
+                      <ExternalLink className='h-3.5 w-3.5' aria-hidden='true' />
                     </a>
                   )}
                 </div>
@@ -59,8 +59,8 @@ export function BlogsSection({ preview = false }: { preview?: boolean }) {
                             rel='noopener noreferrer'
                             className='group flex items-start gap-2 text-sm text-cream-muted hover:text-cream transition-colors'
                           >
-                            <span className='text-cream mt-0.5 shrink-0'>→</span>
-                            <span className='group-hover:underline'>{post.title}</span>
+                            <span className='text-cream mt-0.5 shrink-0' aria-hidden='true'>→</span>
+                            <span className='group-hover:underline min-w-0 break-words'>{post.title}</span>
                           </a>
                         </li>
                       )
