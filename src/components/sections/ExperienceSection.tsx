@@ -11,7 +11,7 @@ export function ExperienceSection({ preview = false }: { preview?: boolean }) {
   const items = preview ? experience.items.slice(0, 3) : experience.items;
 
   return (
-    <section className='border-t border-border py-16 md:py-24'>
+    <section className='border-t border-border section-spacing'>
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
@@ -39,7 +39,7 @@ export function ExperienceSection({ preview = false }: { preview?: boolean }) {
                           {item.company}
                         </Link>
                       ) : (
-                        <h3 className='text-lg font-semibold text-cream'>{item.company}</h3>
+                        <h3 className='text-h3 text-cream'>{item.company}</h3>
                       )}
                       <p className='text-sm text-cream-muted mt-1'>
                         {item.period}
@@ -66,7 +66,7 @@ export function ExperienceSection({ preview = false }: { preview?: boolean }) {
                         )}
                         {!preview && (
                           <>
-                            <p className='mt-2 text-sm text-cream-muted leading-relaxed'>
+                            <p className='mt-2 text-sm text-cream-muted leading-relaxed break-words'>
                               {role.description}
                             </p>
                             {role.skills && role.skills.length > 0 && (

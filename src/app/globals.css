@@ -30,10 +30,42 @@
   ::selection {
     @apply bg-cream/20 text-cream;
   }
+
+  /* Visible, radius-aware focus ring for all keyboard-focusable elements. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-cream ring-offset-2 ring-offset-background;
+  }
+
+  /* Respect prefers-reduced-motion for pure-CSS transitions/animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Shared type scale */
+  .text-h1 {
+    @apply font-black text-4xl md:text-5xl leading-tight;
+  }
+  .text-h2 {
+    @apply font-semibold text-2xl md:text-3xl;
+  }
+  .text-h3 {
+    @apply font-semibold text-lg;
+  }
+
+  /* Shared section vertical rhythm */
+  .section-spacing {
+    @apply py-16 md:py-24;
   }
 }

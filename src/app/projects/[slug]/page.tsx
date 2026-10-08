@@ -39,27 +39,32 @@ export default async function ProjectDetailPage({
   if (!project) notFound();
 
   return (
-    <article className='py-16 md:py-24'>
+    <article className='section-spacing'>
       <div className='container px-6 max-w-4xl'>
         <Reveal>
           <Link
             href='/projects'
             className='inline-flex items-center gap-2 text-sm text-cream-muted hover:text-cream mb-8 transition-colors'
           >
-            <ArrowLeft className='h-4 w-4' />
+            <ArrowLeft className='h-4 w-4' aria-hidden='true' />
             Back to projects
           </Link>
 
           <p className='text-sm font-medium uppercase tracking-wider text-cream-muted mb-3'>
             {project.role}
           </p>
-          <h1 className='text-4xl md:text-5xl font-black text-cream mb-4'>{project.title}</h1>
+          <h1 className='text-h1 text-cream mb-4'>{project.title}</h1>
           <p className='text-lg text-cream-muted leading-relaxed mb-8'>{project.summary}</p>
 
           {project.liveUrl && (
-            <Button href={project.liveUrl} variant='secondary' className='mb-12'>
+            <Button
+              href={project.liveUrl}
+              variant='secondary'
+              className='mb-12'
+              aria-label={`View live site for ${project.title}`}
+            >
               Visit live site
-              <ExternalLink className='h-4 w-4' />
+              <ExternalLink className='h-4 w-4' aria-hidden='true' />
             </Button>
           )}
         </Reveal>
@@ -68,10 +73,11 @@ export default async function ProjectDetailPage({
           <div className='relative aspect-video overflow-hidden rounded-2xl border border-border mb-12'>
             <Image
               src={project.thumb}
-              alt={project.title}
+              alt={`Screenshot of ${project.title}`}
               fill
-              className='object-cover'
+              sizes='(max-width: 768px) 100vw, 800px'
               priority
+              className='object-cover'
             />
           </div>
         </Reveal>
@@ -92,15 +98,15 @@ export default async function ProjectDetailPage({
         <Reveal delay={0.2}>
           <div className='grid gap-10 md:grid-cols-2 mb-12'>
             <div>
-              <h2 className='text-lg font-semibold text-cream mb-3'>Problem</h2>
+              <h2 className='text-h3 text-cream mb-3'>Problem</h2>
               <p className='text-cream-muted leading-relaxed'>{project.challenge}</p>
             </div>
             <div>
-              <h2 className='text-lg font-semibold text-cream mb-3'>What I built</h2>
+              <h2 className='text-h3 text-cream mb-3'>What I built</h2>
               <ul className='space-y-2'>
                 {project.approach.map((step, i) => (
                   <li key={i} className='flex gap-2 text-cream-muted text-sm'>
-                    <span className='text-cream'>→</span>
+                    <span className='text-cream' aria-hidden='true'>→</span>
                     {step}
                   </li>
                 ))}
@@ -110,7 +116,7 @@ export default async function ProjectDetailPage({
         </Reveal>
 
         <Reveal delay={0.25}>
-          <h2 className='text-lg font-semibold text-cream mb-4'>Stack</h2>
+          <h2 className='text-h3 text-cream mb-4'>Stack</h2>
           <div className='flex flex-wrap gap-2'>
             {project.stack.map(tech => (
               <span
