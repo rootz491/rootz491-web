@@ -1,0 +1,182 @@
+{
+  "title": "Tools",
+  "subtitle": "Browser-only developer utilities and recon tools I build and use.",
+  "items": [
+    {
+      "slug": "tools-hub",
+      "name": "Tools Hub",
+      "description": "All browser-only developer utilities in one place.",
+      "category": "Dev",
+      "icon": "LayoutGrid",
+      "url": "https://tools.rootz491.com/"
+    },
+    {
+      "slug": "json",
+      "name": "JSON",
+      "description": "Format, validate, and minify JSON.",
+      "category": "Dev",
+      "icon": "Braces",
+      "url": "https://tools.rootz491.com/t/json"
+    },
+    {
+      "slug": "jwt",
+      "name": "JWT",
+      "description": "Decode and verify JSON Web Tokens.",
+      "category": "Dev",
+      "icon": "KeyRound",
+      "url": "https://tools.rootz491.com/t/jwt"
+    },
+    {
+      "slug": "base64",
+      "name": "Base64",
+      "description": "Encode and decode Base64 text.",
+      "category": "Dev",
+      "icon": "Binary",
+      "url": "https://tools.rootz491.com/t/base64"
+    },
+    {
+      "slug": "uuid",
+      "name": "UUID",
+      "description": "Generate v4 and v7 UUIDs in bulk.",
+      "category": "Dev",
+      "icon": "Fingerprint",
+      "url": "https://tools.rootz491.com/t/uuid"
+    },
+    {
+      "slug": "cron",
+      "name": "Cron",
+      "description": "Explain and preview cron schedules.",
+      "category": "Dev",
+      "icon": "CalendarClock",
+      "url": "https://tools.rootz491.com/t/cron"
+    },
+    {
+      "slug": "timestamp",
+      "name": "Timestamp",
+      "description": "Convert Unix time across zones, IST first.",
+      "category": "Dev",
+      "icon": "Clock",
+      "url": "https://tools.rootz491.com/t/timestamp"
+    },
+    {
+      "slug": "hash",
+      "name": "Hash & HMAC",
+      "description": "Compute hashes and HMAC signatures.",
+      "category": "Dev",
+      "icon": "Hash",
+      "url": "https://tools.rootz491.com/t/hash"
+    },
+    {
+      "slug": "url",
+      "name": "URL",
+      "description": "Encode/decode URLs and parse query strings.",
+      "category": "Dev",
+      "icon": "Link",
+      "url": "https://tools.rootz491.com/t/url"
+    },
+    {
+      "slug": "diff",
+      "name": "Diff",
+      "description": "Compare two blocks of text line by line.",
+      "category": "Dev",
+      "icon": "GitCompare",
+      "url": "https://tools.rootz491.com/t/diff"
+    },
+    {
+      "slug": "regex",
+      "name": "Regex",
+      "description": "Test and debug regular expressions.",
+      "category": "Dev",
+      "icon": "Regex",
+      "url": "https://tools.rootz491.com/t/regex"
+    },
+    {
+      "slug": "qr",
+      "name": "QR Code",
+      "description": "Generate QR codes from text or URLs.",
+      "category": "Dev",
+      "icon": "QrCode",
+      "url": "https://tools.rootz491.com/t/qr"
+    },
+    {
+      "slug": "gst",
+      "name": "GST Calculator",
+      "description": "Split CGST/SGST/IGST and read amounts in lakh/crore.",
+      "category": "Finance/India",
+      "icon": "IndianRupee",
+      "url": "https://tools.rootz491.com/t/gst"
+    },
+    {
+      "slug": "dns",
+      "name": "DNS Lookup",
+      "description": "Resolve A, AAAA, MX, TXT, and NS records.",
+      "category": "Security/Recon",
+      "icon": "Network",
+      "url": "https://tools.rootz491.com/r/dns"
+    },
+    {
+      "slug": "reverse-dns",
+      "name": "Reverse DNS",
+      "description": "Find PTR records for an IP address.",
+      "category": "Security/Recon",
+      "icon": "ArrowLeftRight",
+      "url": "https://tools.rootz491.com/r/rdns"
+    },
+    {
+      "slug": "headers",
+      "name": "HTTP Headers",
+      "description": "Inspect response headers and security flags.",
+      "category": "Security/Recon",
+      "icon": "FileText",
+      "url": "https://tools.rootz491.com/r/headers"
+    },
+    {
+      "slug": "subdomains",
+      "name": "Subdomains",
+      "description": "Discover subdomains from certificate transparency logs.",
+      "category": "Security/Recon",
+      "icon": "Radar",
+      "url": "https://tools.rootz491.com/r/subdomains"
+    },
+    {
+      "slug": "tls",
+      "name": "TLS Certificate",
+      "description": "Inspect the certificate chain and expiry.",
+      "category": "Security/Recon",
+      "icon": "ShieldCheck",
+      "url": "https://tools.rootz491.com/r/tls"
+    },
+    {
+      "slug": "redirects",
+      "name": "Redirects",
+      "description": "Trace a URL's full redirect chain.",
+      "category": "Security/Recon",
+      "icon": "CornerDownRight",
+      "url": "https://tools.rootz491.com/r/redirects"
+    },
+    {
+      "slug": "mail",
+      "name": "Email Security",
+      "description": "Check SPF, DKIM, DMARC, and MTA-STS.",
+      "category": "Security/Recon",
+      "icon": "Mail",
+      "url": "https://tools.rootz491.com/r/mail"
+    },
+    {
+      "slug": "paste",
+      "name": "Pastebin",
+      "description": "Share text with expiry and burn-after-read.",
+      "category": "Sharing",
+      "icon": "ClipboardPaste",
+      "url": "https://paste.rootz491.com/"
+    },
+    {
+      "slug": "request-bin",
+      "name": "Request Bin",
+      "description": "Capture and inspect incoming webhooks.",
+      "category": "Sharing",
+      "icon": "Webhook",
+      "url": "https://bin.rootz491.com/"
+    }
+  ]
+}
