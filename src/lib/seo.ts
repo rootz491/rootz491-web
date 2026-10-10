@@ -1,4 +1,4 @@
-import { getContact, getSite } from '@/lib/content';
+import { getContact, getSite, getTools } from '@/lib/content';
 import type { Metadata } from 'next';
 
 interface SEOProps {
@@ -96,5 +96,23 @@ export function getWebSiteSchema() {
     alternateName: site.brand.wordmark,
     url: baseUrl,
     description: site.seo.defaultDescription,
+  };
+}
+
+export function getToolsSchema() {
+  const tools = getTools();
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: tools.title,
+    description: tools.subtitle,
+    itemListElement: tools.items.map((tool, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: tool.name,
+      description: tool.description,
+      url: tool.url,
+    })),
   };
 }

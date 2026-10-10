@@ -7,6 +7,7 @@ import projectsData from '../../../content/projects.json';
 import servicesData from '../../../content/services.json';
 import siteData from '../../../content/site.json';
 import skillsData from '../../../content/skills.json';
+import toolsData from '../../../content/tools.json';
 import {
   BlogsSchema,
   AboutSchema,
@@ -17,6 +18,7 @@ import {
   ServicesSchema,
   SiteSchema,
   SkillsSchema,
+  ToolsSchema,
   type BlogsContent,
   type AboutContent,
   type ContactContent,
@@ -27,6 +29,9 @@ import {
   type ServicesContent,
   type SiteContent,
   type SkillsContent,
+  type Tool,
+  type ToolCategory,
+  type ToolsContent,
 } from './types';
 
 let cache: {
@@ -35,6 +40,7 @@ let cache: {
   about: AboutContent;
   skills: SkillsContent;
   projects: ProjectsContent;
+  tools: ToolsContent;
   experience: ExperienceContent;
   services: ServicesContent;
   contact: ContactContent;
@@ -50,6 +56,7 @@ function loadAll() {
     about: AboutSchema.parse(aboutData),
     skills: SkillsSchema.parse(skillsData),
     projects: ProjectsSchema.parse(projectsData),
+    tools: ToolsSchema.parse(toolsData),
     experience: ExperienceSchema.parse(experienceData),
     services: ServicesSchema.parse(servicesData),
     contact: ContactSchema.parse(contactData),
@@ -85,6 +92,14 @@ export function getProjectBySlug(slug: string): Project | null {
 
 export function getAllProjectSlugs(): string[] {
   return getProjects().items.map(p => p.slug);
+}
+
+export function getTools(): ToolsContent {
+  return loadAll().tools;
+}
+
+export function getToolCategories(): ToolCategory[] {
+  return Array.from(new Set(getTools().items.map(t => t.category)));
 }
 
 export function getExperience(): ExperienceContent {

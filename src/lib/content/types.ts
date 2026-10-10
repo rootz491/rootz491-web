@@ -108,6 +108,28 @@ export const ProjectsSchema = z.object({
   items: z.array(ProjectSchema),
 });
 
+export const ToolCategorySchema = z.enum([
+  'Dev',
+  'Security/Recon',
+  'Finance/India',
+  'Sharing',
+]);
+
+export const ToolSchema = z.object({
+  slug: z.string(),
+  name: z.string(),
+  description: z.string(),
+  category: ToolCategorySchema,
+  icon: z.string(),
+  url: z.string(),
+});
+
+export const ToolsSchema = z.object({
+  title: z.string(),
+  subtitle: z.string(),
+  items: z.array(ToolSchema),
+});
+
 export const ExperienceRoleSchema = z.object({
   title: z.string(),
   employmentType: z.string().optional(),
@@ -185,6 +207,9 @@ export type AboutContent = z.infer<typeof AboutSchema>;
 export type SkillsContent = z.infer<typeof SkillsSchema>;
 export type Project = z.infer<typeof ProjectSchema>;
 export type ProjectsContent = z.infer<typeof ProjectsSchema>;
+export type Tool = z.infer<typeof ToolSchema>;
+export type ToolCategory = z.infer<typeof ToolCategorySchema>;
+export type ToolsContent = z.infer<typeof ToolsSchema>;
 export type ExperienceContent = z.infer<typeof ExperienceSchema>;
 export type ServicesContent = z.infer<typeof ServicesSchema>;
 export type ContactContent = z.infer<typeof ContactSchema>;
