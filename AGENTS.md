@@ -18,3 +18,11 @@ Use the scripts in `package.json`: `npm run dev`, `npm run build`, `npm start`, 
 - Resume PDF path: `public/resume/karan-sharma-resume.pdf` (replace with your real resume).
 - `next.config.js` uses `output: 'standalone'` for the Docker build; this does not affect `npm run dev`.
 - `npm run lint` uses `next lint` (prints a deprecation notice but works and passes).
+
+## UI rules
+
+- Follow the `emil-design-eng` skill (Emil Kowalski, MIT; shared copy at `/home/box/agent-data/workflows/emil-design-eng/`) for any UI or motion work.
+- Respect `prefers-reduced-motion`: every animation/transition must be disabled or reduced under `@media (prefers-reduced-motion: reduce)`.
+- Put hover effects only behind `@media (hover: hover) and (pointer: fine)`, so touch devices never get sticky hover states.
+- Run the `review-animations` and `break-ui` skills before opening any UI PR.
+- This site already uses Framer Motion and Lenis: keep those, and add no new motion/animation library.
