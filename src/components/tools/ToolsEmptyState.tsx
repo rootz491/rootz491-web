@@ -10,7 +10,7 @@ export function ToolsEmptyState({
   return (
     <div className='rounded-xl border border-border bg-surface p-8 text-center'>
       <p className='text-sm text-cream-muted'>
-        {trimmedQuery ? `No tools match “${trimmedQuery}”` : 'No tools in this category'}
+        {trimmedQuery ? 'No tools match this search' : 'No tools in this category'}
       </p>
       <button
         type='button'

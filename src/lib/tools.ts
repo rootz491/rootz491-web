@@ -2,7 +2,11 @@ export type ToolFilterItem = {
   name: string;
   description: string;
   category: string;
+  url?: string;
+  slug?: string;
 };
+
+export type ToolSort = 'default' | 'name';
 
 const ALL = 'All';
 
@@ -22,21 +26,58 @@ export function toolPath(url: string): string {
   }
 }
 
+export function normalizeSearch(s: string): string {
+  return s
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function compact(s: string): string {
+  return normalizeSearch(s).replace(/ /g, '');
+}
+
 export function filterTools<T extends ToolFilterItem>(
   items: T[],
   category: string,
   query: string
 ): T[] {
-  const normalizedQuery = query.trim().toLowerCase();
+  const tokens = normalizeSearch(query).split(' ').filter(Boolean);
+  const matchAllCategories = category === ALL;
 
   return items.filter(tool => {
-    const matchesCategory = category === ALL || tool.category === category;
-    const matchesQuery =
-      normalizedQuery === '' ||
-      tool.name.toLowerCase().includes(normalizedQuery) ||
-      tool.description.toLowerCase().includes(normalizedQuery);
-    return matchesCategory && matchesQuery;
+    if (!matchAllCategories && tool.category !== category) return false;
+    if (tokens.length === 0) return true;
+
+    const parts = [tool.name, tool.description, tool.category];
+    if (tool.slug) parts.push(tool.slug);
+    if (tool.url) parts.push(toolHost(tool.url) + toolPath(tool.url));
+
+    const haystack = normalizeSearch(parts.join(' '));
+    const packed = compact(haystack);
+
+    return tokens.every(
+      token => haystack.includes(token) || packed.includes(token)
+    );
   });
+}
+
+export function sortTools<T extends { name: string }>(
+  items: T[],
+  sort: ToolSort
+): T[] {
+  const copy = items.slice();
+  if (sort === 'name') {
+    copy.sort((a, b) =>
+      a.name.localeCompare(b.name, 'en', {
+        sensitivity: 'base',
+        numeric: true,
+      })
+    );
+  }
+  return copy;
 }
 
 export function groupByCategory<T extends ToolFilterItem>(

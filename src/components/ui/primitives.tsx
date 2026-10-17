@@ -59,14 +59,16 @@ export function SectionHeading({
   title,
   subtitle,
   className,
+  as: Heading = 'h2',
 }: {
   title: string;
   subtitle?: string;
   className?: string;
+  as?: 'h1' | 'h2';
 }) {
   return (
     <div className={cn('space-y-3', className)}>
-      <h2 className='text-h2 text-cream'>{title}</h2>
+      <Heading className='text-h2 text-cream'>{title}</Heading>
       {subtitle && <p className='text-base text-cream-muted max-w-2xl'>{subtitle}</p>}
     </div>
   );
