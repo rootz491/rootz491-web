@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,11 +18,13 @@ module.exports = {
     extend: {
       colors: {
         border: 'hsl(var(--border))',
+        'border-strong': 'hsl(var(--border-strong))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         cream: 'hsl(var(--cream))',
         'cream-muted': 'hsl(var(--cream-muted))',
         surface: 'hsl(var(--surface))',
+        'surface-hover': 'hsl(var(--surface-hover))',
         'surface-elevated': 'hsl(var(--surface-elevated))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -41,5 +45,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant('pointer-hover', '@media (hover: hover) and (pointer: fine) { &:hover }');
+    }),
+  ],
 };
