@@ -7,7 +7,7 @@ Builds on `docs/tools-uiux-phase1.md`. Spec: tools-uiux-review.md (Phase 2).
 - **Search**: matches name, description, category, slug and domain + path. It ignores case, punctuation and diacritics, and every word must match ("hash/hmac", "Base-64", "paste.rootz491" all work). No fuzzy dependency.
 - Page title is now the `<h1>` (`SectionHeading as="h1"`), with groups as `<h2>`.
 - **View switch**: Grid / List. Grid keeps the 1/2/3/4-column card grid; List is one column of dense rows
-  (icon | name + domain | description | category | actions). Switching is instant — no animation.
+  (icon | name + domain | description | actions; no category column). Switching is instant — no animation.
 - **Sort**: native `<select>` — "Default order" (content order) and "Name A–Z" (locale-aware, numeric).
 - **Favorites**: a star toggle per tool. Favorited tools are pulled into a "Favorites" group shown first and
   are removed from their category group, so a tool never appears twice.

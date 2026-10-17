@@ -45,13 +45,9 @@ export function ToolRow({
           </p>
         </div>
 
-        <p className='hidden w-[42%] shrink-0 line-clamp-2 text-[13px] leading-5 text-cream-muted md:block'>
+        <p className='hidden w-[45%] shrink-0 text-[13px] leading-5 text-cream-muted md:line-clamp-2'>
           {tool.description}
         </p>
-
-        <span className='hidden w-28 shrink-0 truncate text-xs text-cream-muted lg:block'>
-          {tool.category}
-        </span>
 
         <ToolActions
           name={tool.name}
