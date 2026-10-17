@@ -6,8 +6,10 @@
   :root {
     --background: 0 0% 5%;
     --surface: 0 0% 8%;
+    --surface-hover: 0 0% 10%;
     --surface-elevated: 0 0% 11%;
     --border: 0 0% 18%;
+    --border-strong: 0 0% 26%;
     --cream: 40 100% 99%;
     --cream-muted: 30 6% 65%;
     --foreground: 40 100% 99%;
