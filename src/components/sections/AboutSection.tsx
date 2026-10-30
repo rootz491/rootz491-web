@@ -4,7 +4,13 @@ import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { SectionHeading, SectionLink } from '@/components/ui/primitives';
 import { getAbout } from '@/lib/content';
 
-export function AboutSection({ preview = false }: { preview?: boolean }) {
+export function AboutSection({
+  preview = false,
+  headingAs = 'h2',
+}: {
+  preview?: boolean;
+  headingAs?: 'h1' | 'h2';
+}) {
   const about = getAbout();
 
   return (
@@ -12,7 +18,7 @@ export function AboutSection({ preview = false }: { preview?: boolean }) {
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
-            <SectionHeading title={about.title} subtitle={about.intro} />
+            <SectionHeading as={headingAs} title={about.title} subtitle={about.intro} />
             {preview && <SectionLink href='/about' label='Read more' />}
           </div>
         </Reveal>
