@@ -7,7 +7,13 @@ import { getBlogs } from '@/lib/content';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
-export function BlogsSection({ preview = false }: { preview?: boolean }) {
+export function BlogsSection({
+  preview = false,
+  headingAs = 'h2',
+}: {
+  preview?: boolean;
+  headingAs?: 'h1' | 'h2';
+}) {
   const blogs = getBlogs();
   const platforms = preview ? blogs.platforms.slice(0, 2) : blogs.platforms;
 
@@ -16,7 +22,7 @@ export function BlogsSection({ preview = false }: { preview?: boolean }) {
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
-            <SectionHeading title={blogs.title} subtitle={blogs.subtitle} />
+            <SectionHeading as={headingAs} title={blogs.title} subtitle={blogs.subtitle} />
             {preview && <SectionLink href='/blog' label='All posts' />}
           </div>
         </Reveal>

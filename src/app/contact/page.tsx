@@ -9,5 +9,5 @@ export const metadata = generateMetadata({
 });
 
 export default function ContactPage() {
-  return <ContactSection />;
+  return <ContactSection headingAs='h1' />;
 }

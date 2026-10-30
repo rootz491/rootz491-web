@@ -6,7 +6,13 @@ import { SectionHeading, SectionLink } from '@/components/ui/primitives';
 import { getContact } from '@/lib/content';
 import { motion } from 'framer-motion';
 
-export function ContactSection({ preview = false }: { preview?: boolean }) {
+export function ContactSection({
+  preview = false,
+  headingAs = 'h2',
+}: {
+  preview?: boolean;
+  headingAs?: 'h1' | 'h2';
+}) {
   const contact = getContact();
 
   return (
@@ -14,7 +20,7 @@ export function ContactSection({ preview = false }: { preview?: boolean }) {
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
-            <SectionHeading title={contact.title} subtitle={contact.subtitle} />
+            <SectionHeading as={headingAs} title={contact.title} subtitle={contact.subtitle} />
             {preview && <SectionLink href='/contact' label='Get in touch' />}
           </div>
         </Reveal>

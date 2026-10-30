@@ -13,7 +13,7 @@ export const metadata = generateMetadata({
 export default function AboutPage() {
   return (
     <>
-      <AboutSection />
+      <AboutSection headingAs='h1' />
       <div id='skills'>
         <SkillsSection />
       </div>

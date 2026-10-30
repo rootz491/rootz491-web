@@ -11,7 +11,7 @@ export const metadata = generateMetadata({
 export default function BlogPage() {
   return (
     <div className='pt-8'>
-      <BlogsSection />
+      <BlogsSection headingAs='h1' />
     </div>
   );
 }

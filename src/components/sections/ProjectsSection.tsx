@@ -7,7 +7,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export function ProjectsSection({ preview = false }: { preview?: boolean }) {
+export function ProjectsSection({
+  preview = false,
+  headingAs = 'h2',
+}: {
+  preview?: boolean;
+  headingAs?: 'h1' | 'h2';
+}) {
   const projects = getProjects();
   const items = projects.items;
 
@@ -16,7 +22,7 @@ export function ProjectsSection({ preview = false }: { preview?: boolean }) {
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
-            <SectionHeading title={projects.title} subtitle={projects.subtitle} />
+            <SectionHeading as={headingAs} title={projects.title} subtitle={projects.subtitle} />
             {preview && <SectionLink href='/projects' label='All projects' />}
           </div>
         </Reveal>
