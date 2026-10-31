@@ -39,6 +39,21 @@ describe('standalone page h1s', () => {
   });
 });
 
+describe('mobile tap targets', () => {
+  it('keeps the skip link full-size and off-canvas until focused', () => {
+    const source = read('src/components/ui/SkipLink.tsx');
+    assert.doesNotMatch(source, /sr-only/);
+    assert.match(source, /-translate-y-\[200%\]/);
+    assert.match(source, /focus:translate-y-0/);
+  });
+
+  it('gives small text links vertical padding for a 24px hit area', () => {
+    assert.match(read('src/components/layout/Footer.tsx'), /py-0\.5/);
+    const blogs = read('src/components/sections/BlogsSection.tsx');
+    assert.equal(blogs.match(/py-0\.5/g)?.length, 2);
+  });
+});
+
 describe('custom 404', () => {
   it('exists and exports the not-found metadata title', () => {
     const source = read('src/app/not-found.tsx');

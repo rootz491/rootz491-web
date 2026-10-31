@@ -21,7 +21,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className='text-sm text-cream-muted transition-colors hover:text-cream'
+                  className='py-0.5 text-sm text-cream-muted transition-colors hover:text-cream'
                 >
                   {link.label}
                 </Link>

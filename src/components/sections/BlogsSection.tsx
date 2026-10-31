@@ -46,7 +46,7 @@ export function BlogsSection({
                       href={platform.profileUrl}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-sm text-cream-muted hover:text-cream transition-colors inline-flex items-center gap-1'
+                      className='py-0.5 text-sm text-cream-muted hover:text-cream transition-colors inline-flex items-center gap-1'
                     >
                       Profile
                       <ExternalLink className='h-3.5 w-3.5' aria-hidden='true' />
@@ -63,7 +63,7 @@ export function BlogsSection({
                             href={post.url}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='group flex items-start gap-2 text-sm text-cream-muted hover:text-cream transition-colors'
+                            className='group flex items-start gap-2 py-0.5 text-sm text-cream-muted hover:text-cream transition-colors'
                           >
                             <span className='text-cream mt-0.5 shrink-0' aria-hidden='true'>→</span>
                             <span className='group-hover:underline min-w-0 break-words'>{post.title}</span>
