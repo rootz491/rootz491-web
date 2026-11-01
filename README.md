@@ -199,7 +199,7 @@ The contact form uses **nodemailer** to send emails via SMTP:
 
 ## Security Features
 
-- Security headers via middleware
+- Security headers and legacy redirects via `next.config.js`
 - Input validation with Zod
 - Rate limiting on contact form
 - Honeypot field for spam prevention
