@@ -14,7 +14,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/work', destination: '/projects', permanent: false },
-      { source: '/work/:slug', destination: '/projects/:slug', permanent: false },
+      { source: '/work/:path*', destination: '/projects/:path*', permanent: false },
       { source: '/services', destination: '/projects', permanent: false },
       { source: '/services/:path*', destination: '/projects', permanent: false },
       { source: '/government', destination: '/about', permanent: false },
@@ -35,7 +35,7 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value:
-              'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+              'camera=(), microphone=(), geolocation=()',
           },
           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
         ],

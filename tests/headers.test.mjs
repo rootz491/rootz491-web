@@ -23,8 +23,8 @@ describe('legacy redirects', () => {
     assert.deepEqual(await config.redirects(), [
       { source: '/work', destination: '/projects', permanent: false },
       {
-        source: '/work/:slug',
-        destination: '/projects/:slug',
+        source: '/work/:path*',
+        destination: '/projects/:path*',
         permanent: false,
       },
       { source: '/services', destination: '/projects', permanent: false },
@@ -63,7 +63,7 @@ describe('security headers', () => {
           {
             key: 'Permissions-Policy',
             value:
-              'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+              'camera=(), microphone=(), geolocation=()',
           },
           {
             key: 'Cross-Origin-Opener-Policy',
