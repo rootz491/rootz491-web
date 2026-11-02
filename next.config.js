@@ -1,3 +1,5 @@
+const { buildContentSecurityPolicy } = require('./csp.js');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
@@ -38,6 +40,17 @@ const nextConfig = {
               'camera=(), microphone=(), geolocation=()',
           },
           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+          {
+            key: 'Content-Security-Policy',
+            // Next.js App Router inlines its bootstrap scripts
+            // (self.__next_f.push), so 'unsafe-inline' is required for
+            // script-src. Using nonces instead would force every page to be
+            // dynamically rendered. The dev variant also allows 'unsafe-eval'
+            // and ws: so `next dev` HMR works.
+            value: buildContentSecurityPolicy({
+              dev: process.env.NODE_ENV !== 'production',
+            }),
+          },
         ],
       },
     ];
