@@ -1,4 +1,4 @@
-import { isPlainAnchor } from '@/lib/nav';
+import { isPdfHref, isPlainAnchor } from '@/lib/nav';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { type ComponentProps } from 'react';
@@ -43,6 +43,7 @@ export function Button({
         className={classes}
         target={external ? '_blank' : undefined}
         rel={external ? 'noopener noreferrer' : undefined}
+        download={!external && isPdfHref(href) ? true : undefined}
         {...props}
       >
         {children}

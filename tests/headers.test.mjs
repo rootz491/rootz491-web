@@ -122,8 +122,10 @@ describe('security headers', () => {
       /connect-src 'self' ws: https:\/\/cloudflareinsights\.com/
     );
     assert.doesNotMatch(productionCsp, /ws:/);
+    assert.doesNotMatch(devCsp, /upgrade-insecure-requests/);
     assert.equal(
-      devCsp.replace(" 'unsafe-eval'", '').replace(' ws:', ''),
+      devCsp.replace(" 'unsafe-eval'", '').replace(' ws:', '') +
+        '; upgrade-insecure-requests',
       productionCsp
     );
   });

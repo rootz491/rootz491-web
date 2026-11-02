@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
-import { isPlainAnchor } from '../src/lib/nav.ts';
+import { isPdfHref, isPlainAnchor } from '../src/lib/nav.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = rel => readFileSync(path.join(root, rel), 'utf8');
@@ -46,5 +46,18 @@ describe('Header resume and nav links', () => {
     const source = read('src/components/ui/primitives.tsx');
     assert.match(source, /isPlainAnchor\(href\)/);
     assert.doesNotMatch(source, /resume/i);
+  });
+});
+
+describe('isPlainAnchor edge cases', () => {
+  it('handles case, protocol-relative URLs and non-URL words', () => {
+    for (const href of ['/resume/CV.PDF', 'HTTPS://example.com', '//cdn.example.com/x', '/a.pdf?dl=1#p']) {
+      assert.equal(isPlainAnchor(href), true, href);
+    }
+    for (const href of ['/httpbin', '/projects', '/about#pdf', 'httpfoo']) {
+      assert.equal(isPlainAnchor(href), false, href);
+    }
+    assert.equal(isPdfHref('/resume/karan-sharma-resume.pdf'), true);
+    assert.equal(isPdfHref('https://example.com/x'), false);
   });
 });

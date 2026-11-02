@@ -18,7 +18,11 @@ const PRODUCTION_DIRECTIVES = [
 ];
 
 function buildContentSecurityPolicy({ dev = false } = {}) {
-  return PRODUCTION_DIRECTIVES.map(directive => {
+  // next dev serves plain http://localhost, so upgrading would break it.
+  const directives = dev
+    ? PRODUCTION_DIRECTIVES.filter(d => d !== 'upgrade-insecure-requests')
+    : PRODUCTION_DIRECTIVES;
+  return directives.map(directive => {
     if (!dev) return directive;
     if (directive.startsWith('script-src ')) {
       return directive.replace(
