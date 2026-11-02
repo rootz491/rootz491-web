@@ -1,6 +1,7 @@
 'use client';
 
 import { getSite } from '@/lib/content';
+import { isPlainAnchor } from '@/lib/nav';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { Download, Menu, X } from 'lucide-react';
@@ -73,25 +74,45 @@ export function Header() {
         </Link>
 
         <div className='hidden items-center gap-8 md:flex'>
-          {site.nav.links.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-current={pathname === link.href ? 'page' : undefined}
-              className={cn(
-                'relative text-base font-medium transition-colors',
-                pathname === link.href ? 'text-cream' : 'text-cream-muted hover:text-cream'
-              )}
-            >
-              {link.label}
-              {pathname === link.href && (
-                <motion.span
-                  layoutId='nav-underline'
-                  className='absolute -bottom-1 left-0 right-0 h-px bg-cream'
-                />
-              )}
-            </Link>
-          ))}
+          {site.nav.links.map(link => {
+            const active = pathname === link.href;
+            const className = cn(
+              'relative text-base font-medium transition-colors',
+              active ? 'text-cream' : 'text-cream-muted hover:text-cream'
+            );
+            const underline = active && (
+              <motion.span
+                layoutId='nav-underline'
+                className='absolute -bottom-1 left-0 right-0 h-px bg-cream'
+              />
+            );
+
+            if (isPlainAnchor(link.href)) {
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={className}
+                >
+                  {link.label}
+                  {underline}
+                </a>
+              );
+            }
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                className={className}
+              >
+                {link.label}
+                {underline}
+              </Link>
+            );
+          })}
           <a
             href={site.nav.resume.href}
             download
@@ -125,17 +146,33 @@ export function Header() {
             className='border-t border-border md:hidden'
           >
             <div className='container space-y-1 px-6 py-4 overflow-y-auto max-h-[calc(100vh-64px)]'>
-              {site.nav.links.map(link => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={pathname === link.href ? 'page' : undefined}
-                  onClick={() => setOpen(false)}
-                  className='block py-3 text-base font-medium text-cream-muted hover:text-cream'
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {site.nav.links.map(link => {
+                if (isPlainAnchor(link.href)) {
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      aria-current={pathname === link.href ? 'page' : undefined}
+                      onClick={() => setOpen(false)}
+                      className='block py-3 text-base font-medium text-cream-muted hover:text-cream'
+                    >
+                      {link.label}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={pathname === link.href ? 'page' : undefined}
+                    onClick={() => setOpen(false)}
+                    className='block py-3 text-base font-medium text-cream-muted hover:text-cream'
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <a
                 href={site.nav.resume.href}
                 download

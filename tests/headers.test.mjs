@@ -7,7 +7,20 @@ import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+process.env.NODE_ENV = 'production';
 const config = require('../next.config.js');
+const { buildContentSecurityPolicy } = require('../csp.js');
+
+const productionCsp =
+  "default-src 'self'; " +
+  "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; " +
+  "style-src 'self' 'unsafe-inline'; " +
+  "img-src 'self' data: blob: https://images.unsplash.com; " +
+  "font-src 'self' data:; " +
+  "connect-src 'self' https://cloudflareinsights.com; " +
+  "frame-src 'none'; frame-ancestors 'none'; object-src 'none'; " +
+  "base-uri 'self'; form-action 'self'; manifest-src 'self'; " +
+  "worker-src 'self' blob:; upgrade-insecure-requests";
 
 const sourceFiles = dir => {
   const entries = readdirSync(path.join(root, dir), { withFileTypes: true });
@@ -69,6 +82,10 @@ describe('security headers', () => {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin',
           },
+          {
+            key: 'Content-Security-Policy',
+            value: productionCsp,
+          },
         ],
       },
     ]);
@@ -80,9 +97,37 @@ describe('security headers', () => {
     assert.ok(!keys.includes('X-DNS-Prefetch-Control'));
   });
 
-  it('does not ship a Content-Security-Policy yet', async () => {
-    const keys = (await config.headers())[0].headers.map(header => header.key);
-    assert.ok(!keys.includes('Content-Security-Policy'));
+  it('ships the exact production Content-Security-Policy on every path', async () => {
+    const rule = (await config.headers()).find(entry => entry.source === '/(.*)');
+    assert.ok(rule, 'missing the catch-all header rule');
+    const csp = rule.headers.find(header => header.key === 'Content-Security-Policy');
+    assert.equal(
+      csp?.value,
+      productionCsp,
+      'production CSP must match the documented directive list'
+    );
+    assert.doesNotMatch(csp.value, /'unsafe-eval'/);
+    assert.match(csp.value, /frame-ancestors 'none'/);
+    assert.match(csp.value, /object-src 'none'/);
+  });
+
+  it('relaxes only script-src and connect-src in development', () => {
+    const devCsp = buildContentSecurityPolicy({ dev: true });
+    assert.match(
+      devCsp,
+      /script-src 'self' 'unsafe-inline' 'unsafe-eval' https:\/\/static\.cloudflareinsights\.com/
+    );
+    assert.match(
+      devCsp,
+      /connect-src 'self' ws: https:\/\/cloudflareinsights\.com/
+    );
+    assert.doesNotMatch(productionCsp, /ws:/);
+    assert.doesNotMatch(devCsp, /upgrade-insecure-requests/);
+    assert.equal(
+      devCsp.replace(" 'unsafe-eval'", '').replace(' ws:', '') +
+        '; upgrade-insecure-requests',
+      productionCsp
+    );
   });
 
   it('can deny framing because no page is embedded on purpose', () => {
