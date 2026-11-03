@@ -37,7 +37,7 @@ export function ToolRow({
 
           <div className='truncate font-mono text-[12.5px] leading-5 text-cream-muted'>
             {host}
-            {path && <span className='text-cream-muted/70'>{path}</span>}
+            {path}
           </div>
 
           <p className='mt-0.5 line-clamp-2 text-[13px] leading-5 text-cream-muted md:hidden'>

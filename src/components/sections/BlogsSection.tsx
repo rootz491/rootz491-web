@@ -4,6 +4,7 @@ import { SocialIcon } from '@/components/icons/SocialIcon';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { SectionHeading, SectionLink } from '@/components/ui/primitives';
 import { getBlogs } from '@/lib/content';
+import { cardHeadingFor } from '@/lib/headings';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
@@ -16,6 +17,7 @@ export function BlogsSection({
 }) {
   const blogs = getBlogs();
   const platforms = preview ? blogs.platforms.slice(0, 2) : blogs.platforms;
+  const CardHeading = cardHeadingFor(headingAs);
 
   return (
     <section className='border-t border-border section-spacing'>
@@ -39,7 +41,7 @@ export function BlogsSection({
                     <div className='flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface-elevated'>
                       <SocialIcon platform={platform.icon} className='h-5 w-5 text-cream' />
                     </div>
-                    <h3 className='font-semibold text-cream'>{platform.name}</h3>
+                    <CardHeading className='font-semibold text-cream'>{platform.name}</CardHeading>
                   </div>
                   {platform.profileUrl && (
                     <a
@@ -79,7 +81,7 @@ export function BlogsSection({
                       href={platform.profileUrl}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-cream hover:underline'
+                      className='text-cream underline underline-offset-2'
                     >
                       {platform.name}
                     </a>
