@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: { absolute: 'Not found — Karan Sharma' },
+  robots: { index: false, follow: false },
+  // The root layout declares a canonical for every page; a 404 must not.
+  alternates: { canonical: null },
 };
 
 export default function NotFound() {

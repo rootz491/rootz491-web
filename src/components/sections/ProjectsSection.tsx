@@ -3,6 +3,7 @@
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { SectionHeading, SectionLink } from '@/components/ui/primitives';
 import { getProjects } from '@/lib/content';
+import { cardHeadingFor } from '@/lib/headings';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,6 +17,7 @@ export function ProjectsSection({
 }) {
   const projects = getProjects();
   const items = projects.items;
+  const CardHeading = cardHeadingFor(headingAs);
 
   return (
     <section className='border-t border-border section-spacing'>
@@ -53,9 +55,9 @@ export function ProjectsSection({
                     <p className='text-xs font-medium uppercase tracking-wider text-cream-muted'>
                       {project.role}
                     </p>
-                    <h3 className='text-h3 text-cream group-hover:text-cream/90'>
+                    <CardHeading className='text-h3 text-cream group-hover:text-cream/90'>
                       {project.title}
-                    </h3>
+                    </CardHeading>
                     <p className='text-sm text-cream-muted leading-relaxed line-clamp-2'>
                       {project.summary}
                     </p>
