@@ -116,6 +116,43 @@ function blend(foreground, background, alpha) {
   );
 }
 
+// WCAG 2.5.8 Target Size (Minimum): standalone links need a 24x24 CSS px target.
+// `min-h-6` is 1.5rem = 24px; inline-flex/items-center keeps the box uncluttered.
+const minTapHeight = /\bmin-h-6\b/;
+
+describe('standalone link tap targets', () => {
+  it('gives SectionLink a 24px minimum height', () => {
+    const source = read('src/components/ui/primitives.tsx');
+    const sectionLink = source.slice(source.indexOf('export function SectionLink'));
+
+    assert.ok(sectionLink, 'SectionLink component not found');
+    assert.match(sectionLink, /inline-flex/);
+    assert.match(sectionLink, /items-center/);
+    assert.match(sectionLink, minTapHeight);
+  });
+
+  it('gives the /about company link a 24px minimum height', () => {
+    const source = read('src/components/sections/ExperienceSection.tsx');
+    const companyLink = source.match(/<Link[\s\S]*?\{item\.company\}[\s\S]*?<\/Link>/);
+
+    assert.ok(companyLink, 'company link not found in ExperienceSection');
+    assert.match(companyLink[0], /inline-flex/);
+    assert.match(companyLink[0], /items-center/);
+    assert.match(companyLink[0], minTapHeight);
+  });
+
+  it('keeps inline links inside paragraphs on their natural line-height', () => {
+    const blogs = read('src/components/sections/BlogsSection.tsx');
+    const inlineLink = blogs.match(/Posts coming soon[\s\S]*?<\/p>/);
+
+    assert.ok(inlineLink, 'inline fallback link not found');
+    assert.doesNotMatch(inlineLink[0], /min-h-|inline-flex/);
+
+    const about = read('src/components/sections/AboutSection.tsx');
+    assert.match(about, /leading-relaxed/);
+  });
+});
+
 describe('/tools card text contrast', () => {
   const surface = hslToRgb(hslVar('surface'));
   const creamMuted = hslToRgb(hslVar('cream-muted'));

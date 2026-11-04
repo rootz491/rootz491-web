@@ -34,7 +34,7 @@ export function ExperienceSection({ preview = false }: { preview?: boolean }) {
                           href={item.url}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='text-lg font-semibold text-cream hover:underline'
+                          className='inline-flex items-center min-h-6 text-lg font-semibold text-cream hover:underline'
                         >
                           {item.company}
                         </Link>

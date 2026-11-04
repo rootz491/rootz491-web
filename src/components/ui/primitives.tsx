@@ -81,7 +81,7 @@ export function SectionLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className='group inline-flex items-center gap-2 text-sm font-medium text-cream-muted transition-colors hover:text-cream'
+      className='group inline-flex items-center gap-2 min-h-6 text-sm font-medium text-cream-muted transition-colors hover:text-cream'
     >
       {label}
       <span aria-hidden='true' className='transition-transform duration-300 group-hover:translate-x-1 motion-reduce:group-hover:translate-x-0'>
