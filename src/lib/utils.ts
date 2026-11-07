@@ -72,26 +72,61 @@ const MONTH_MAP: Record<string, number> = {
   Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
 };
 
-function parsePeriodEnd(token: string): Date {
-  if (token === 'Present') return new Date();
-  const [mon, year] = token.split(' ');
-  return new Date(parseInt(year), MONTH_MAP[mon], 1);
+const DURATION_FALLBACK = 'Duration unavailable';
+const MIN_YEAR = 1900;
+const MAX_YEAR = 9999;
+const PERIOD_PATTERN =
+  /^([A-Za-z]{3})\s+(\d{4})\s*[\u2013\u2014-]\s*(?:(present)|([A-Za-z]{3})\s+(\d{4}))$/i;
+
+type PeriodPoint = { month: number; year: number };
+
+function parsePoint(monthToken: string, yearToken: string): PeriodPoint | null {
+  const monthKey =
+    monthToken.charAt(0).toUpperCase() + monthToken.slice(1).toLowerCase();
+  const month = MONTH_MAP[monthKey];
+  if (month === undefined) return null;
+
+  const year = Number.parseInt(yearToken, 10);
+  if (!Number.isInteger(year) || year < MIN_YEAR || year > MAX_YEAR) {
+    return null;
+  }
+
+  return { month, year };
+}
+
+function toMonthIndex({ month, year }: PeriodPoint): number {
+  return year * 12 + month;
 }
 
 /**
  * Calculate a human-readable duration from a period string like
  * "Aug 2023 — Present" or "May 2023 — Aug 2023".
- * Returns a string such as "1 yr 7 mos", "4 mos", "1 yr", etc.
+ * Accepts em dash, en dash, or ASCII hyphen separators.
+ * Returns a string such as "1 yr 7 mos", "4 mos", "1 yr", etc.,
+ * or "Duration unavailable" for malformed, reversed, or unknown periods.
  */
-export function calcDuration(period: string): string {
-  const [startToken, endToken] = period.split('—').map(s => s.trim());
-  const [startMon, startYear] = startToken.split(' ');
-  const start = new Date(parseInt(startYear), MONTH_MAP[startMon], 1);
-  const end = parsePeriodEnd(endToken);
+export function calcDuration(period: string, now: Date = new Date()): string {
+  if (typeof period !== 'string') return DURATION_FALLBACK;
 
-  let totalMonths =
-    (end.getFullYear() - start.getFullYear()) * 12 +
-    (end.getMonth() - start.getMonth());
+  const match = PERIOD_PATTERN.exec(period.trim());
+  if (!match) return DURATION_FALLBACK;
+
+  const start = parsePoint(match[1], match[2]);
+  if (!start) return DURATION_FALLBACK;
+
+  let end: PeriodPoint | null;
+  if (match[3]) {
+    if (!(now instanceof Date) || Number.isNaN(now.getTime())) {
+      return DURATION_FALLBACK;
+    }
+    end = { month: now.getMonth(), year: now.getFullYear() };
+  } else {
+    end = parsePoint(match[4], match[5]);
+  }
+  if (!end) return DURATION_FALLBACK;
+
+  let totalMonths = toMonthIndex(end) - toMonthIndex(start);
+  if (totalMonths < 0) return DURATION_FALLBACK;
   if (totalMonths < 1) totalMonths = 1;
 
   const years = Math.floor(totalMonths / 12);
