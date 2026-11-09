@@ -61,3 +61,30 @@ describe('isPlainAnchor edge cases', () => {
     assert.equal(isPdfHref('https://example.com/x'), false);
   });
 });
+
+describe('telephone and SMS hrefs', () => {
+  it('treats tel: and sms: links as plain anchors, tolerating case and whitespace', () => {
+    for (const href of [
+      'tel:+12025550123',
+      'TEL:+12025550123',
+      '  tel:+12025550123  ',
+      'sms:+12025550123',
+      'SMS:+12025550123',
+      '\tsms:+12025550123\n',
+    ]) {
+      assert.equal(isPlainAnchor(href), true, JSON.stringify(href));
+    }
+  });
+
+  it('does not broaden the guard to arbitrary or relative path schemes', () => {
+    for (const href of [
+      'javascript:alert(1)',
+      'data:text/html,<p>x</p>',
+      'ftp://example.com/file',
+      '/tel:+12025550123',
+      '/sms',
+    ]) {
+      assert.equal(isPlainAnchor(href), false, href);
+    }
+  });
+});
