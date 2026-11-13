@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
 
 import {
@@ -9,6 +10,81 @@ import {
   toolHost,
   toolPath,
 } from '../src/lib/tools.ts';
+
+const catalog = JSON.parse(
+  readFileSync(new URL('../content/tools.json', import.meta.url), 'utf8')
+);
+const toolIconSource = readFileSync(
+  new URL('../src/components/tools/ToolIcon.tsx', import.meta.url),
+  'utf8'
+);
+
+// Canonical routes from the tools-hub registry (src/ui.ts TOOLS).
+const BROWSER_SLUGS = new Set([
+  'json',
+  'convert',
+  'base64',
+  'url',
+  'jwt',
+  'jwt-sign',
+  'chmod',
+  'color',
+  'ua',
+  'timestamp',
+  'cron',
+  'hash',
+  'x509',
+  'sshkey',
+  'diff',
+  'regex',
+  'markdown',
+  'uuid',
+  'qr',
+  'password',
+  'gst',
+  'cidr',
+]);
+
+const SERVER_SLUGS = new Set([
+  'dns',
+  'mail',
+  'rdap',
+  'rdns',
+  'headers',
+  'redirects',
+  'subdomains',
+  'tls',
+  'dnssec',
+  'mtasts',
+  'dane',
+  'securitytxt',
+  'robots',
+  'caa',
+  'hsts',
+  'rpki',
+]);
+
+const NEW_SLUGS = [
+  'convert',
+  'jwt-sign',
+  'chmod',
+  'color',
+  'ua',
+  'x509',
+  'sshkey',
+  'markdown',
+  'password',
+  'cidr',
+  'rdap',
+  'dnssec',
+  'mtasts',
+  'dane',
+  'securitytxt',
+  'robots',
+  'caa',
+  'hsts',
+  'rpki',
+];
 
 const items = [
   { name: 'JSON', description: 'Format, validate, and minify JSON.', category: 'Dev' },
@@ -229,5 +305,84 @@ describe('sortTools', () => {
     const input = [{ name: 'b' }, { name: 'a' }];
     sortTools(input, 'name');
     assert.deepEqual(input.map(t => t.name), ['b', 'a']);
+  });
+});
+
+describe('tools catalog', () => {
+  it('includes every newly shipped tool', () => {
+    const slugs = new Set(catalog.items.map(t => t.slug));
+    for (const slug of NEW_SLUGS) {
+      assert.ok(slugs.has(slug), `missing catalog item: ${slug}`);
+    }
+  });
+
+  it('includes the representative sample', () => {
+    const slugs = new Set(catalog.items.map(t => t.slug));
+    for (const slug of ['sshkey', 'robots', 'cidr', 'jwt-sign', 'password']) {
+      assert.ok(slugs.has(slug), `missing representative tool: ${slug}`);
+    }
+  });
+
+  it('has no duplicate slugs or urls', () => {
+    assert.equal(
+      new Set(catalog.items.map(t => t.slug)).size,
+      catalog.items.length
+    );
+    assert.equal(
+      new Set(catalog.items.map(t => t.url)).size,
+      catalog.items.length
+    );
+  });
+
+  it('points every new tool at its real tools-hub route', () => {
+    const bySlug = new Map(catalog.items.map(t => [t.slug, t]));
+    for (const slug of NEW_SLUGS) {
+      const tool = bySlug.get(slug);
+      assert.ok(tool, `missing catalog item: ${slug}`);
+      const kind = BROWSER_SLUGS.has(slug) ? 't' : 'r';
+      assert.equal(tool.url, `https://tools.rootz491.com/${kind}/${slug}`);
+    }
+  });
+
+  it('only links to tools that exist on tools-hub', () => {
+    const known = new Set([...BROWSER_SLUGS, ...SERVER_SLUGS]);
+    const legacy = new Set(['tools-hub', 'paste', 'request-bin']);
+
+    for (const tool of catalog.items) {
+      if (legacy.has(tool.slug)) continue;
+      const { hostname, pathname } = new URL(tool.url);
+      assert.equal(hostname, 'tools.rootz491.com');
+      const match = /^\/(t|r)\/([a-z0-9-]+)$/.exec(pathname);
+      assert.ok(match, `not a tools-hub route: ${tool.url}`);
+      const [, kind, routeSlug] = match;
+      assert.ok(known.has(routeSlug), `unknown tools-hub slug: ${routeSlug}`);
+      const expectedKind = BROWSER_SLUGS.has(routeSlug) ? 't' : 'r';
+      assert.equal(kind, expectedKind, `wrong route kind: ${tool.url}`);
+    }
+  });
+
+  it('keeps categories consistent with the route kind', () => {
+    const legacy = new Set(['tools-hub', 'paste', 'request-bin']);
+
+    for (const tool of catalog.items) {
+      if (legacy.has(tool.slug)) continue;
+      if (tool.slug === 'gst') {
+        assert.equal(tool.category, 'Finance/India');
+        continue;
+      }
+      const { pathname } = new URL(tool.url);
+      const expected = pathname.startsWith('/r/') ? 'Security/Recon' : 'Dev';
+      assert.equal(tool.category, expected, tool.slug);
+    }
+  });
+
+  it('uses a mapped Lucide icon for every tool', () => {
+    for (const tool of catalog.items) {
+      assert.match(
+        toolIconSource,
+        new RegExp(`\\b${tool.icon}\\b`),
+        `icon not mapped for ${tool.slug}: ${tool.icon}`
+      );
+    }
   });
 });
