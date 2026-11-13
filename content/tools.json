@@ -99,6 +99,86 @@
       "url": "https://tools.rootz491.com/t/qr"
     },
     {
+      "slug": "convert",
+      "name": "Convert",
+      "description": "Convert between JSON, YAML, and CSV.",
+      "category": "Dev",
+      "icon": "ArrowLeftRight",
+      "url": "https://tools.rootz491.com/t/convert"
+    },
+    {
+      "slug": "jwt-sign",
+      "name": "JWT Sign",
+      "description": "Sign a JWT with HS, RS, PS, ES, or EdDSA in the browser.",
+      "category": "Dev",
+      "icon": "Signature",
+      "url": "https://tools.rootz491.com/t/jwt-sign"
+    },
+    {
+      "slug": "chmod",
+      "name": "chmod Calculator",
+      "description": "Convert Unix permissions between octal and rwx.",
+      "category": "Dev",
+      "icon": "Lock",
+      "url": "https://tools.rootz491.com/t/chmod"
+    },
+    {
+      "slug": "color",
+      "name": "Color Converter",
+      "description": "Convert colors between hex, rgb, and hsl with contrast checks.",
+      "category": "Dev",
+      "icon": "Palette",
+      "url": "https://tools.rootz491.com/t/color"
+    },
+    {
+      "slug": "ua",
+      "name": "User-Agent Parser",
+      "description": "Parse browser, engine, OS, and device from a user-agent string.",
+      "category": "Dev",
+      "icon": "MonitorSmartphone",
+      "url": "https://tools.rootz491.com/t/ua"
+    },
+    {
+      "slug": "x509",
+      "name": "X.509 Certificate",
+      "description": "Parse PEM or DER certificates, SANs, and fingerprints.",
+      "category": "Dev",
+      "icon": "FileBadge",
+      "url": "https://tools.rootz491.com/t/x509"
+    },
+    {
+      "slug": "sshkey",
+      "name": "SSH Key",
+      "description": "Inspect a public SSH key's type, size, and fingerprints.",
+      "category": "Dev",
+      "icon": "KeySquare",
+      "url": "https://tools.rootz491.com/t/sshkey"
+    },
+    {
+      "slug": "markdown",
+      "name": "Markdown",
+      "description": "Preview Markdown with safe rendering.",
+      "category": "Dev",
+      "icon": "FileCode",
+      "url": "https://tools.rootz491.com/t/markdown"
+    },
+    {
+      "slug": "password",
+      "name": "Password Generator",
+      "description": "Generate passwords and passphrases with entropy estimates.",
+      "category": "Dev",
+      "icon": "LockKeyhole",
+      "url": "https://tools.rootz491.com/t/password"
+    },
+    {
+      "slug": "cidr",
+      "name": "CIDR / Subnet",
+      "description": "Calculate IPv4 and IPv6 ranges, masks, and subnet splits.",
+      "category": "Dev",
+      "icon": "Network",
+      "url": "https://tools.rootz491.com/t/cidr"
+    },
+    {
       "slug": "gst",
       "name": "GST Calculator",
       "description": "Split CGST/SGST/IGST and read amounts in lakh/crore.",
@@ -161,6 +241,78 @@
       "category": "Security/Recon",
       "icon": "Mail",
       "url": "https://tools.rootz491.com/r/mail"
+    },
+    {
+      "slug": "rdap",
+      "name": "RDAP",
+      "description": "Look up registration data for domains, IPs, and ASNs.",
+      "category": "Security/Recon",
+      "icon": "Globe",
+      "url": "https://tools.rootz491.com/r/rdap"
+    },
+    {
+      "slug": "dnssec",
+      "name": "DNSSEC",
+      "description": "Verify the DNSSEC chain of trust from the root.",
+      "category": "Security/Recon",
+      "icon": "ShieldCheck",
+      "url": "https://tools.rootz491.com/r/dnssec"
+    },
+    {
+      "slug": "mtasts",
+      "name": "MTA-STS",
+      "description": "Check MTA-STS and TLS-RPT policy in depth.",
+      "category": "Security/Recon",
+      "icon": "MailCheck",
+      "url": "https://tools.rootz491.com/r/mtasts"
+    },
+    {
+      "slug": "dane",
+      "name": "DANE",
+      "description": "Validate SMTP TLSA records with DNSSEC.",
+      "category": "Security/Recon",
+      "icon": "Fingerprint",
+      "url": "https://tools.rootz491.com/r/dane"
+    },
+    {
+      "slug": "securitytxt",
+      "name": "security.txt",
+      "description": "Check a site's security.txt against RFC 9116.",
+      "category": "Security/Recon",
+      "icon": "FileCheck",
+      "url": "https://tools.rootz491.com/r/securitytxt"
+    },
+    {
+      "slug": "robots",
+      "name": "robots.txt",
+      "description": "Fetch and parse robots.txt groups, rules, and sitemaps.",
+      "category": "Security/Recon",
+      "icon": "Bot",
+      "url": "https://tools.rootz491.com/r/robots"
+    },
+    {
+      "slug": "caa",
+      "name": "CAA Policy",
+      "description": "Inspect CAA records and cross-check allowed issuers.",
+      "category": "Security/Recon",
+      "icon": "BadgeCheck",
+      "url": "https://tools.rootz491.com/r/caa"
+    },
+    {
+      "slug": "hsts",
+      "name": "HSTS Preload",
+      "description": "Check HSTS preload eligibility.",
+      "category": "Security/Recon",
+      "icon": "Shield",
+      "url": "https://tools.rootz491.com/r/hsts"
+    },
+    {
+      "slug": "rpki",
+      "name": "RPKI",
+      "description": "Validate route origins against RPKI data.",
+      "category": "Security/Recon",
+      "icon": "Route",
+      "url": "https://tools.rootz491.com/r/rpki"
     },
     {
       "slug": "paste",
