@@ -62,6 +62,9 @@ const SERVER_SLUGS = new Set([
   'caa',
   'hsts',
   'rpki',
+  'llmstxt',
+  'bimi',
+  'applinks',
 ]);
 
 const NEW_SLUGS = [
@@ -84,6 +87,9 @@ const NEW_SLUGS = [
   'caa',
   'hsts',
   'rpki',
+  'llmstxt',
+  'bimi',
+  'applinks',
 ];
 
 const items = [
@@ -373,6 +379,22 @@ describe('tools catalog', () => {
       const { pathname } = new URL(tool.url);
       const expected = pathname.startsWith('/r/') ? 'Security/Recon' : 'Dev';
       assert.equal(tool.category, expected, tool.slug);
+    }
+  });
+
+  it('lists the new recon tools on their /r/ routes', () => {
+    const newRecon = ['llmstxt', 'bimi', 'applinks'];
+    const bySlug = new Map(catalog.items.map(t => [t.slug, t]));
+
+    for (const slug of newRecon) {
+      const tool = bySlug.get(slug);
+      assert.ok(tool, `missing catalog item: ${slug}`);
+      assert.ok(
+        tool.url.startsWith('https://tools.rootz491.com/r/'),
+        `wrong route for ${slug}: ${tool.url}`
+      );
+      assert.equal(tool.url, `https://tools.rootz491.com/r/${slug}`);
+      assert.equal(tool.category, 'Security/Recon');
     }
   });
 
