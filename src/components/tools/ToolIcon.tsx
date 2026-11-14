@@ -11,6 +11,7 @@ import {
   FileBadge,
   FileCheck,
   FileCode,
+  FileSearch,
   FileText,
   Fingerprint,
   GitCompare,
@@ -35,6 +36,7 @@ import {
   Shield,
   ShieldCheck,
   Signature,
+  Smartphone,
   Webhook,
   type LucideIcon,
 } from 'lucide-react';
@@ -52,6 +54,7 @@ const iconMap: Record<string, LucideIcon> = {
   FileBadge,
   FileCheck,
   FileCode,
+  FileSearch,
   FileText,
   Fingerprint,
   GitCompare,
@@ -76,6 +79,7 @@ const iconMap: Record<string, LucideIcon> = {
   Shield,
   ShieldCheck,
   Signature,
+  Smartphone,
   Webhook,
 };
 

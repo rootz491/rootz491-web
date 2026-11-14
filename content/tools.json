@@ -315,6 +315,30 @@
       "url": "https://tools.rootz491.com/r/rpki"
     },
     {
+      "slug": "llmstxt",
+      "name": "llms.txt",
+      "description": "Check a site's llms.txt and optional llms-full.txt without crawling linked pages.",
+      "category": "Security/Recon",
+      "icon": "FileSearch",
+      "url": "https://tools.rootz491.com/r/llmstxt"
+    },
+    {
+      "slug": "bimi",
+      "name": "BIMI",
+      "description": "Check a BIMI record, logo, and VMC/evidence.",
+      "category": "Security/Recon",
+      "icon": "BadgeCheck",
+      "url": "https://tools.rootz491.com/r/bimi"
+    },
+    {
+      "slug": "applinks",
+      "name": "App links",
+      "description": "Inspect Digital Asset Links and Apple App Site Association documents.",
+      "category": "Security/Recon",
+      "icon": "Smartphone",
+      "url": "https://tools.rootz491.com/r/applinks"
+    },
+    {
       "slug": "paste",
       "name": "Pastebin",
       "description": "Share text with expiry and burn-after-read.",
