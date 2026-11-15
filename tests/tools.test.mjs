@@ -65,6 +65,9 @@ const SERVER_SLUGS = new Set([
   'llmstxt',
   'bimi',
   'applinks',
+  'oidc',
+  'adstxt',
+  'webfinger',
 ]);
 
 const NEW_SLUGS = [
@@ -90,6 +93,9 @@ const NEW_SLUGS = [
   'llmstxt',
   'bimi',
   'applinks',
+  'oidc',
+  'adstxt',
+  'webfinger',
 ];
 
 const items = [
@@ -324,7 +330,16 @@ describe('tools catalog', () => {
 
   it('includes the representative sample', () => {
     const slugs = new Set(catalog.items.map(t => t.slug));
-    for (const slug of ['sshkey', 'robots', 'cidr', 'jwt-sign', 'password']) {
+    for (const slug of [
+      'sshkey',
+      'robots',
+      'cidr',
+      'jwt-sign',
+      'password',
+      'llmstxt',
+      'bimi',
+      'applinks',
+    ]) {
       assert.ok(slugs.has(slug), `missing representative tool: ${slug}`);
     }
   });
@@ -383,7 +398,7 @@ describe('tools catalog', () => {
   });
 
   it('lists the new recon tools on their /r/ routes', () => {
-    const newRecon = ['llmstxt', 'bimi', 'applinks'];
+    const newRecon = ['llmstxt', 'bimi', 'applinks', 'oidc', 'adstxt', 'webfinger'];
     const bySlug = new Map(catalog.items.map(t => [t.slug, t]));
 
     for (const slug of newRecon) {
@@ -398,10 +413,34 @@ describe('tools catalog', () => {
     }
   });
 
+  it('lists the Nov 15 recon tools with their slugs and urls', () => {
+    const expected = {
+      oidc: { name: 'OIDC', url: 'https://tools.rootz491.com/r/oidc' },
+      adstxt: { name: 'ads.txt', url: 'https://tools.rootz491.com/r/adstxt' },
+      webfinger: { name: 'WebFinger', url: 'https://tools.rootz491.com/r/webfinger' },
+    };
+    const bySlug = new Map(catalog.items.map(t => [t.slug, t]));
+
+    for (const [slug, { name, url }] of Object.entries(expected)) {
+      const tool = bySlug.get(slug);
+      assert.ok(tool, `missing catalog item: ${slug}`);
+      assert.equal(tool.url, url, `wrong url for ${slug}`);
+      assert.equal(tool.name, name, `wrong name for ${slug}`);
+      assert.equal(tool.category, 'Security/Recon', `wrong category for ${slug}`);
+      assert.ok(tool.description.length > 0, `missing description for ${slug}`);
+    }
+  });
+
   it('uses a mapped Lucide icon for every tool', () => {
+    const iconMapSource = toolIconSource.slice(
+      toolIconSource.indexOf('const iconMap'),
+      toolIconSource.indexOf('export function ToolIcon')
+    );
+    assert.ok(iconMapSource.length > 0, 'iconMap not found in ToolIcon.tsx');
+
     for (const tool of catalog.items) {
       assert.match(
-        toolIconSource,
+        iconMapSource,
         new RegExp(`\\b${tool.icon}\\b`),
         `icon not mapped for ${tool.slug}: ${tool.icon}`
       );

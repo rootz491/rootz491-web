@@ -339,6 +339,30 @@
       "url": "https://tools.rootz491.com/r/applinks"
     },
     {
+      "slug": "oidc",
+      "name": "OIDC",
+      "description": "Check a host's OpenID Connect and OAuth discovery document without fetching listed endpoints.",
+      "category": "Security/Recon",
+      "icon": "ScanSearch",
+      "url": "https://tools.rootz491.com/r/oidc"
+    },
+    {
+      "slug": "adstxt",
+      "name": "ads.txt",
+      "description": "Fetch and parse ads.txt and app-ads.txt without requesting listed ad-system domains.",
+      "category": "Security/Recon",
+      "icon": "Megaphone",
+      "url": "https://tools.rootz491.com/r/adstxt"
+    },
+    {
+      "slug": "webfinger",
+      "name": "WebFinger",
+      "description": "Look up an account's WebFinger JRD without following listed links.",
+      "category": "Security/Recon",
+      "icon": "AtSign",
+      "url": "https://tools.rootz491.com/r/webfinger"
+    },
+    {
       "slug": "paste",
       "name": "Pastebin",
       "description": "Share text with expiry and burn-after-read.",

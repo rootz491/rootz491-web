@@ -1,5 +1,6 @@
 import {
   ArrowLeftRight,
+  AtSign,
   BadgeCheck,
   Binary,
   Bot,
@@ -26,6 +27,7 @@ import {
   LockKeyhole,
   Mail,
   MailCheck,
+  Megaphone,
   MonitorSmartphone,
   Network,
   Palette,
@@ -33,6 +35,7 @@ import {
   Radar,
   Regex,
   Route,
+  ScanSearch,
   Shield,
   ShieldCheck,
   Signature,
@@ -43,6 +46,7 @@ import {
 
 const iconMap: Record<string, LucideIcon> = {
   ArrowLeftRight,
+  AtSign,
   BadgeCheck,
   Binary,
   Bot,
@@ -69,6 +73,7 @@ const iconMap: Record<string, LucideIcon> = {
   LockKeyhole,
   Mail,
   MailCheck,
+  Megaphone,
   MonitorSmartphone,
   Network,
   Palette,
@@ -76,6 +81,7 @@ const iconMap: Record<string, LucideIcon> = {
   Radar,
   Regex,
   Route,
+  ScanSearch,
   Shield,
   ShieldCheck,
   Signature,
