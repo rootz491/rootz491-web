@@ -68,6 +68,9 @@ const SERVER_SLUGS = new Set([
   'oidc',
   'adstxt',
   'webfinger',
+  'httpsrr',
+  'sellers',
+  'matrix',
 ]);
 
 const NEW_SLUGS = [
@@ -96,6 +99,9 @@ const NEW_SLUGS = [
   'oidc',
   'adstxt',
   'webfinger',
+  'httpsrr',
+  'sellers',
+  'matrix',
 ];
 
 const items = [
@@ -339,6 +345,9 @@ describe('tools catalog', () => {
       'llmstxt',
       'bimi',
       'applinks',
+      'oidc',
+      'adstxt',
+      'webfinger',
     ]) {
       assert.ok(slugs.has(slug), `missing representative tool: ${slug}`);
     }
@@ -425,6 +434,28 @@ describe('tools catalog', () => {
       const tool = bySlug.get(slug);
       assert.ok(tool, `missing catalog item: ${slug}`);
       assert.equal(tool.url, url, `wrong url for ${slug}`);
+      assert.equal(tool.name, name, `wrong name for ${slug}`);
+      assert.equal(tool.category, 'Security/Recon', `wrong category for ${slug}`);
+      assert.ok(tool.description.length > 0, `missing description for ${slug}`);
+    }
+  });
+
+  it('lists the Nov 16 recon tools with their slugs and urls', () => {
+    const expected = {
+      httpsrr: { name: 'HTTPS / SVCB', url: 'https://tools.rootz491.com/r/httpsrr' },
+      sellers: { name: 'sellers.json', url: 'https://tools.rootz491.com/r/sellers' },
+      matrix: { name: 'Matrix well-known', url: 'https://tools.rootz491.com/r/matrix' },
+    };
+    const bySlug = new Map(catalog.items.map(t => [t.slug, t]));
+
+    for (const [slug, { name, url }] of Object.entries(expected)) {
+      const tool = bySlug.get(slug);
+      assert.ok(tool, `missing catalog item: ${slug}`);
+      assert.equal(tool.url, url, `wrong url for ${slug}`);
+      assert.ok(
+        tool.url.startsWith('https://tools.rootz491.com/r/'),
+        `wrong route for ${slug}: ${tool.url}`
+      );
       assert.equal(tool.name, name, `wrong name for ${slug}`);
       assert.equal(tool.category, 'Security/Recon', `wrong category for ${slug}`);
       assert.ok(tool.description.length > 0, `missing description for ${slug}`);

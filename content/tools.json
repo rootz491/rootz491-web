@@ -363,6 +363,30 @@
       "url": "https://tools.rootz491.com/r/webfinger"
     },
     {
+      "slug": "httpsrr",
+      "name": "HTTPS / SVCB",
+      "description": "Parse a host's HTTPS and SVCB DNS records (ALPN, ECH, port, address hints) without contacting the targets.",
+      "category": "Security/Recon",
+      "icon": "GlobeLock",
+      "url": "https://tools.rootz491.com/r/httpsrr"
+    },
+    {
+      "slug": "sellers",
+      "name": "sellers.json",
+      "description": "Fetch and parse IAB sellers.json without requesting listed seller domains.",
+      "category": "Security/Recon",
+      "icon": "Store",
+      "url": "https://tools.rootz491.com/r/sellers"
+    },
+    {
+      "slug": "matrix",
+      "name": "Matrix well-known",
+      "description": "Fetch Matrix well-known client and server documents without contacting delegated servers.",
+      "category": "Security/Recon",
+      "icon": "Server",
+      "url": "https://tools.rootz491.com/r/matrix"
+    },
+    {
       "slug": "paste",
       "name": "Pastebin",
       "description": "Share text with expiry and burn-after-read.",
