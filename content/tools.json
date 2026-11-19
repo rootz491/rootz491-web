@@ -293,7 +293,7 @@
     {
       "slug": "sitemap",
       "name": "Sitemap",
-      "description": "sitemap documents, indexes and listed URLs",
+      "description": "Fetch and parse sitemap documents, indexes, and listed URLs.",
       "category": "Security/Recon",
       "icon": "Network",
       "url": "https://tools.rootz491.com/r/sitemap"
