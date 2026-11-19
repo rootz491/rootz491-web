@@ -59,6 +59,7 @@ const SERVER_SLUGS = new Set([
   'dane',
   'securitytxt',
   'robots',
+  'sitemap',
   'caa',
   'hsts',
   'rpki',
