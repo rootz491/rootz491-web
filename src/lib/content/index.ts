@@ -2,6 +2,7 @@ import blogsData from '../../../content/blogs.json';
 import aboutData from '../../../content/about.json';
 import contactData from '../../../content/contact.json';
 import experienceData from '../../../content/experience.json';
+import hireData from '../../../content/hire.json';
 import profileData from '../../../content/profile.json';
 import projectsData from '../../../content/projects.json';
 import servicesData from '../../../content/services.json';
@@ -13,6 +14,7 @@ import {
   AboutSchema,
   ContactSchema,
   ExperienceSchema,
+  HireSchema,
   ProfileSchema,
   ProjectsSchema,
   ServicesSchema,
@@ -23,6 +25,7 @@ import {
   type AboutContent,
   type ContactContent,
   type ExperienceContent,
+  type HireContent,
   type ProfileContent,
   type Project,
   type ProjectsContent,
@@ -45,6 +48,7 @@ let cache: {
   services: ServicesContent;
   contact: ContactContent;
   blogs: BlogsContent;
+  hire: HireContent;
 } | null = null;
 
 function loadAll() {
@@ -61,6 +65,7 @@ function loadAll() {
     services: ServicesSchema.parse(servicesData),
     contact: ContactSchema.parse(contactData),
     blogs: BlogsSchema.parse(blogsData),
+    hire: HireSchema.parse(hireData),
   };
 
   return cache;
@@ -116,4 +121,8 @@ export function getContact(): ContactContent {
 
 export function getBlogs(): BlogsContent {
   return loadAll().blogs;
+}
+
+export function getHire(): HireContent {
+  return loadAll().hire;
 }

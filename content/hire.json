@@ -1,0 +1,89 @@
+{
+  "title": "Hire me",
+  "eyebrow": "Indie software development",
+  "intro": "I'm Karan Sharma, an indie software developer. Online I go by rootz491.",
+  "summary": "I build web software directly: interfaces, APIs, and the deployment around them. If you need something made, write to me on Telegram and tell me what it is.",
+  "locationLabel": "Based in",
+  "location": "Dehradun, Uttarakhand, India",
+  "timezone": "India Standard Time (UTC+5:30)",
+  "personal": "Away from the screen I trek, play badminton, and watch films.",
+  "ctas": [
+    {
+      "label": "Message on Telegram",
+      "href": "https://t.me/rootz491",
+      "variant": "primary"
+    },
+    {
+      "label": "Selected projects",
+      "href": "/projects",
+      "variant": "secondary"
+    }
+  ],
+  "work": {
+    "title": "What I can take on",
+    "subtitle": "Web products, the services behind them, and the setup required to run them.",
+    "items": [
+      {
+        "icon": "code",
+        "title": "Web applications",
+        "description": "Sites and web apps with Next.js, React, and TypeScript, from an early version through to something you can run in production."
+      },
+      {
+        "icon": "server",
+        "title": "APIs and backends",
+        "description": "APIs with NestJS or FastAPI, along with databases, caching, and search."
+      },
+      {
+        "icon": "cloud",
+        "title": "Deployment",
+        "description": "Docker, continuous integration, and cloud hosting so a project can be shipped and kept running."
+      }
+    ]
+  },
+  "start": {
+    "title": "How to begin",
+    "steps": [
+      "Message @rootz491 on Telegram with a short description, plus any links you already have.",
+      "We confirm the work fits and agree on the first piece before building starts.",
+      "I build it from Dehradun and send progress in writing."
+    ]
+  },
+  "engagement": {
+    "title": "Time and place",
+    "paragraphs": [
+      "I work remotely from Dehradun. Afternoons and evenings here overlap with Europe. Mornings overlap with the Americas.",
+      "Write in English. A short note is enough: what you are building, what you need from me, and any timing that matters."
+    ]
+  },
+  "contacts": {
+    "title": "Where to reach me",
+    "subtitle": "Telegram is the direct line. GitHub, the blog, and this site are there if you want to look around first.",
+    "items": [
+      {
+        "label": "Telegram",
+        "href": "https://t.me/rootz491",
+        "detail": "@rootz491"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/rootz491",
+        "detail": "github.com/rootz491"
+      },
+      {
+        "label": "Blog",
+        "href": "https://blog.rootz491.com",
+        "detail": "blog.rootz491.com"
+      },
+      {
+        "label": "This site",
+        "href": "https://rootz491.com",
+        "detail": "rootz491.com"
+      }
+    ]
+  },
+  "elsewhere": {
+    "intro": "I also keep a few small tools online, including a pastebin and a request bin.",
+    "linkLabel": "Browse tools",
+    "href": "/tools"
+  }
+}
