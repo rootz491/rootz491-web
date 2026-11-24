@@ -114,6 +114,14 @@ describe('hire page wiring', () => {
     assert.match(read('src/app/sitemap.ts'), /\/hire/);
   });
 
+  it('lets the collapsed menu scroll while Lenis is stopped', () => {
+    const source = read('src/components/layout/Header.tsx');
+    const list = source.slice(source.indexOf("id='mobile-menu'"));
+    assert.match(list, /data-lenis-prevent/);
+    assert.match(list, /overflow-y-auto/);
+    assert.match(list, /max-h-\[calc\(100vh-64px\)\]/);
+  });
+
   it('shows the full nav from the lg breakpoint so the extra link fits', () => {
     const source = read('src/components/layout/Header.tsx');
     assert.match(source, /hidden items-center gap-8 lg:flex/);

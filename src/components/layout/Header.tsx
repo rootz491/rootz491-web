@@ -23,7 +23,8 @@ export function Header() {
   });
 
   // Lock body scroll + pause Lenis while the mobile menu is open so the two
-  // scroll systems never fight each other.
+  // scroll systems never fight each other. The link list opts out with
+  // data-lenis-prevent so it can still scroll on short screens.
   useEffect(() => {
     if (!open) return;
     lenis?.stop();
@@ -145,7 +146,10 @@ export function Header() {
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className='border-t border-border lg:hidden'
           >
-            <div className='container space-y-1 px-6 py-4 overflow-y-auto max-h-[calc(100vh-64px)]'>
+            <div
+              data-lenis-prevent
+              className='container max-h-[calc(100vh-64px)] space-y-1 overflow-y-auto overscroll-contain px-6 py-4'
+            >
               {site.nav.links.map(link => {
                 if (isPlainAnchor(link.href)) {
                   return (
