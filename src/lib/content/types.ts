@@ -201,6 +201,63 @@ export const BlogsSchema = z.object({
   platforms: z.array(BlogPlatformSchema),
 });
 
+export const HireSchema = z.object({
+  eyebrow: z.string(),
+  headline: z.string(),
+  intro: z.string(),
+  traveller: z.string(),
+  packages: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    items: z.array(
+      z.object({
+        icon: z.enum(['code', 'cloud', 'cpu']),
+        title: z.string(),
+        lead: z.boolean().optional(),
+        leadLabel: z.string().optional(),
+        points: z.array(z.string()),
+      })
+    ),
+  }),
+  pricing: z.object({
+    title: z.string(),
+    body: z.string(),
+  }),
+  process: z.object({
+    title: z.string(),
+    steps: z.array(
+      z.object({
+        title: z.string(),
+        body: z.string(),
+      })
+    ),
+    location: z.string(),
+    overlapTodo: z.string(),
+  }),
+  work: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    slugs: z.array(z.string()),
+  }),
+  booking: z.object({
+    prompt: z.string(),
+    label: z.string(),
+    href: z.string(),
+    cal: z.string(),
+    telegramLabel: z.string(),
+    telegramHref: z.string(),
+  }),
+  faq: z.object({
+    title: z.string(),
+    items: z.array(
+      z.object({
+        question: z.string(),
+        answer: z.string(),
+      })
+    ),
+  }),
+});
+
 export type SiteContent = z.infer<typeof SiteSchema>;
 export type ProfileContent = z.infer<typeof ProfileSchema>;
 export type AboutContent = z.infer<typeof AboutSchema>;
@@ -215,3 +272,4 @@ export type ServicesContent = z.infer<typeof ServicesSchema>;
 export type ContactContent = z.infer<typeof ContactSchema>;
 export type BlogsContent = z.infer<typeof BlogsSchema>;
 export type BlogPlatform = z.infer<typeof BlogPlatformSchema>;
+export type HireContent = z.infer<typeof HireSchema>;

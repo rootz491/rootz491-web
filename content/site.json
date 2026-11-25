@@ -22,6 +22,7 @@
       { "label": "Tools", "href": "/tools" },
       { "label": "About", "href": "/about" },
       { "label": "Blog", "href": "/blog" },
+      { "label": "Hire", "href": "/hire" },
       { "label": "Contact", "href": "/contact" }
     ],
     "resume": {

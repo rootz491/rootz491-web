@@ -23,7 +23,8 @@ export function Header() {
   });
 
   // Lock body scroll + pause Lenis while the mobile menu is open so the two
-  // scroll systems never fight each other.
+  // scroll systems never fight each other. The link list opts out with
+  // data-lenis-prevent so it can still scroll on short screens.
   useEffect(() => {
     if (!open) return;
     lenis?.stop();
@@ -73,7 +74,7 @@ export function Header() {
           {site.brand.wordmark}
         </Link>
 
-        <div className='hidden items-center gap-8 md:flex'>
+        <div className='hidden items-center gap-8 lg:flex'>
           {site.nav.links.map(link => {
             const active = pathname === link.href;
             const className = cn(
@@ -128,7 +129,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls='mobile-menu'
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className='md:hidden h-11 w-11 rounded-md text-cream flex items-center justify-center'
+          className='lg:hidden h-11 w-11 rounded-md text-cream flex items-center justify-center'
           onClick={() => setOpen(!open)}
         >
           {open ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
@@ -143,9 +144,12 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className='border-t border-border md:hidden'
+            className='border-t border-border lg:hidden'
           >
-            <div className='container space-y-1 px-6 py-4 overflow-y-auto max-h-[calc(100vh-64px)]'>
+            <div
+              data-lenis-prevent
+              className='container max-h-[calc(100vh-64px)] space-y-1 overflow-y-auto overscroll-contain px-6 py-4'
+            >
               {site.nav.links.map(link => {
                 if (isPlainAnchor(link.href)) {
                   return (
@@ -154,7 +158,10 @@ export function Header() {
                       href={link.href}
                       aria-current={pathname === link.href ? 'page' : undefined}
                       onClick={() => setOpen(false)}
-                      className='block py-3 text-base font-medium text-cream-muted hover:text-cream'
+                      className={cn(
+                        'block py-3 text-base font-medium transition-colors hover:text-cream',
+                        pathname === link.href ? 'text-cream' : 'text-cream-muted'
+                      )}
                     >
                       {link.label}
                     </a>
@@ -167,7 +174,10 @@ export function Header() {
                     href={link.href}
                     aria-current={pathname === link.href ? 'page' : undefined}
                     onClick={() => setOpen(false)}
-                    className='block py-3 text-base font-medium text-cream-muted hover:text-cream'
+                    className={cn(
+                      'block py-3 text-base font-medium transition-colors hover:text-cream',
+                      pathname === link.href ? 'text-cream' : 'text-cream-muted'
+                    )}
                   >
                     {link.label}
                   </Link>

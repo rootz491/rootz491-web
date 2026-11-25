@@ -1,0 +1,122 @@
+{
+  "eyebrow": "Hire me",
+  "headline": "I build your product, from MVP to launch.",
+  "intro": "I'm Karan, a full-stack developer with 4+ years of shipping production web apps. I work with startups and agencies who need one reliable person to take a product from idea to something real users can sign up for, covering frontend, backend, deployment and, where it helps, AI. I'm available for new projects now.",
+  "traveller": "I travel, and I still do the building myself.",
+  "packages": {
+    "title": "Packages",
+    "subtitle": "MVP to launch is the main offer. The other two can stand on their own.",
+    "items": [
+      {
+        "icon": "code",
+        "title": "MVP to launch",
+        "lead": true,
+        "leadLabel": "Lead offer",
+        "points": [
+          "Scoping the smallest launchable product",
+          "Next.js/React frontend",
+          "Node or Python API",
+          "PostgreSQL or MongoDB",
+          "Auth",
+          "Deployment to a real domain",
+          "Basic monitoring",
+          "Weekly demo builds",
+          "Handover docs"
+        ]
+      },
+      {
+        "icon": "cloud",
+        "title": "Deployment and DevOps setup",
+        "points": [
+          "Docker",
+          "CI/CD",
+          "Cloud hosting (AWS, GCP or Cloudflare)",
+          "Staging and production environments",
+          "Backups",
+          "Logging",
+          "A written runbook"
+        ]
+      },
+      {
+        "icon": "cpu",
+        "title": "AI integration into an existing product",
+        "points": [
+          "Picking the right model and where it runs",
+          "A cost-per-request estimate",
+          "An API or pipeline built into the app",
+          "Fallbacks when the model fails",
+          "A short report on cost and limits"
+        ]
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Pricing",
+    "body": "€20/hour. One-off projects are quoted from your requirements after a short call, so there are no fixed package prices. You get a written scope and estimate before any work starts."
+  },
+  "process": {
+    "title": "How a project runs",
+    "steps": [
+      {
+        "title": "Call",
+        "body": "A free 20-minute call about what you're building and what done looks like."
+      },
+      {
+        "title": "Scope",
+        "body": "A written scope, estimate and timeline, approved before anything starts."
+      },
+      {
+        "title": "Build",
+        "body": "Weekly steps, with a link to click through and a short update each week."
+      },
+      {
+        "title": "Handover",
+        "body": "Code in your repo, deployment in your accounts, docs so your team can run it."
+      }
+    ],
+    "location": "Based in India (IST, UTC+5:30).",
+    "overlapTodo": "TODO: hours that overlap with your team."
+  },
+  "work": {
+    "title": "Selected work",
+    "subtitle": "Public projects already on this site.",
+    "slugs": ["kaluwala", "explorewithnurse", "akira", "artbyshul"]
+  },
+  "booking": {
+    "prompt": "Have a project in mind?",
+    "label": "Book a free 20-minute call",
+    "href": "/contact",
+    "cal": "TODO: cal.com link",
+    "telegramLabel": "Message on Telegram",
+    "telegramHref": "https://t.me/rootz491"
+  },
+  "faq": {
+    "title": "Questions",
+    "items": [
+      {
+        "question": "Are you available now?",
+        "answer": "Yes, I'm taking on new freelance projects."
+      },
+      {
+        "question": "How do you charge?",
+        "answer": "€20/hour; projects are quoted after a short call."
+      },
+      {
+        "question": "Do you work with agencies?",
+        "answer": "Yes, as a white-label or embedded developer."
+      },
+      {
+        "question": "Who owns the code?",
+        "answer": "You do, in your repo and accounts from day one."
+      },
+      {
+        "question": "How do we stay in touch?",
+        "answer": "Slack, email or whatever your team uses, with a weekly written update."
+      },
+      {
+        "question": "How do I pay?",
+        "answer": "TODO: payment details."
+      }
+    ]
+  }
+}

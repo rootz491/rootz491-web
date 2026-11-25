@@ -14,6 +14,7 @@ const standalonePages = [
   ['blog', 'src/app/blog/page.tsx', 'src/components/sections/BlogsSection.tsx'],
   ['about', 'src/app/about/page.tsx', 'src/components/sections/AboutSection.tsx'],
   ['contact', 'src/app/contact/page.tsx', 'src/components/sections/ContactSection.tsx'],
+  ['hire', 'src/app/hire/page.tsx', 'src/components/sections/HireSection.tsx'],
 ];
 
 describe('tailwind hover gating', () => {
