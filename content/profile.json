@@ -9,6 +9,7 @@
     "avatar": "/images/avatar.jpg",
     "ctas": [
       { "label": "View projects", "href": "/projects", "variant": "primary" },
+      { "label": "Hire me", "href": "/hire", "variant": "secondary" },
       { "label": "Download resume", "href": "/resume/karan-sharma-resume.pdf", "variant": "secondary" }
     ]
   },

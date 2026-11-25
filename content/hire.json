@@ -1,89 +1,122 @@
 {
-  "title": "Hire me",
-  "eyebrow": "Indie software development",
-  "intro": "I'm Karan Sharma, an indie software developer. Online I go by rootz491.",
-  "summary": "I build web software directly: interfaces, APIs, and the deployment around them. If you need something made, write to me on Telegram and tell me what it is.",
-  "locationLabel": "Based in",
-  "location": "Dehradun, Uttarakhand, India",
-  "timezone": "India Standard Time (UTC+5:30)",
-  "personal": "Away from the screen I trek, play badminton, and watch films.",
-  "ctas": [
-    {
-      "label": "Message on Telegram",
-      "href": "https://t.me/rootz491",
-      "variant": "primary"
-    },
-    {
-      "label": "Selected projects",
-      "href": "/projects",
-      "variant": "secondary"
-    }
-  ],
-  "work": {
-    "title": "What I can take on",
-    "subtitle": "Web products, the services behind them, and the setup required to run them.",
+  "eyebrow": "Hire me",
+  "headline": "I build your product, from MVP to launch.",
+  "intro": "I'm Karan, a full-stack developer with 4+ years of shipping production web apps. I work with startups and agencies who need one reliable person to take a product from idea to something real users can sign up for, covering frontend, backend, deployment and, where it helps, AI. I'm available for new projects now.",
+  "traveller": "I travel, and I still do the building myself.",
+  "packages": {
+    "title": "Packages",
+    "subtitle": "MVP to launch is the main offer. The other two can stand on their own.",
     "items": [
       {
         "icon": "code",
-        "title": "Web applications",
-        "description": "Sites and web apps with Next.js, React, and TypeScript, from an early version through to something you can run in production."
-      },
-      {
-        "icon": "server",
-        "title": "APIs and backends",
-        "description": "APIs with NestJS or FastAPI, along with databases, caching, and search."
+        "title": "MVP to launch",
+        "lead": true,
+        "leadLabel": "Lead offer",
+        "points": [
+          "Scoping the smallest launchable product",
+          "Next.js/React frontend",
+          "Node or Python API",
+          "PostgreSQL or MongoDB",
+          "Auth",
+          "Deployment to a real domain",
+          "Basic monitoring",
+          "Weekly demo builds",
+          "Handover docs"
+        ]
       },
       {
         "icon": "cloud",
-        "title": "Deployment",
-        "description": "Docker, continuous integration, and cloud hosting so a project can be shipped and kept running."
+        "title": "Deployment and DevOps setup",
+        "points": [
+          "Docker",
+          "CI/CD",
+          "Cloud hosting (AWS, GCP or Cloudflare)",
+          "Staging and production environments",
+          "Backups",
+          "Logging",
+          "A written runbook"
+        ]
+      },
+      {
+        "icon": "cpu",
+        "title": "AI integration into an existing product",
+        "points": [
+          "Picking the right model and where it runs",
+          "A cost-per-request estimate",
+          "An API or pipeline built into the app",
+          "Fallbacks when the model fails",
+          "A short report on cost and limits"
+        ]
       }
     ]
   },
-  "start": {
-    "title": "How to begin",
+  "pricing": {
+    "title": "Pricing",
+    "body": "€20/hour. One-off projects are quoted from your requirements after a short call, so there are no fixed package prices. You get a written scope and estimate before any work starts."
+  },
+  "process": {
+    "title": "How a project runs",
     "steps": [
-      "Message @rootz491 on Telegram with a short description, plus any links you already have.",
-      "We confirm the work fits and agree on the first piece before building starts.",
-      "I build it from Dehradun and send progress in writing."
-    ]
+      {
+        "title": "Call",
+        "body": "A free 20-minute call about what you're building and what done looks like."
+      },
+      {
+        "title": "Scope",
+        "body": "A written scope, estimate and timeline, approved before anything starts."
+      },
+      {
+        "title": "Build",
+        "body": "Weekly steps, with a link to click through and a short update each week."
+      },
+      {
+        "title": "Handover",
+        "body": "Code in your repo, deployment in your accounts, docs so your team can run it."
+      }
+    ],
+    "location": "Based in India (IST, UTC+5:30).",
+    "overlapTodo": "TODO: hours that overlap with your team."
   },
-  "engagement": {
-    "title": "Time and place",
-    "paragraphs": [
-      "I work remotely from Dehradun. Afternoons and evenings here overlap with Europe. Mornings overlap with the Americas.",
-      "Write in English. A short note is enough: what you are building, what you need from me, and any timing that matters."
-    ]
+  "work": {
+    "title": "Selected work",
+    "subtitle": "Public projects already on this site.",
+    "slugs": ["kaluwala", "explorewithnurse", "akira", "artbyshul"]
   },
-  "contacts": {
-    "title": "Where to reach me",
-    "subtitle": "Telegram is the direct line. GitHub, the blog, and this site are there if you want to look around first.",
+  "booking": {
+    "prompt": "Have a project in mind?",
+    "label": "Book a free 20-minute call",
+    "href": "/contact",
+    "cal": "TODO: cal.com link",
+    "telegramLabel": "Message on Telegram",
+    "telegramHref": "https://t.me/rootz491"
+  },
+  "faq": {
+    "title": "Questions",
     "items": [
       {
-        "label": "Telegram",
-        "href": "https://t.me/rootz491",
-        "detail": "@rootz491"
+        "question": "Are you available now?",
+        "answer": "Yes, I'm taking on new freelance projects."
       },
       {
-        "label": "GitHub",
-        "href": "https://github.com/rootz491",
-        "detail": "github.com/rootz491"
+        "question": "How do you charge?",
+        "answer": "€20/hour; projects are quoted after a short call."
       },
       {
-        "label": "Blog",
-        "href": "https://blog.rootz491.com",
-        "detail": "blog.rootz491.com"
+        "question": "Do you work with agencies?",
+        "answer": "Yes, as a white-label or embedded developer."
       },
       {
-        "label": "This site",
-        "href": "https://rootz491.com",
-        "detail": "rootz491.com"
+        "question": "Who owns the code?",
+        "answer": "You do, in your repo and accounts from day one."
+      },
+      {
+        "question": "How do we stay in touch?",
+        "answer": "Slack, email or whatever your team uses, with a weekly written update."
+      },
+      {
+        "question": "How do I pay?",
+        "answer": "TODO: payment details."
       }
     ]
-  },
-  "elsewhere": {
-    "intro": "I also keep a few small tools online, including a pastebin and a request bin.",
-    "linkLabel": "Browse tools",
-    "href": "/tools"
   }
 }

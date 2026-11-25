@@ -6,7 +6,7 @@ const hire = getHire();
 
 export const metadata = generateMetadata({
   title: 'Hire me',
-  description: `${hire.intro} Based in ${hire.location}.`,
+  description: hire.intro,
   path: '/hire',
 });
 

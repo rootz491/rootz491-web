@@ -201,56 +201,60 @@ export const BlogsSchema = z.object({
   platforms: z.array(BlogPlatformSchema),
 });
 
-export const HireCtaSchema = z.object({
-  label: z.string(),
-  href: z.string(),
-  variant: z.enum(['primary', 'secondary']),
-});
-
 export const HireSchema = z.object({
-  title: z.string(),
   eyebrow: z.string(),
+  headline: z.string(),
   intro: z.string(),
-  summary: z.string(),
-  locationLabel: z.string(),
-  location: z.string(),
-  timezone: z.string(),
-  personal: z.string(),
-  ctas: z.array(HireCtaSchema),
+  traveller: z.string(),
+  packages: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    items: z.array(
+      z.object({
+        icon: z.enum(['code', 'cloud', 'cpu']),
+        title: z.string(),
+        lead: z.boolean().optional(),
+        leadLabel: z.string().optional(),
+        points: z.array(z.string()),
+      })
+    ),
+  }),
+  pricing: z.object({
+    title: z.string(),
+    body: z.string(),
+  }),
+  process: z.object({
+    title: z.string(),
+    steps: z.array(
+      z.object({
+        title: z.string(),
+        body: z.string(),
+      })
+    ),
+    location: z.string(),
+    overlapTodo: z.string(),
+  }),
   work: z.object({
     title: z.string(),
     subtitle: z.string(),
-    items: z.array(
-      z.object({
-        icon: z.enum(['code', 'server', 'cloud']),
-        title: z.string(),
-        description: z.string(),
-      })
-    ),
+    slugs: z.array(z.string()),
   }),
-  start: z.object({
-    title: z.string(),
-    steps: z.array(z.string()),
-  }),
-  engagement: z.object({
-    title: z.string(),
-    paragraphs: z.array(z.string()),
-  }),
-  contacts: z.object({
-    title: z.string(),
-    subtitle: z.string(),
-    items: z.array(
-      z.object({
-        label: z.string(),
-        href: z.string(),
-        detail: z.string(),
-      })
-    ),
-  }),
-  elsewhere: z.object({
-    intro: z.string(),
-    linkLabel: z.string(),
+  booking: z.object({
+    prompt: z.string(),
+    label: z.string(),
     href: z.string(),
+    cal: z.string(),
+    telegramLabel: z.string(),
+    telegramHref: z.string(),
+  }),
+  faq: z.object({
+    title: z.string(),
+    items: z.array(
+      z.object({
+        question: z.string(),
+        answer: z.string(),
+      })
+    ),
   }),
 });
 

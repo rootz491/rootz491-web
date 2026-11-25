@@ -12,6 +12,7 @@ const json = rel => JSON.parse(read(rel));
 
 const hire = HireSchema.parse(json('content/hire.json'));
 const hireText = JSON.stringify(hire);
+const projects = json('content/projects.json');
 const hireFiles = [
   'content/hire.json',
   'src/app/hire/page.tsx',
@@ -29,44 +30,91 @@ function collectStrings(value, out = []) {
 }
 
 describe('hire page content', () => {
-  it('names Karan, the alias, and city-level location only', () => {
-    assert.match(hire.intro, /Karan Sharma/);
-    assert.match(hire.intro, /rootz491/);
-    assert.equal(hire.location, 'Dehradun, Uttarakhand, India');
-    assert.match(hire.timezone, /UTC\+5:30/);
+  it('uses the signed-off headline, intro, price, and availability', () => {
+    assert.equal(hire.headline, 'I build your product, from MVP to launch.');
+    assert.match(hire.intro, /I'm Karan, a full-stack developer with 4\+ years/);
+    assert.match(hire.intro, /I'm available for new projects now/);
+    assert.match(hire.traveller, /travel/i);
+    assert.equal(
+      hire.pricing.body,
+      '€20/hour. One-off projects are quoted from your requirements after a short call, so there are no fixed package prices. You get a written scope and estimate before any work starts.'
+    );
+    assert.equal(hire.process.location, 'Based in India (IST, UTC+5:30).');
+  });
+
+  it('lists the three packages, with MVP to launch first', () => {
+    assert.deepEqual(
+      hire.packages.items.map(item => item.title),
+      [
+        'MVP to launch',
+        'Deployment and DevOps setup',
+        'AI integration into an existing product',
+      ]
+    );
+    assert.equal(hire.packages.items[0].lead, true);
+    assert.match(hire.packages.items[0].points.join(' '), /Next\.js\/React/);
+    assert.match(hire.packages.items[1].points.join(' '), /Docker/);
+    assert.match(hire.packages.items[2].points.join(' '), /cost-per-request/);
+  });
+
+  it('describes the four-step process and leaves overlap as a TODO', () => {
+    assert.deepEqual(
+      hire.process.steps.map(step => step.title),
+      ['Call', 'Scope', 'Build', 'Handover']
+    );
+    assert.match(hire.process.steps[0].body, /free 20-minute call/);
+    assert.match(hire.process.overlapTodo, /^TODO:/);
+  });
+
+  it('shows the four public projects and leaves the graphics platform out', () => {
+    assert.deepEqual(hire.work.slugs, [
+      'kaluwala',
+      'explorewithnurse',
+      'akira',
+      'artbyshul',
+    ]);
+    const known = new Set(projects.items.map(item => item.slug));
+    for (const slug of hire.work.slugs) {
+      assert.equal(known.has(slug), true, slug);
+    }
+    assert.equal(hire.work.slugs.includes('creazilla'), false);
+    assert.doesNotMatch(hireText, /creazilla|10M\+/i);
+  });
+
+  it('books through the contact page until cal.com exists, with Telegram second', () => {
+    assert.equal(hire.booking.prompt, 'Have a project in mind?');
+    assert.equal(hire.booking.label, 'Book a free 20-minute call');
+    assert.equal(hire.booking.href, '/contact');
+    assert.equal(hire.booking.cal, 'TODO: cal.com link');
+    assert.equal(hire.booking.telegramHref, 'https://t.me/rootz491');
+    assert.doesNotMatch(read('src/components/sections/HireSection.tsx'), /<form/i);
+  });
+
+  it('answers the FAQ and leaves payment as a visible TODO', () => {
+    assert.deepEqual(
+      hire.faq.items.map(item => item.question),
+      [
+        'Are you available now?',
+        'How do you charge?',
+        'Do you work with agencies?',
+        'Who owns the code?',
+        'How do we stay in touch?',
+        'How do I pay?',
+      ]
+    );
+    assert.match(hire.faq.items[1].answer, /€20\/hour/);
+    assert.match(hire.faq.items[2].answer, /white-label/);
+    assert.match(hire.faq.items.at(-1).answer, /^TODO:/);
+  });
+
+  it('stays at region level and does not name employers', () => {
     const copy = collectStrings(hire).join('\n');
     assert.doesNotMatch(
       copy,
-      /\b(street|road|lane|nagar|pincode|pin code|zip)\b/i
+      /\b(street|road|lane|nagar|pincode|pin code|zip|mountain|trek|himalaya)\b/i
     );
     assert.doesNotMatch(copy, /\b(phone|gstin|ifsc|iban|swift|dob)\b/i);
     assert.doesNotMatch(copy, /date of birth/i);
-    assert.doesNotMatch(copy, /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
-    assert.doesNotMatch(copy, /\d[\d\s().-]{7,}\d/);
-  });
-
-  it('links only the public contacts and does not invent a form or email', () => {
-    assert.deepEqual(
-      hire.contacts.items.map(item => item.href),
-      [
-        'https://t.me/rootz491',
-        'https://github.com/rootz491',
-        'https://blog.rootz491.com',
-        'https://rootz491.com',
-      ]
-    );
-    assert.equal(hire.contacts.items[0].detail, '@rootz491');
-    assert.equal(hire.ctas[0].href, 'https://t.me/rootz491');
-    assert.doesNotMatch(hireText, /mailto:/i);
-    assert.doesNotMatch(
-      read('src/components/sections/HireSection.tsx'),
-      /<form/i
-    );
-  });
-
-  it('points at work already on the site without naming employers or clients', () => {
-    assert.equal(hire.ctas[1].href, '/projects');
-    assert.equal(hire.elsewhere.href, '/tools');
     const employers = json('content/experience.json').items.map(
       item => item.company
     );
@@ -77,8 +125,6 @@ describe('hire page content', () => {
       'instagram',
       'devin',
       'testimonial',
-      'kaluwala',
-      'explorewithnurse',
     ];
     for (const name of banned) {
       assert.equal(
@@ -87,18 +133,14 @@ describe('hire page content', () => {
         name
       );
     }
-    assert.doesNotMatch(hireText, /\b(rates?|per hour|\/hr)\b/i);
-    assert.doesNotMatch(hireText, /[$₹€£]/);
-    assert.doesNotMatch(hireText, /\byears?\b/i);
     assert.doesNotMatch(hireText, /\bcursor\b/i);
   });
 
-  it('keeps a light personal note and the public tool link', () => {
-    assert.match(hire.personal, /trek/i);
-    assert.match(hire.personal, /badminton/i);
-    assert.match(hire.personal, /film/i);
-    assert.match(hire.elsewhere.intro, /paste/i);
-    assert.match(hire.elsewhere.intro, /bin/i);
+  it('links hire from the homepage hero', () => {
+    const cta = json('content/profile.json').hero.ctas.find(
+      item => item.href === '/hire'
+    );
+    assert.equal(cta.label, 'Hire me');
   });
 });
 
