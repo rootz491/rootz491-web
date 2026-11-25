@@ -5,18 +5,30 @@ import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import { SectionHeading, SectionLink } from '@/components/ui/primitives';
 import { getBlogs } from '@/lib/content';
 import { cardHeadingFor } from '@/lib/headings';
+import {
+  OWN_BLOG_FALLBACK_LABEL,
+  mergeOwnBlogPosts,
+  ownBlogNeedsFallback,
+  platformsForView,
+  type OwnBlogPost,
+} from '@/lib/ownBlogFeed';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
 export function BlogsSection({
   preview = false,
   headingAs = 'h2',
+  ownBlogPosts = [],
 }: {
   preview?: boolean;
   headingAs?: 'h1' | 'h2';
+  ownBlogPosts?: OwnBlogPost[];
 }) {
   const blogs = getBlogs();
-  const platforms = preview ? blogs.platforms.slice(0, 2) : blogs.platforms;
+  const platforms = platformsForView(
+    mergeOwnBlogPosts(blogs.platforms, ownBlogPosts),
+    preview
+  );
   const CardHeading = cardHeadingFor(headingAs);
 
   return (
@@ -24,7 +36,11 @@ export function BlogsSection({
       <div className='container px-6'>
         <Reveal>
           <div className='flex items-end justify-between gap-4 mb-10'>
-            <SectionHeading as={headingAs} title={blogs.title} subtitle={blogs.subtitle} />
+            <SectionHeading
+              as={headingAs}
+              title={blogs.title}
+              subtitle={blogs.subtitle}
+            />
             {preview && <SectionLink href='/blog' label='All posts' />}
           </div>
         </Reveal>
@@ -37,43 +53,79 @@ export function BlogsSection({
                 className='rounded-2xl border border-border bg-surface p-6 h-full'
               >
                 <div className='flex items-center justify-between gap-4 mb-5'>
-                  <div className='flex items-center gap-3'>
-                    <div className='flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface-elevated'>
-                      <SocialIcon platform={platform.icon} className='h-5 w-5 text-cream' />
+                  <div className='flex min-w-0 items-center gap-3'>
+                    <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-surface-elevated text-cream'>
+                      {platform.icon === 'blog' ? (
+                        <span
+                          aria-hidden='true'
+                          className='text-sm font-semibold leading-none tracking-tight'
+                        >
+                          Rz
+                        </span>
+                      ) : (
+                        <SocialIcon
+                          platform={platform.icon}
+                          className='h-5 w-5'
+                        />
+                      )}
                     </div>
-                    <CardHeading className='font-semibold text-cream'>{platform.name}</CardHeading>
+                    <CardHeading className='font-semibold text-cream'>
+                      {platform.name}
+                    </CardHeading>
                   </div>
                   {platform.profileUrl && (
                     <a
                       href={platform.profileUrl}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='py-0.5 text-sm text-cream-muted hover:text-cream transition-colors inline-flex items-center gap-1'
+                      className='py-0.5 text-sm text-cream-muted hover:text-cream transition-colors inline-flex shrink-0 items-center gap-1'
                     >
-                      Profile
-                      <ExternalLink className='h-3.5 w-3.5' aria-hidden='true' />
+                      {platform.linkLabel ?? 'Profile'}
+                      <ExternalLink
+                        className='h-3.5 w-3.5'
+                        aria-hidden='true'
+                      />
                     </a>
                   )}
                 </div>
 
                 {platform.posts.length > 0 ? (
                   <ul className='space-y-3'>
-                    {(preview ? platform.posts.slice(0, 2) : platform.posts).map(
-                      (post, i) => (
-                        <li key={i}>
-                          <a
-                            href={post.url}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='group flex items-start gap-2 py-0.5 text-sm text-cream-muted hover:text-cream transition-colors'
+                    {(preview
+                      ? platform.posts.slice(0, 2)
+                      : platform.posts
+                    ).map(post => (
+                      <li key={post.url}>
+                        <a
+                          href={post.url}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='group flex items-start gap-2 py-0.5 text-sm text-cream-muted hover:text-cream transition-colors'
+                        >
+                          <span
+                            className='text-cream mt-0.5 shrink-0'
+                            aria-hidden='true'
                           >
-                            <span className='text-cream mt-0.5 shrink-0' aria-hidden='true'>→</span>
-                            <span className='group-hover:underline min-w-0 break-words'>{post.title}</span>
-                          </a>
-                        </li>
-                      )
-                    )}
+                            →
+                          </span>
+                          <span className='group-hover:underline min-w-0 break-words'>
+                            {post.title}
+                          </span>
+                        </a>
+                      </li>
+                    ))}
                   </ul>
+                ) : ownBlogNeedsFallback(platform) ? (
+                  <p className='text-sm text-cream-muted'>
+                    <a
+                      href={platform.profileUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='inline-flex items-center py-0.5 text-cream underline underline-offset-2'
+                    >
+                      {OWN_BLOG_FALLBACK_LABEL}
+                    </a>
+                  </p>
                 ) : (
                   <p className='text-sm text-cream-muted'>
                     Posts coming soon — follow on{' '}

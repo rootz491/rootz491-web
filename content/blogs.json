@@ -3,6 +3,14 @@
   "subtitle": "Occasional posts on security, development, and things I learn along the way.",
   "platforms": [
     {
+      "id": "rootz",
+      "name": "Blog",
+      "profileUrl": "https://blog.rootz491.com",
+      "icon": "blog",
+      "linkLabel": "Visit",
+      "posts": []
+    },
+    {
       "id": "medium",
       "name": "Medium",
       "profileUrl": "https://medium.com/@karansh491",
