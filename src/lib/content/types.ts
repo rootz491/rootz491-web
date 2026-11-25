@@ -192,6 +192,7 @@ export const BlogPlatformSchema = z.object({
   name: z.string(),
   profileUrl: z.string(),
   icon: z.string(),
+  linkLabel: z.string().optional(),
   posts: z.array(BlogPostSchema),
 });
 

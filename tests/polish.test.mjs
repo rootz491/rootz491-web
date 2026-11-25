@@ -51,7 +51,8 @@ describe('mobile tap targets', () => {
   it('gives small text links vertical padding for a 24px hit area', () => {
     assert.match(read('src/components/layout/Footer.tsx'), /py-0\.5/);
     const blogs = read('src/components/sections/BlogsSection.tsx');
-    assert.equal(blogs.match(/py-0\.5/g)?.length, 2);
+    // Profile/Visit, each post title, and the own-blog feed fallback.
+    assert.equal(blogs.match(/py-0\.5/g)?.length, 3);
   });
 });
 
