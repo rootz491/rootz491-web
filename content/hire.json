@@ -74,8 +74,7 @@
         "body": "Code in your repo, deployment in your accounts, docs so your team can run it."
       }
     ],
-    "location": "Based in India (IST, UTC+5:30).",
-    "overlapTodo": "TODO: hours that overlap with your team."
+    "location": "Based in India (IST, UTC+5:30)."
   },
   "work": {
     "title": "Selected work",
@@ -115,7 +114,7 @@
       },
       {
         "question": "How do I pay?",
-        "answer": "TODO: payment details."
+        "answer": "Bank transfer, crypto, Wise, PayPal, or any other platform you prefer."
       }
     ]
   }

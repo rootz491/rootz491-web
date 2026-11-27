@@ -136,9 +136,6 @@ export function HireSection({ headingAs = 'h2' }: { headingAs?: 'h1' | 'h2' }) {
             <p className='mt-8 text-sm leading-relaxed text-cream-muted'>
               {hire.process.location}
             </p>
-            <p className='mt-3 max-w-2xl border-l border-cream/30 pl-4 text-sm leading-relaxed text-cream-muted'>
-              {hire.process.overlapTodo}
-            </p>
           </Reveal>
         </div>
       </section>

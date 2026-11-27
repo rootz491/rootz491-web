@@ -233,7 +233,6 @@ export const HireSchema = z.object({
       })
     ),
     location: z.string(),
-    overlapTodo: z.string(),
   }),
   work: z.object({
     title: z.string(),
