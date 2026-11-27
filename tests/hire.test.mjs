@@ -57,13 +57,17 @@ describe('hire page content', () => {
     assert.match(hire.packages.items[2].points.join(' '), /cost-per-request/);
   });
 
-  it('describes the four-step process and leaves overlap as a TODO', () => {
+  it('describes the four-step process and omits overlap hours', () => {
     assert.deepEqual(
       hire.process.steps.map(step => step.title),
       ['Call', 'Scope', 'Build', 'Handover']
     );
     assert.match(hire.process.steps[0].body, /free 20-minute call/);
-    assert.match(hire.process.overlapTodo, /^TODO:/);
+    assert.equal('overlapTodo' in hire.process, false);
+    assert.doesNotMatch(
+      read('src/components/sections/HireSection.tsx'),
+      /overlapTodo|overlap with your team/i
+    );
   });
 
   it('shows the four public projects and leaves the graphics platform out', () => {
@@ -90,7 +94,7 @@ describe('hire page content', () => {
     assert.doesNotMatch(read('src/components/sections/HireSection.tsx'), /<form/i);
   });
 
-  it('answers the FAQ and leaves payment as a visible TODO', () => {
+  it('answers the FAQ, including payment methods', () => {
     assert.deepEqual(
       hire.faq.items.map(item => item.question),
       [
@@ -104,7 +108,10 @@ describe('hire page content', () => {
     );
     assert.match(hire.faq.items[1].answer, /€20\/hour/);
     assert.match(hire.faq.items[2].answer, /white-label/);
-    assert.match(hire.faq.items.at(-1).answer, /^TODO:/);
+    assert.equal(
+      hire.faq.items.at(-1).answer,
+      'Bank transfer, crypto, Wise, PayPal, or any other platform you prefer.'
+    );
   });
 
   it('stays at region level and does not name employers', () => {
